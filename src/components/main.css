@@ -1,0 +1,14 @@
+.spa {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 1400px) 1fr;
+  justify-content: center;
+  grid-template-areas: ". header ." ". content ." ". footer .";
+}
+
+footer {
+  background-color: antiquewhite;
+}
+
+footer {
+  grid-area: footer;
+}

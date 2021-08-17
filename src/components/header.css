@@ -1,0 +1,43 @@
+header {
+    background-color: antiquewhite;
+    grid-area: header;
+    display: grid;
+    grid-template-areas: "h-top" "h-bottom";
+  }
+  
+  .header-top {
+    grid-area: h-top;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(90px, 90px);
+  }
+  
+  .header-bottom {
+    grid-area: h-bottom;
+    display: grid;
+    grid-template-columns: 0.9fr 0.1fr;
+  }
+  
+  .header_logo, .delivery-time, .delivery-phone, .enter-personal {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .header_logo img {
+    max-width: 150px;
+  }
+  .nav-menu ul {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(80px, 1fr));
+  }
+  
+  .nav-menu ul li {
+    list-style: none;
+  }
+  
+  .cart {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
