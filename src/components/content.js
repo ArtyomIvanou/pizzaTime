@@ -1,98 +1,139 @@
 import React from 'react'
 import './content.css';
 import Carousel from './carousel';
-const Content=()=>{
-  
-   
+import Products from './products';
+var shop = [
+    {
+        type: 'pizza',
+        title: 'Пицца',
+        productsType: [
+            { type: 'classic', title: 'Классические' },
+            { type: 'lovely', title: 'Любимые' },
+            { type: 'premium', title: 'Премиум' },
+            { type: 'legends', title: 'Легенды' },
+            { type: 'redPrice', title: 'Красная цена' }
+        ],
+        products: [
+            {
+                id: 1,
+                type: 'classic',
+                config: {
+                    size: [
+                        { name: 'small', weight: 380, price: 17,title:"27см" },
+                        { name: 'standart', weight: 620, price: 22.9,title:"30см" },
+                        { name: 'big', weight: 920, price: 25.6,title:"33см" },
+                    ],
+                    defaultSize: 'standart',
+                    dough: [
+                        { name: 'classic', weight: 0, price: 0,title:"Классическое" },
+                        { name: 'hotDog', weight: 100, price: 4,title:"Хот Дог борт" },
+                        { name: 'cheese', weight: 50, price: 2,title:"Сырный борт" },
+                        { name: 'thin', weight: -50, price: 0,title:"Тонкое" }
+                    ],
+                    defaulDough: 'classic',
+                    topping: 0,
+                    toppingWeight: 30,
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2018/09/12/carbonara.png',
+                title: 'Карбонара',
+                content: ['Лук', 'Бекон', 'Крем фреш', 'Ветчина', 'Шампиньоны', 'Сыр моцарелла',],
+                // weight: [380, 620, 920],
+                defaultPrice: 22.9,
+                price: 22.9
+            },
+            {
+                id: 2,
+                type: 'legends',
+                config: {
+                    size: [
+                        { name: 'small', weight: 390, price: 18,title:"27см" },
+                        { name: 'standart', weight: 650, price: 23,title:"30см" },
+                        { name: 'big', weight: 950, price: 27,title:"35см" },
+                    ],
+                    defaultSize: 'small',
+                    dough: [
+                        { name: 'classic', weight: 0, price: 0,title:"Классическое" },
+                        { name: 'hotDog', weight: 100, price: 4,title:"Хот Дог борт" },
+                        { name: 'cheese', weight: 50, price: 2,title:"Сырный борт" },
+                        { name: 'thin', weight: -50, price: 0,title:"Тонкое" }
+                    ],
+                    defaulDough: 'classic',
+                    topping: 0,
+                    toppingWeight: 30,
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2021/06/10/meksikanskaya_small.png',
+                title: 'Мексиканская',
+                content: ['Сыр моцарелла', 'Сладкий перец', 'Соус Бургер', 'Халапеньо', 'Курица', 'Кукуруза','Томаты',],
+                // weight: [380, 620, 920],
+                defaultPrice: 23,
+                price: 23,
+            }
+        ]
+    },
+    {
+        type: 'drinks',
+        title: 'Напитки',
+        productsType: [
+            { type: 'hot', title: 'Горячие напитки' },
+            { type: 'cold', title: 'Холодные напитки' },
+            { type: 'juice', title: 'Соки' },
+            { type: 'water', title: 'Вода' },
+            { type: 'carbonated', title: 'Газированные напитки' }
+        ],
+        products: [
+            {
+                id: 1,
+                type: 'hot',
+                config: {
+                    size: [
+                        { name: 'small', weight: 300, price: 2, },
+                        { name: 'standart', weight: 400, price: 3, },
+                        { name: 'big', weight: 500, price: 4, },
+                    ],
+                    defaultSize: 'standart',
+
+                    defaulDough: 'classic',
+
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2018/09/12/carbonara.png',
+                title: 'Чай Клюква с имбирем',
+                content: ['dfgdfg', 'dfgfdg', 'dfgfdgfd', 'dfgdfgfd', 'dfgdfgfffff', 'ggggggg',],
+                // weight: [380, 620, 920],
+                defaultPrice: 3,
+                price: 3
+            }
+        ]
+    }
+]
+const Content = () => {
+    let selectedProducts = shop.map((a, i) => {
+        if (a.type === 'pizza') {
+            return <Products key={i} content={a}></Products>
+        }
+        else { return null }
+    })
     return (
         <div className={'content'}>
-        <Carousel></Carousel>
-        <div className={'content-description'}>
-          <div className={'content-name'}>Пицца</div>
-          <div className={'content-sort'}>
-            <ul>
-              <li>Классические</li>
-              <li>Любимые</li>
-              <li>Премиум</li>
-              <li>Легенды</li>
-              <li>Красная цена</li>
-            </ul>
-          </div>
+            <Carousel ></Carousel>
+            {selectedProducts}
         </div>
-
-        <div className={'products'}>
-          <div className={'product'}>
-            <div className={'product-logo'}>
-              <img src={"https://images.dominos.by/media/dominos/osg/api/2018/09/12/carbonara.png"} alt={"Карбонара"}></img>
-            </div>
-            <div className={'product-name'}>Карбонара</div>
-            <div className={'product-description'}>Лук, Бекон, Крем фреш, Ветчина, Шампиньоны, Сыр моцарелла</div>
-            <div className={'product-customize'}>
-              <div className={'product-modification'}><select>
-                <option>30см</option>
-              </select>
-                <select>
-                  <option>Хот-дог борт</option>
-                </select></div>
-            </div>
-            <div className={'product-modification-control'}>
-              <div className={"topping-counter__actions"}><button type={"button"} ><svg width={"26"} height={"26"} viewBox={"0 0 24 24"} xmlns={"http://www.w3.org/2000/svg"} fill={"rgb(0,121,174)"}><g><path d={"M11 11V7H13V11H17V13H13V17H11V13H7V11H11Z"}></path></g></svg></button>Моцарелла-мини</div>
-            </div>
-            <div className={'product-result'}>
-
-              <div className={"product-card__modification-info"}><p className={"product-card__modification-info-price"}>22.99 руб.</p><p className={"product-card__modification-info-weight"}>585 гр</p></div>
-              <div className={"product-card__actions"}><button title={"В корзину"} type={"button"} ><span ><span ><span >В корзину</span></span></span></button></div>
-            </div>
-          </div>
-          <div className={'product'}>
-            <div className={'product-logo'}>
-              <img src={"	https://images.dominos.by/media/dominos/osg/api/2021/06/10/meksikanskaya_small.png"} alt={"Мексиканская"}></img>
-            </div>
-            <div className={'product-name'}>Мексиканская</div>
-            <div className={'product-description'}>Сыр моцарелла, Сладкий перец, Соус Бургер, Халапеньо, Курица, Кукуруза, Томаты</div>
-            <div className={'product-customize'}>
-              <div className={'product-modification'}><select>
-                <option>30см</option>
-              </select>
-                <select>
-                  <option>Хот-дог борт</option>
-                </select></div>
-            </div>
-            <div className={'product-modification-control'}>
-              <div className={"topping-counter__actions"}><button type={"button"} ><svg width={"26"} height={"26"} viewBox={"0 0 24 24"} xmlns={"http://www.w3.org/2000/svg"} fill={"rgb(0,121,174)"}><g><path d={"M11 11V7H13V11H17V13H13V17H11V13H7V11H11Z"}></path></g></svg></button>Моцарелла-мини</div>
-            </div>
-            <div className={'product-result'}>
-
-              <div className={"product-card__modification-info"}><p className={"product-card__modification-info-price"}>22.99 руб.</p><p className={"product-card__modification-info-weight"}>585 гр</p></div>
-              <div className={"product-card__actions"}><button title={"В корзину"} type={"button"} ><span ><span ><span >В корзину</span></span></span></button></div>
-            </div>
-          </div>
-          <div className={'product'}>
-            <div className={'product-logo'}>
-              <img src={"	https://images.dominos.by/media/dominos/osg/api/2018/09/12/provence.png"} alt={"Прованс"}></img>
-            </div>
-            <div className={'product-name'}>Прованс</div>
-            <div className={'product-description'}>Голубой сыр, Томаты, Сыр моцарелла, Пепперони, Ветчина, Крем фреш</div>
-            <div className={'product-customize'}>
-              <div className={'product-modification'}><select>
-                <option>30см</option>
-              </select>
-                <select>
-                  <option>Хот-дог борт</option>
-                </select></div>
-            </div>
-            <div className={'product-modification-control'}>
-              <div className={"topping-counter__actions"}><button type={"button"} ><svg width={"26"} height={"26"} viewBox={"0 0 24 24"} xmlns={"http://www.w3.org/2000/svg"} fill={"rgb(0,121,174)"}><g><path d={"M11 11V7H13V11H17V13H13V17H11V13H7V11H11Z"}></path></g></svg></button>Моцарелла-мини</div>
-            </div>
-            <div className={'product-result'}>
-
-              <div className={"product-card__modification-info"}><p className={"product-card__modification-info-price"}>22.99 руб.</p><p className={"product-card__modification-info-weight"}>585 гр</p></div>
-              <div className={"product-card__actions"}><button title={"В корзину"} type={"button"} ><span ><span ><span >В корзину</span></span></span></button></div>
-            </div>
-          </div>
-        </div>
-      </div>
     );
-    
-  }
-  export default Content
+
+}
+/*class Content extends React.Component {
+    render() {
+        let selectedProducts = shop.map((a, i) => {
+            if (a.type === 'pizza') {
+                return <Products key={i} title={a.title} productsType={a.productsType} products={a.products}></Products>
+            }
+            else { return null }
+        })
+        return (
+            <div className={'content'}>
+                <Carousel ></Carousel>
+                {selectedProducts}
+            </div>
+        );
+    }
+}*/
+export default Content

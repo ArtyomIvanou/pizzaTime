@@ -3,6 +3,8 @@ import './main.css';
 import React from 'react'
 import Header from './header';
 import Content from './content';
+//import NavMenu from './navMenu';
+import Footer from './footer';
 const Main = () => {
 
 
@@ -12,11 +14,7 @@ const Main = () => {
       <Header></Header>
 
       <Content></Content>
-      <footer>
-        <div>about</div>
-        <div>menu2</div>
-        <div>cards</div>
-      </footer>
+     <Footer></Footer>
     </div>
   );
 

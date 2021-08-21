@@ -5,12 +5,12 @@
     background-color: azure;
   }
   
-  .content-sort ul {
+  .content_sort ul {
     display: grid;
     grid-template-columns: repeat(5, minmax(80px, 1fr));
   }
   
-  .content-sort ul li {
+  .content_sort ul li {
     list-style: none;
   }
   
