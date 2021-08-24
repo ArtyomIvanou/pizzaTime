@@ -1,5 +1,9 @@
 import React from 'react'
-import './header.css';
+import '../header/header.css';
+import {
+ 
+  NavLink
+} from "react-router-dom";
 const NavMenu=()=>{
   
    
@@ -8,14 +12,16 @@ const NavMenu=()=>{
       
           <nav className={'nav_menu'}>
             <ul>
-              <li>Пицца</li>
-              <li>Курица</li>
+              
+              <li><NavLink to={'/pizza/'}>Пицца</NavLink></li>
+              <li><NavLink to={'/chicken/'}>Курица</NavLink></li>
               <li>Картофель</li>
               <li>Хлебцы</li>
               <li>Салаты</li>
               <li>Десерты</li>
               <li>Напитки</li>
               <li>Соусы</li>
+             
             </ul>
           </nav>
 

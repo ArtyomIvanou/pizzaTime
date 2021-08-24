@@ -7,7 +7,17 @@ const ProductUnit = (props, state) => {
 
         return <option value={a.name} key={i} >{a.title}</option>
 
-    })
+    }) 
+ /*   let optionDough=null
+    if (props.content.config.dough) {
+        optionDough = props.content.config.dough.map((a, i) => {
+
+            return <option value={a.name} key={i} >{a.title}</option>
+    
+        })   
+    } else {
+        return null
+    }*/
     let optionDough = props.content.config.dough.map((a, i) => {
 
         return <option value={a.name} key={i} >{a.title}</option>
