@@ -2,17 +2,15 @@ import React, { Fragment } from 'react'
 import './content.css';
 import ProductUnit from './productUnit';
 import {
-
     Switch,
     Route,
     NavLink
 } from "react-router-dom";
 
 const Products = (props, state) => {
-
     let productsSort = props.content.productsType.map((a, i) => { return <li key={i} ><NavLink to={'/' + props.type + '/' + a.type}>{a.title} </NavLink></li> })
-    let allProducts = props.content.products.map((a, i) => { return <Route key={a.id} path={'/' + props.type + '/' + a.type}><ProductUnit key={a.id} content={a}></ProductUnit></Route> })
-    let allProductsShow = props.content.products.map((a, i) => { return <ProductUnit key={a.id} content={a}></ProductUnit> })
+    let allProducts = props.content.products.map((a, i) => { return <Route key={a.id} path={'/' + props.type + '/' + a.type}><ProductUnit key={a.id} content={a} type={props.type}></ProductUnit></Route> })
+    let allProductsShow = props.content.products.map((a, i) => { return <ProductUnit key={a.id} content={a} type={props.type}></ProductUnit> })
     return (
         <Fragment>
 

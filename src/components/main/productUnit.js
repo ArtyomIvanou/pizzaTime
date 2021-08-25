@@ -2,27 +2,39 @@ import React from 'react'
 import './content.css';
 
 const ProductUnit = (props, state) => {
-
-    let optionSize = props.content.config.size.map((a, i) => {
-
-        return <option value={a.name} key={i} >{a.title}</option>
-
-    }) 
- /*   let optionDough=null
-    if (props.content.config.dough) {
-        optionDough = props.content.config.dough.map((a, i) => {
-
-            return <option value={a.name} key={i} >{a.title}</option>
-    
-        })   
+    let optionSize
+    let optionDough
+    let sizeSelect
+    let doughSelect
+    let addMozarella
+    if (props.type === 'pizza') {
+        addMozarella = <div className={"topping-counter__actions"}>
+            <button type={"button"} >
+                <svg width={"26"} height={"26"} viewBox={"0 0 24 24"} xmlns={"http://www.w3.org/2000/svg"} fill={"rgb(0,121,174)"}><g><path d={"M11 11V7H13V11H17V13H13V17H11V13H7V11H11Z"}></path></g></svg></button>Моцарелла-мини</div>
     } else {
-        return null
-    }*/
-    let optionDough = props.content.config.dough.map((a, i) => {
+        addMozarella = null
+    }
+    if (props.content.config.size.length > 0) {
+        optionSize = props.content.config.size.map((a, i) => {
+            return <option value={a.name} key={i} >{a.title}</option>
+        })
+        sizeSelect = <select  >
+            {optionSize}
+        </select>
+    } else {
+        sizeSelect = null
+    }
+    if (props.content.config.dough.length > 0) {
+        optionDough = props.content.config.size.map((a, i) => {
+            return <option value={a.name} key={i} >{a.title}</option>
+        })
+        doughSelect = <select  >
+            {optionDough}
+        </select>
+    } else {
+        doughSelect = null
+    }
 
-        return <option value={a.name} key={i} >{a.title}</option>
-
-    })
     return (
         <div className={'product'}>
             <div className={'product_logo'}>
@@ -32,18 +44,12 @@ const ProductUnit = (props, state) => {
             <div className={'product_description'}>{props.content.content}</div>
             <div className={'product_customize'}>
                 <div className={'product_modification'}>
-                    <select  >
-                        {optionSize}
-                    </select>
-                    <select>
-                        {optionDough}
-                    </select>
+                    {sizeSelect}
+                    {doughSelect}
                 </div>
             </div>
             <div className={'product_modification_control'}>
-                <div className={"topping-counter__actions"}>
-                    <button type={"button"} >
-                        <svg width={"26"} height={"26"} viewBox={"0 0 24 24"} xmlns={"http://www.w3.org/2000/svg"} fill={"rgb(0,121,174)"}><g><path d={"M11 11V7H13V11H17V13H13V17H11V13H7V11H11Z"}></path></g></svg></button>Моцарелла-мини</div>
+                {addMozarella}
             </div>
             <div className={'product-result'}>
 

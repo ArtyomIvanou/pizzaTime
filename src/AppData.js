@@ -193,17 +193,10 @@ let shop = [
                 id: 1,
                 type: null,
                 config: {
-                    size: [
-                        { name: 'small', weight: 380, price: 17, title: "27см" },
-                        { name: 'standart', weight: 620, price: 22.9, title: "30см" },
-                        { name: 'big', weight: 920, price: 25.6, title: "33см" },
-                    ],
+                    size: [],
                     defaultSize: 'standart',
                     dough: [
-                        { name: 'classic', weight: 0, price: 0, title: "Классическое" },
-                        { name: 'hotDog', weight: 100, price: 4, title: "Хот Дог борт" },
-                        { name: 'cheese', weight: 50, price: 2, title: "Сырный борт" },
-                        { name: 'thin', weight: -50, price: 0, title: "Тонкое" }
+                       
                     ],
                     defaulDough: 'classic',
                     topping: 0,
