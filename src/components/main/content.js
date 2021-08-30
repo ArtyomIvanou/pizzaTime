@@ -6,13 +6,13 @@ import Pizza from './pizza';
 import Chicken from './chicken';
 import {
 
-   /* Switch,*/
+    /* Switch,*/
     Route,
     /*NavLink*/
 } from "react-router-dom";
 //import shop from '../../AppData';
 
-const Content = () => {
+const Content = (props) => {
     /*let selectedPizza = shop.map((a, i) => {
         if (a.type === 'pizza') {
             return <Products key={i} content={a} type={a.type}></Products>
@@ -25,11 +25,13 @@ const Content = () => {
         }
         else { return null }
     })*/
+    //console.log(props.content)
     return (
         <div className={'content'}>
             <Carousel ></Carousel>
-           <Route path={'/pizza/'} component={Pizza}/>
-           <Route path={'/chicken/'} component={Chicken}/>
+            <Route exact path="/" ><Pizza content={props.content}/></Route>
+            <Route path={'/pizza/'} ><Pizza content={props.content}/></Route>
+            <Route path={'/chicken/'} ><Chicken content={props.content}/></Route>
 
         </div>
     );

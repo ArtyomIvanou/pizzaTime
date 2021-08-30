@@ -5,15 +5,15 @@ import Content from './content';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import './main.css';
-const Main = () => {
+const Main = (props) => {
 
-
+//console.log(props.content)
   return (
     <div className={'spa'}>
 
       <Header></Header>
 
-      <Content></Content>
+      <Content content={props.content}></Content>
       <Footer></Footer>
     </div>
   );
