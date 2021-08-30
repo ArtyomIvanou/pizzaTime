@@ -2,8 +2,7 @@ import React from 'react'
 import './header.css';
 import {
 
-  /*Switch,
-  Route,*/
+ 
   NavLink
 } from "react-router-dom";
 const HeaderTop=()=>{

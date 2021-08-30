@@ -1,6 +1,5 @@
 import React from 'react'
-//import './content.css';
-//import Carousel from './carousel';
+
 const CartButton=()=>{
   
    

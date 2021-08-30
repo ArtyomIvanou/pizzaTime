@@ -1,14 +1,7 @@
-import React, { Fragment } from 'react'
-import './content.css';
-/*import ProductUnit from './productUnit';
-import {
+import React, { Fragment } from 'react';
+import '../content.css';
+import Products from '../products';
 
-    Switch,
-    Route,
-    NavLink
-} from "react-router-dom";*/
-//import shop from '../../AppData'
-import Products from './products';
 const Chicken = (props, state) => {
     let selectedChicken = props.content.map((a, i) => {
         if (a.type === 'chicken') {
