@@ -3,14 +3,14 @@ import './App.css';
 import Main from './components/main/main';
 import { Router } from "react-router-dom"
 import { createBrowserHistory } from 'history'
-import shop from './AppData';
+//import shop from './AppData';
 
 const history = createBrowserHistory()
 
-function App() {
+function App(props) {
   return (
     <Router history={history}>
-      <Main content={shop}></Main>
+      <Main content={props.content} addToCart={props.addToCart} cart={props.cart}></Main>
     </Router>
   );
 }

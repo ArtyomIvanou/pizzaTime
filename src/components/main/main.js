@@ -2,7 +2,7 @@
 import React from 'react';
 import Footer from '../footer/footer';
 import Header from '../header/header';
-import Content from './content';
+import Content from './content/content';
 import './main.css';
 
 const Main = (props) => {
@@ -11,9 +11,9 @@ const Main = (props) => {
   return (
     <div className={'spa'}>
 
-      <Header></Header>
+      <Header cart={props.cart}></Header>
 
-      <Content content={props.content}></Content>
+      <Content content={props.content} addToCart={props.addToCart} cart={props.cart}></Content>
       <Footer></Footer>
     </div>
   );

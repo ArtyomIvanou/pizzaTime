@@ -1,8 +1,8 @@
 import React from 'react'
 import './header.css';
-import NavMenu from '../main/navMenu';
+import NavMenu from './navMenu';
 import CartButton from './cartButton';
-const HeaderBottom=()=>{
+const HeaderBottom=(props)=>{
   
    
     return (
@@ -10,7 +10,7 @@ const HeaderBottom=()=>{
         <div className={'header_bottom'}>
          <NavMenu></NavMenu>
 
-          <CartButton></CartButton>
+          <CartButton cart={props.cart}></CartButton>
         </div>
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import './content.css';
+import '../../content.css';
 
 const ProductUnit = (props, state) => {
     let optionSize
@@ -7,6 +7,7 @@ const ProductUnit = (props, state) => {
     let sizeSelect
     let doughSelect
     let addMozarella
+//let addToCart=()=>props.addToCart
     if (props.type === 'pizza') {
         addMozarella = <div className={"topping-counter__actions"}>
             <button type={"button"} >
@@ -58,7 +59,7 @@ const ProductUnit = (props, state) => {
                     <p className={"product-card__modification-info-weight"}>585 гр</p>
                 </div>
                 <div className={"product-card__actions"}>
-                    <button title={"В корзину"} type={"button"} ><span ><span >
+                    <button title={"В корзину"} type={"button"} onClick={()=>props.addToCart(props.content)}><span ><span >
                         <span >В корзину</span></span></span></button>
                 </div>
             </div>

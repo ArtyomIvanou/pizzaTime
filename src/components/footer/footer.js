@@ -2,7 +2,7 @@
 import '../main/main.css';
 import React from 'react'
 
-import NavMenu from '../main/navMenu';
+import NavMenu from '../header/navMenu';
 const Footer = () => {
 
 

@@ -1,10 +1,12 @@
 import React from 'react'
 
-const CartButton=()=>{
+const CartButton=(props)=>{
   
-   
+
+  
+   console.log(props.cart.length)
     return (
-      <div className={'cart'}><button>Корзина</button></div>  
+      <div className={'cart'}><button>Корзина</button><div>{props.cart.length}</div></div>  
     );
     
   }
