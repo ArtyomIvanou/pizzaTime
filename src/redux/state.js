@@ -50,7 +50,7 @@ let state =
                             { name: 'standart', weight: 650, price: 23, title: "30см" },
                             { name: 'big', weight: 950, price: 27, title: "35см" },
                         ],
-                        defaultSize: 'small',
+                        defaultSize: 'big',
                         dough: [
                             { name: 'classic', weight: 0, price: 0, title: "Классическое" },
                             { name: 'hotDog', weight: 100, price: 4, title: "Хот Дог борт" },
@@ -75,7 +75,7 @@ let state =
                         size: [
                             { name: 'small', weight: 3700, price: 19, title: "27см" },
                             { name: 'standart', weight: 630, price: 33, title: "30см" },
-                            { name: 'big', weight: 970, price: 29, title: "35см" },
+                            { name: 'big', weight: 970, price: 39, title: "35см" },
                         ],
                         defaultSize: 'small',
                         dough: [
@@ -102,7 +102,7 @@ let state =
                         size: [
                             { name: 'small', weight: 3700, price: 19, title: "27см" },
                             { name: 'standart', weight: 630, price: 33, title: "30см" },
-                            { name: 'big', weight: 970, price: 29, title: "35см" },
+                            { name: 'big', weight: 970, price: 40, title: "35см" },
                         ],
                         defaultSize: 'small',
                         dough: [
@@ -345,5 +345,14 @@ export let addToCart = (product) => {
     state.cart.push(product)
     renderTree(state)
 }
-
+export let changeSize = (product, selectedType, value) => {
+    state.shop.map(i => {
+        if (i.type === selectedType) {
+            return i.products[product - 1].price = value.price
+        } else {
+            return null
+        }
+    })
+    renderTree(state)
+}
 export default state

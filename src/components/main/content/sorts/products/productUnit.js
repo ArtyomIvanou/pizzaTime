@@ -7,7 +7,16 @@ const ProductUnit = (props, state) => {
     let sizeSelect
     let doughSelect
     let addMozarella
-//let addToCart=()=>props.addToCart
+    let selectSizeToProps = (value) => {
+        props.content.config.size.map((a, i) => {
+            if (a.name===value) {
+               return props.changeSize(props.content.id, props.type, a)
+            } else {
+               return null 
+            }
+        }
+        )
+    }
     if (props.type === 'pizza') {
         addMozarella = <div className={"topping-counter__actions"}>
             <button type={"button"} >
@@ -15,18 +24,20 @@ const ProductUnit = (props, state) => {
     } else {
         addMozarella = null
     }
+
     if (props.content.config.size.length > 0) {
         optionSize = props.content.config.size.map((a, i) => {
-            return <option value={a.name} key={i} >{a.title}</option>
+            return <option value={a.name} info={a} key={i} >{a.title}</option>
         })
-        sizeSelect = <select  >
+        sizeSelect = <select defaultValue={props.content.config.defaultSize} onChange={(event) => selectSizeToProps(event.target.value)} >
             {optionSize}
         </select>
     } else {
         sizeSelect = null
     }
+
     if (props.content.config.dough.length > 0) {
-        optionDough = props.content.config.size.map((a, i) => {
+        optionDough = props.content.config.dough.map((a, i) => {
             return <option value={a.name} key={i} >{a.title}</option>
         })
         doughSelect = <select  >
@@ -59,7 +70,7 @@ const ProductUnit = (props, state) => {
                     <p className={"product-card__modification-info-weight"}>585 гр</p>
                 </div>
                 <div className={"product-card__actions"}>
-                    <button title={"В корзину"} type={"button"} onClick={()=>props.addToCart(props.content)}><span ><span >
+                    <button title={"В корзину"} type={"button"} onClick={() => props.addToCart(props.content)}><span ><span >
                         <span >В корзину</span></span></span></button>
                 </div>
             </div>

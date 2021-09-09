@@ -5,7 +5,7 @@ import Products from './products/products';
 const Chicken = (props, state) => {
     let selectedChicken = props.content.map((a, i) => {
         if (a.type === 'chicken') {
-            return <Products key={i} content={a} type={a.type} addToCart={props.addToCart} cart={props.cart}></Products>
+            return <Products key={i} content={a} type={a.type} changeSize={props.changeSize} addToCart={props.addToCart} cart={props.cart}></Products>
         }
         else { return null }
     })

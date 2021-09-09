@@ -10,7 +10,7 @@ const history = createBrowserHistory()
 function App(props) {
   return (
     <Router history={history}>
-      <Main content={props.content} addToCart={props.addToCart} cart={props.cart}></Main>
+      <Main content={props.content} addToCart={props.addToCart} changeSize={props.changeSize} cart={props.cart}></Main>
     </Router>
   );
 }

@@ -5,11 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 //import state from './redux/state';
 import {addToCart} from './redux/state'
+import { changeSize } from './redux/state';
 //console.log(state.cart)
 
 export let renderTree=(state)=> ReactDOM.render(
   <React.StrictMode>
-    <App content={state.shop} addToCart={addToCart} cart={state.cart}/>
+    <App content={state.shop} addToCart={addToCart} changeSize={changeSize} cart={state.cart}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
