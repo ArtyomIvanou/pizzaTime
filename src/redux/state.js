@@ -30,6 +30,7 @@ let state =
                             { name: 'cheese', weight: 50, price: 2, title: "Сырный борт" },
                             { name: 'thin', weight: -50, price: 0, title: "Тонкое" }
                         ],
+
                         defaulDough: 'classic',
                         topping: 0,
                         toppingWeight: 30,
@@ -38,7 +39,9 @@ let state =
                     title: 'Карбонара',
                     content: ['Лук', 'Бекон', 'Крем фреш', 'Ветчина', 'Шампиньоны', 'Сыр моцарелла',],
                     // weight: [380, 620, 920],
-                    defaultPrice: 22.9,
+                    addedPrice: 0,
+                    addedWeight:0,
+                    weight: 620,
                     price: 22.9
                 },
                 {
@@ -65,7 +68,9 @@ let state =
                     title: 'Мексиканская',
                     content: ['Сыр моцарелла', 'Сладкий перец', 'Соус Бургер', 'Халапеньо', 'Курица', 'Кукуруза', 'Томаты',],
                     // weight: [380, 620, 920],
-                    defaultPrice: 23,
+                    addedPrice: 0,
+                    addedWeight:0,
+                    weight: 950,
                     price: 23,
                 },
                 {
@@ -73,7 +78,7 @@ let state =
                     type: 'lovely',
                     config: {
                         size: [
-                            { name: 'small', weight: 3700, price: 19, title: "27см" },
+                            { name: 'small', weight: 370, price: 19, title: "27см" },
                             { name: 'standart', weight: 630, price: 33, title: "30см" },
                             { name: 'big', weight: 970, price: 39, title: "35см" },
                         ],
@@ -92,7 +97,9 @@ let state =
                     title: '5 Сыров',
                     content: ['Пармезан', 'Крем фреш', 'Чеддер', 'Голубой сыр', 'Фета', 'Сыр моцарелла',],
                     // weight: [380, 620, 920],
-                    defaultPrice: 33,
+                    addedPrice: 0,
+                    addedWeight:0,
+                    weight: 370,
                     price: 33,
                 },
                 {
@@ -100,7 +107,7 @@ let state =
                     type: 'premium',
                     config: {
                         size: [
-                            { name: 'small', weight: 3700, price: 19, title: "27см" },
+                            { name: 'small', weight: 375, price: 19, title: "27см" },
                             { name: 'standart', weight: 630, price: 33, title: "30см" },
                             { name: 'big', weight: 970, price: 40, title: "35см" },
                         ],
@@ -119,7 +126,9 @@ let state =
                     title: 'Говядина BURGER',
                     content: ['Сыр моцарелла', 'Шампиньоны', 'Телятина', 'Соус Бургер', 'Лук', 'Огурцы',],
                     // weight: [380, 620, 920],
-                    defaultPrice: 33,
+                    addedPrice: 0,
+                    addedWeight:0,
+                    weight: 375,
                     price: 33,
                 },
                 {
@@ -127,7 +136,7 @@ let state =
                     type: 'redPrice',
                     config: {
                         size: [
-                            { name: 'small', weight: 3700, price: 19, title: "27см" },
+                            { name: 'small', weight: 399, price: 19, title: "27см" },
                             { name: 'standart', weight: 630, price: 33, title: "30см" },
                             { name: 'big', weight: 970, price: 29, title: "35см" },
                         ],
@@ -146,7 +155,9 @@ let state =
                     title: 'Колбаски и опята',
                     content: ['Баварские колбаски', 'Опята', 'Сыр моцарелла', 'Соус Чесночный', 'Горчица',],
                     // weight: [380, 620, 920],
-                    defaultPrice: 33,
+                    addedPrice: 0,
+                    addedWeight:0,
+                    weight: 399,
                     price: 33,
                 },
             ]
@@ -181,7 +192,9 @@ let state =
                     title: 'Чай Клюква с имбирем',
                     content: ['dfgdfg', 'dfgfdg', 'dfgfdgfd', 'dfgdfgfd', 'dfgdfgfffff', 'ggggggg',],
                     // weight: [380, 620, 920],
-                    defaultPrice: 3,
+                    addedPrice: 0,
+                    addedWeight:0,
+                    weight: 400,
                     price: 3
                 }
             ]
@@ -210,7 +223,8 @@ let state =
                     title: 'Крылышки острые',
                     content: ['Сальса соус', 'Томатный соус 25г',],
                     // weight: [380, 620, 920],
-                    defaultPrice: 9,
+                    addedPrice: 0,
+                    addedWeight: 0,
                     price: 9
                 }
             ]
@@ -260,7 +274,7 @@ let state =
                     title: 'Хлебец с сырной начинкой',
                     content: ['Сыр моцарелла', 'Чеддер'],
                     // weight: [380, 620, 920],
-                    defaultPrice: 8,
+                    addedPrice: 0,
                     price: 8,
                 }
             ]
@@ -285,7 +299,7 @@ let state =
                     title: 'Салат Греческий',
                     content: ['Оливковое масло',],
                     // weight: [380, 620, 920],
-                    defaultPrice: 7.5,
+                    addedPrice: 0,
                     price: 7.5,
                 }
             ]
@@ -310,7 +324,7 @@ let state =
                     title: 'Джем-роллы с грушей',
                     content: [],
                     // weight: [380, 620, 920],
-                    defaultPrice: 7.5,
+                    addedPrice: 0,
                     price: 7.5,
                 }
             ]
@@ -335,7 +349,7 @@ let state =
                     title: 'Соус Барбекю',
                     content: [],
                     // weight: [380, 620, 920],
-                    defaultPrice: 1,
+                    addedPrice: 0,
                     price: 1,
                 }
             ]
@@ -348,11 +362,28 @@ export let addToCart = (product) => {
 export let changeSize = (product, selectedType, value) => {
     state.shop.map(i => {
         if (i.type === selectedType) {
-            return i.products[product - 1].price = value.price
+            i.products[product - 1].price = value.price
+            i.products[product - 1].weight = value.weight
+            return null
+          
         } else {
             return null
         }
     })
     renderTree(state)
 }
+export let changeDough = (product, selectedType, value) => {
+    state.shop.map(i => {
+        if (i.type === selectedType) {
+            i.products[product - 1].addedPrice = value.price
+            i.products[product - 1].addedWeight = value.weight
+            return null
+          
+        } else {
+            return null
+        }
+    })
+    renderTree(state)
+}
+export const reload=(observer)=>{}
 export default state

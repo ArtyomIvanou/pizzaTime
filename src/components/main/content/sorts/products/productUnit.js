@@ -7,15 +7,32 @@ const ProductUnit = (props, state) => {
     let sizeSelect
     let doughSelect
     let addMozarella
+    let totalWeight
+    let totalPrice=props.content.price + props.content.addedPrice  +' руб.'
     let selectSizeToProps = (value) => {
         props.content.config.size.map((a, i) => {
-            if (a.name===value) {
-               return props.changeSize(props.content.id, props.type, a)
+            if (a.name === value) {
+                return props.changeSize(props.content.id, props.type, a)
             } else {
-               return null 
+                return null
             }
         }
         )
+    }
+    let selectDoughToProps = (value) => {
+        props.content.config.dough.map((a, i) => {
+            if (a.name === value) {
+                return props.changeDough(props.content.id, props.type, a)
+            } else {
+                return null
+            }
+        }
+        )
+    }
+    if (props.type === 'pizza') {
+        totalWeight = props.content.weight + props.content.addedWeight +' гр.'
+    } else {
+        totalWeight = null
     }
     if (props.type === 'pizza') {
         addMozarella = <div className={"topping-counter__actions"}>
@@ -40,7 +57,7 @@ const ProductUnit = (props, state) => {
         optionDough = props.content.config.dough.map((a, i) => {
             return <option value={a.name} key={i} >{a.title}</option>
         })
-        doughSelect = <select  >
+        doughSelect = <select onChange={(event) => selectDoughToProps(event.target.value)} >
             {optionDough}
         </select>
     } else {
@@ -66,8 +83,8 @@ const ProductUnit = (props, state) => {
             <div className={'product-result'}>
 
                 <div className={"product-card__modification-info"}>
-                    <p className={"product-card__modification-info-price"}>{props.content.price}</p>
-                    <p className={"product-card__modification-info-weight"}>585 гр</p>
+                    <p className={"product-card__modification-info-price"}>{totalPrice}</p>
+                    <p className={"product-card__modification-info-weight"}>{totalWeight}</p>
                 </div>
                 <div className={"product-card__actions"}>
                     <button title={"В корзину"} type={"button"} onClick={() => props.addToCart(props.content)}><span ><span >
