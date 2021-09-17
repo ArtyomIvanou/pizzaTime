@@ -1,4 +1,5 @@
-import { renderTree } from '../render'
+//import { renderTree } from '../render'
+let renderTree=()=>{}
 let state =
 {
     cart: [],
@@ -385,5 +386,6 @@ export let changeDough = (product, selectedType, value) => {
     })
     renderTree(state)
 }
-export const reload=(observer)=>{}
+
+export const reloadSite=(observer)=>{renderTree=observer}
 export default state
