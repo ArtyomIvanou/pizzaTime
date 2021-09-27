@@ -7,11 +7,34 @@ import {
     NavLink
 } from "react-router-dom";
 
-const Products = (props, state) => {
-    let productsSort = props.content.productsType.map((a, i) => { return <li key={i} ><NavLink activeClassName={'active_Link'} to={'/' + props.type + '/' + a.type}>{a.title} </NavLink></li> })
-    let allProducts = props.content.products.map((a, i) => { return <Route key={a.id} path={'/' + props.type + '/' + a.type}><ProductUnit key={a.id} content={a} type={props.type} store={props.store} dispatch={props.dispatch}></ProductUnit></Route> })
-    let allProductsShow = props.content.products.map((a, i) => { return <ProductUnit key={a.id} content={a} type={props.type} store={props.store} dispatch={props.dispatch}></ProductUnit> })
-   // console.log(props.content.products)
+const Products = (props) => {
+    let productsSort = props.content.productsType.map((a, i) => {
+        return <li key={i} ><NavLink
+            activeClassName={'active_Link'}
+            to={'/' + props.type + '/' + a.type}>{a.title} </NavLink></li>
+    })
+    let allProducts = props.content.products.map((a, i) => {
+        return <Route key={a.id}
+            path={'/' + props.type + '/' + a.type}><ProductUnit key={a.id}
+                content={a}
+                type={props.type}
+                store={props.store}
+                dispatch={props.dispatch}
+                addToCart={props.addToCart}
+                selectSizeToProps={props.selectSizeToProps}
+                selectDoughToProps={props.selectDoughToProps}></ProductUnit></Route>
+    })
+    let allProductsShow = props.content.products.map((a, i) => {
+        return <ProductUnit key={a.id}
+            content={a}
+            type={props.type}
+            store={props.store}
+            dispatch={props.dispatch}
+            addToCart={props.addToCart}
+            selectSizeToProps={props.selectSizeToProps}
+            selectDoughToProps={props.selectDoughToProps}></ProductUnit>
+    })
+    // console.log(props.content.products)
     return (
         <Fragment>
 

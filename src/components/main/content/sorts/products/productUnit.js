@@ -1,5 +1,5 @@
 import React from 'react'
-import { addToCartActionCreator,selectSizeActionCreator,selectDoughActionCreator } from '../../../../../redux/store';
+// import { addToCartActionCreator,selectSizeActionCreator,selectDoughActionCreator } from '../../../../../redux/store';
 import '../../content.css';
 
 const ProductUnit = (props, state) => {
@@ -11,34 +11,34 @@ const ProductUnit = (props, state) => {
     let totalWeight
     let totalPrice = props.content.price + props.content.addedPrice + ' руб.'
 
-    let addToCart = () => {
+    // let addToCart = () => {
        
-       //props.dispatch({ type: 'ADD_TO_CART', product: props.content })
-       props.dispatch(addToCartActionCreator(props.content))
-    }
-    let selectSizeToProps = (value) => {
-        props.content.config.size.map((a, i) => {
-            if (a.name === value) {
-                return props.dispatch(selectSizeActionCreator(props.content.id,props.type,a))
-               // return props.dispatch({ type: 'CHANGE_SIZE', product: props.content.id, selectedType: props.type, value: a })
-            } else {
-                return null
-            }
-        }
-        )
-    }
+    //    //props.dispatch({ type: 'ADD_TO_CART', product: props.content })
+    //    props.dispatch(addToCartActionCreator(props.content))
+    // }
+    // let selectSizeToProps = (value) => {
+    //     props.content.config.size.map((a, i) => {
+    //         if (a.name === value) {
+    //             return props.dispatch(selectSizeActionCreator(props.content.id,props.type,a))
+    //            // return props.dispatch({ type: 'CHANGE_SIZE', product: props.content.id, selectedType: props.type, value: a })
+    //         } else {
+    //             return null
+    //         }
+    //     }
+    //     )
+    // }
 
-    let selectDoughToProps = (value) => {
-        props.content.config.dough.map((a, i) => {
-            if (a.name === value) {
-                return props.dispatch(selectDoughActionCreator(props.content.id,props.type,a))
-                //return props.dispatch({ type: 'CHANGE_DOUGH', product: props.content.id, selectedType: props.type, value: a })
-            } else {
-                return null
-            }
-        }
-        )
-    }
+    // let selectDoughToProps = (value) => {
+    //     props.content.config.dough.map((a, i) => {
+    //         if (a.name === value) {
+    //             return props.dispatch(selectDoughActionCreator(props.content.id,props.type,a))
+    //             //return props.dispatch({ type: 'CHANGE_DOUGH', product: props.content.id, selectedType: props.type, value: a })
+    //         } else {
+    //             return null
+    //         }
+    //     }
+    //     )
+    // }
     if (props.type === 'pizza') {
         totalWeight = props.content.weight + props.content.addedWeight + ' гр.'
     } else {
@@ -56,7 +56,7 @@ const ProductUnit = (props, state) => {
         optionSize = props.content.config.size.map((a, i) => {
             return <option value={a.name} info={a} key={i} >{a.title}</option>
         })
-        sizeSelect = <select defaultValue={props.content.config.defaultSize} onChange={(event) => selectSizeToProps(event.target.value)} >
+        sizeSelect = <select defaultValue={props.content.config.defaultSize} onChange={(event) => props.selectSizeToProps(event.target.value,props.type,props.content)} >
             {optionSize}
         </select>
     } else {
@@ -67,7 +67,7 @@ const ProductUnit = (props, state) => {
         optionDough = props.content.config.dough.map((a, i) => {
             return <option value={a.name} key={i} >{a.title}</option>
         })
-        doughSelect = <select onChange={(event) => selectDoughToProps(event.target.value)} >
+        doughSelect = <select onChange={(event) => props.selectDoughToProps(event.target.value,props.type,props.content)} >
             {optionDough}
         </select>
     } else {
@@ -97,7 +97,7 @@ const ProductUnit = (props, state) => {
                     <p className={"product-card__modification-info-weight"}>{totalWeight}</p>
                 </div>
                 <div className={"product-card__actions"}>
-                    <button title={"В корзину"} type={"button"} onClick={() => addToCart()}><span ><span >
+                    <button title={"В корзину"} type={"button"} onClick={() => props.addToCart(props.content)}><span ><span >
                         <span >В корзину</span></span></span></button>
                 </div>
             </div>
