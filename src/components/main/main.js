@@ -13,7 +13,7 @@ const Main = (props) => {
 
       <Header cart={props.cart}></Header>
 
-      <Content content={props.content} addToCart={props.addToCart} changeSize={props.changeSize} changeDough={props.changeDough} cart={props.cart}></Content>
+      <Content content={props.content}  dispatch={props.dispatch} ></Content>
       <Footer></Footer>
     </div>
   );

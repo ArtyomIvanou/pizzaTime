@@ -1,4 +1,5 @@
 import React from 'react'
+import { addToCartActionCreator,selectSizeActionCreator,selectDoughActionCreator } from '../../../../../redux/store';
 import '../../content.css';
 
 const ProductUnit = (props, state) => {
@@ -8,21 +9,30 @@ const ProductUnit = (props, state) => {
     let doughSelect
     let addMozarella
     let totalWeight
-    let totalPrice=props.content.price + props.content.addedPrice  +' руб.'
+    let totalPrice = props.content.price + props.content.addedPrice + ' руб.'
+
+    let addToCart = () => {
+       
+       //props.dispatch({ type: 'ADD_TO_CART', product: props.content })
+       props.dispatch(addToCartActionCreator(props.content))
+    }
     let selectSizeToProps = (value) => {
         props.content.config.size.map((a, i) => {
             if (a.name === value) {
-                return props.changeSize(props.content.id, props.type, a)
+                return props.dispatch(selectSizeActionCreator(props.content.id,props.type,a))
+               // return props.dispatch({ type: 'CHANGE_SIZE', product: props.content.id, selectedType: props.type, value: a })
             } else {
                 return null
             }
         }
         )
     }
+
     let selectDoughToProps = (value) => {
         props.content.config.dough.map((a, i) => {
             if (a.name === value) {
-                return props.changeDough(props.content.id, props.type, a)
+                return props.dispatch(selectDoughActionCreator(props.content.id,props.type,a))
+                //return props.dispatch({ type: 'CHANGE_DOUGH', product: props.content.id, selectedType: props.type, value: a })
             } else {
                 return null
             }
@@ -30,7 +40,7 @@ const ProductUnit = (props, state) => {
         )
     }
     if (props.type === 'pizza') {
-        totalWeight = props.content.weight + props.content.addedWeight +' гр.'
+        totalWeight = props.content.weight + props.content.addedWeight + ' гр.'
     } else {
         totalWeight = null
     }
@@ -87,7 +97,7 @@ const ProductUnit = (props, state) => {
                     <p className={"product-card__modification-info-weight"}>{totalWeight}</p>
                 </div>
                 <div className={"product-card__actions"}>
-                    <button title={"В корзину"} type={"button"} onClick={() => props.addToCart(props.content)}><span ><span >
+                    <button title={"В корзину"} type={"button"} onClick={() => addToCart()}><span ><span >
                         <span >В корзину</span></span></span></button>
                 </div>
             </div>
