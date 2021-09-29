@@ -60,20 +60,14 @@ import { selectDoughActionCreator } from './../../../../redux/configurate-item-r
 //     );
 // }
 let mapStateToProps = (state) => {
-    // let qqq = state.shop.map((a, i) => {
-    //     if (a.type === 'pizza') {
-    //         //console.log(a)
-    //         return a
-    //     } else { return null }
-
-
-    // }
+ 
     let qqq = state.shop.find(a => a.type === 'pizza')
-
-    //console.log(qqq)
+    console.log(qqq)
+    
     return {
         content: qqq,
-        type: qqq.type
+        type: qqq.type,
+      
     }
 }
 let mapDispatchToProps = (dispatch) => {

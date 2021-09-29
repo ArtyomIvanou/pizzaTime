@@ -1,6 +1,6 @@
 const CHANGE_SIZE = 'CHANGE_SIZE'
 const CHANGE_DOUGH = 'CHANGE_DOUGH'
-let initialState=  [  //пицца
+let initialState = [  //пицца
     {
         type: 'pizza',
         title: 'Пицца',
@@ -352,51 +352,55 @@ let initialState=  [  //пицца
             }
         ]
     },]
-const itemReducer = (state=initialState, action) => {
+const itemReducer = (state = initialState, action) => {
     switch (action.type) {
-        
-        case CHANGE_SIZE:{
-            let stateCopy=[...state]
-            /*stateCopy.map(i => {
-                if (i.type === action.selectedType) {
-                    console.log(action.value.price)
-                    i.products[action.product - 1].price = action.value.price
-                    i.products[action.product - 1].weight = action.value.weight
-                    return null
 
-                } else {
-                    return null
-                }
-            })*/
-            let ind=stateCopy.findIndex(i=>i.type === action.selectedType)
-            //stateCopy[ind].products[action.product - 1].addedPrice
-            console.log(stateCopy[ind].products[action.product - 1].price= action.value.price)
-            return stateCopy}
-        case CHANGE_DOUGH:{
-            let stateCopy=[...state]
-            stateCopy.map(i => {
-                if (i.type === action.selectedType) {
-                    console.log(action.value.price)
-                    i.products[action.product - 1].addedPrice = action.value.price
-                    i.products[action.product - 1].addedWeight = action.value.weight
-                    return null
+        case CHANGE_SIZE: {
+            let stateCopy = [...state]
+            let ind = stateCopy.findIndex(i => i.type === action.selectedType)
+            stateCopy[ind]={...stateCopy[ind]}
 
-                } else {
-                    return null
-                }
-            })
-            return stateCopy}
+            stateCopy[ind].products[action.product - 1].price= action.value.price
+            stateCopy[ind].products[action.product - 1].weight= action.value.weight
+            console.log(stateCopy[ind])
+
+            return stateCopy
+        }
+        case CHANGE_DOUGH: {
+            // let stateCopy = [...state]
+            // stateCopy.map(i => {
+            //     if (i.type === action.selectedType) {
+            //         console.log(action.value.price)
+            //         i.products[action.product - 1].addedPrice = action.value.price
+            //         i.products[action.product - 1].addedWeight = action.value.weight
+            //         return null
+
+            //     } else {
+            //         return null
+            //     }
+            // })
+            // return stateCopy
+            let stateCopy = [...state]
+            let ind = stateCopy.findIndex(i => i.type === action.selectedType)
+            stateCopy[ind]={...stateCopy[ind]}
+
+            stateCopy[ind].products[action.product - 1].addedPrice= action.value.price
+            stateCopy[ind].products[action.product - 1].addedWeight= action.value.weight
+            console.log(stateCopy[ind])
+
+            return stateCopy
+        }
 
         default:
             return state
 
     }
-   
+
 }
-export const selectSizeActionCreator=(id,type,info)=>{
-    return{ type: CHANGE_SIZE, product: id, selectedType: type, value: info }
+export const selectSizeActionCreator = (id, type, info) => {
+    return { type: CHANGE_SIZE, product: id, selectedType: type, value: info }
 }
-export const selectDoughActionCreator=(id,type,info)=>{
-    return{ type: CHANGE_DOUGH, product: id, selectedType: type, value: info }
+export const selectDoughActionCreator = (id, type, info) => {
+    return { type: CHANGE_DOUGH, product: id, selectedType: type, value: info }
 }
 export default itemReducer

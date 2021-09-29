@@ -8,7 +8,7 @@ const Header = (props) => {
     return (
         <header>
             <HeaderTop></HeaderTop>
-            <HeaderBottom cart={props.cart}></HeaderBottom>
+            <HeaderBottom ></HeaderBottom>
         </header>
     );
 

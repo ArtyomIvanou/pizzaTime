@@ -4,7 +4,7 @@ const CartButton=(props)=>{
   
 
   
-   console.log(props.cart.length)
+console.log(props.cart)
     return (
       <div className={'cart'}><button>Корзина</button><div>{props.cart.length}</div></div>  
     );

@@ -11,9 +11,9 @@ const Main = (props) => {
   return (
     <div className={'spa'}>
 
-      <Header cart={props.cart}></Header>
+      <Header ></Header>
 
-      <Content content={props.content}  dispatch={props.dispatch} ></Content>
+      <Content ></Content>
       <Footer></Footer>
     </div>
   );

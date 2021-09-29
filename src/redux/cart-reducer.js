@@ -6,7 +6,7 @@ const cartReducer=(state=initialState,action)=>{
         case ADD_TO_CART:
            let stateCopy=[...state]
            stateCopy.push(action.product)
-            console.log(stateCopy)
+           // console.log(stateCopy)
             return stateCopy
 
         default:
