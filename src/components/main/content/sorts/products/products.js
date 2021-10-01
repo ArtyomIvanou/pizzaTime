@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import '../../content.css';
-import ProductUnit from './productUnit';
+// import ProductUnit from './productUnit';
 import {
     Switch,
     Route,
@@ -8,9 +8,10 @@ import {
 } from "react-router-dom";
 
 import { connect } from 'react-redux';
-import { addToCartActionCreator } from '../../../../../redux/cart-reducer';
-import { selectSizeActionCreator } from '../../../../../redux/configurate-item-reducer';
-import { selectDoughActionCreator } from '../../../../../redux/configurate-item-reducer';
+// import { addToCartActionCreator } from '../../../../../redux/cart-reducer';
+// import { selectSizeActionCreator } from '../../../../../redux/configurate-item-reducer';
+// import { selectDoughActionCreator } from '../../../../../redux/configurate-item-reducer';
+import ProductUnitContainer from './productUnitContainer';
 const ProductsConteiner = (props) => {
 
 
@@ -18,16 +19,15 @@ const ProductsConteiner = (props) => {
     return (
         <Products content={props.content}
             type={props.selectedType}
-            addToCart={props.addToCart}
-            selectSizeToProps={props.selectSizeToProps} selectDoughToProps={props.selectDoughToProps} />
+            /*addToCart={props.addToCart}
+            selectSizeToProps={props.selectSizeToProps} selectDoughToProps={props.selectDoughToProps}*/ />
     )
 
 
 
 }
 const Products = (props) => {
-    // console.log(props.aaa)
-    // let props.content = props.content.find(i => i.type === props.type)
+//console.log(props.content)
     let productsSort = props.content.productsType.map((a, i) => {
         return <li key={i} ><NavLink
             activeClassName={'active_Link'}
@@ -35,26 +35,24 @@ const Products = (props) => {
     })
     let allProducts = props.content.products.map((a, i) => {
         return <Route key={a.id}
-            path={'/' + props.type + '/' + a.type}><ProductUnit key={a.id}
-                content={a}
+            path={'/' + props.type + '/' + a.type}><ProductUnitContainer key={a.id}
+                number={i}
+                /*content={a}*/
                 type={props.type}
-                store={props.store}
-                dispatch={props.dispatch}
-                addToCart={props.addToCart}
+                /*addToCart={props.addToCart}
                 selectSizeToProps={props.selectSizeToProps}
-                selectDoughToProps={props.selectDoughToProps}></ProductUnit></Route>
+                selectDoughToProps={props.selectDoughToProps}*//></Route>
     })
     let allProductsShow = props.content.products.map((a, i) => {
-        return <ProductUnit key={a.id}
+        return <ProductUnitContainer key={a.id}
+            number={i}
             content={a}
             type={props.type}
-            store={props.store}
-            dispatch={props.dispatch}
-            addToCart={props.addToCart}
+            /*addToCart={props.addToCart}
             selectSizeToProps={props.selectSizeToProps}
-            selectDoughToProps={props.selectDoughToProps}></ProductUnit>
+            selectDoughToProps={props.selectDoughToProps}*//>
     })
-    // console.log(props.content.products)
+
     return (
         <Fragment>
 
@@ -78,11 +76,9 @@ const Products = (props) => {
     );
 }
 
-let mapStateToProps = (state,props) => {
-console.log(props)
-    let aaa = state.shop.find(a => a.type === 'pizza')
-    // let props.content = state.shop
-    // console.log(props.content)
+let mapStateToProps = (state, props) => {
+    // console.log(props)
+    let aaa = state.shop.find(a => a.type === props.selectedType)
 
     return {
         content: aaa,
@@ -92,31 +88,29 @@ console.log(props)
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        addToCart: (content) => {
-            dispatch(addToCartActionCreator(content))
-        },
-        selectSizeToProps: (value, type, content) => {
-            content.config.size.map((a, i) => {
-                if (a.name === value) {
-                    return dispatch(selectSizeActionCreator(content.id, type, a))
-                    // return props.dispatch({ type: 'CHANGE_SIZE', product: props.content.id, selectedType: props.type, value: a })
-                } else {
-                    return null
-                }
-            }
-            )
-        },
-        selectDoughToProps: (value, type, content) => {
-            content.config.dough.map((a, i) => {
-                if (a.name === value) {
-                    return dispatch(selectDoughActionCreator(content.id, type, a))
-                    //return props.dispatch({ type: 'CHANGE_DOUGH', product: props.content.id, selectedType: props.type, value: a })
-                } else {
-                    return null
-                }
-            }
-            )
-        }
+        // addToCart: (content) => {
+        //     dispatch(addToCartActionCreator(content))
+        // },
+        // selectSizeToProps: (value, type, content) => {
+        //     content.config.size.map((a, i) => {
+        //         if (a.name === value) {
+        //             return dispatch(selectSizeActionCreator(content.id, type, a))
+        //         } else {
+        //             return null
+        //         }
+        //     }
+        //     )
+        // },
+        // selectDoughToProps: (value, type, content) => {
+        //     content.config.dough.map((a, i) => {
+        //         if (a.name === value) {
+        //             return dispatch(selectDoughActionCreator(content.id, type, a))
+        //         } else {
+        //             return null
+        //         }
+        //     }
+        //     )
+        // }
 
     }
 }

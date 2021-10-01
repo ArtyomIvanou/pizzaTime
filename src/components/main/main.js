@@ -10,9 +10,7 @@ const Main = (props) => {
 
   return (
     <div className={'spa'}>
-
       <Header ></Header>
-
       <Content ></Content>
       <Footer></Footer>
     </div>
