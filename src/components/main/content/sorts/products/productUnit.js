@@ -2,6 +2,7 @@ import React from 'react'
 // import { addToCartActionCreator,selectSizeActionCreator,selectDoughActionCreator } from '../../../../../redux/store';
 import '../../content.css';
 
+
 const ProductUnit = (props, state) => {
     let optionSize
     let optionDough
@@ -12,7 +13,7 @@ const ProductUnit = (props, state) => {
     let totalPrice = props.content.price + props.content.addedPrice + ' руб.'
 
     // let addToCart = () => {
-       
+
     //    //props.dispatch({ type: 'ADD_TO_CART', product: props.content })
     //    props.dispatch(addToCartActionCreator(props.content))
     // }
@@ -56,7 +57,7 @@ const ProductUnit = (props, state) => {
         optionSize = props.content.config.size.map((a, i) => {
             return <option value={a.name} info={a} key={i} >{a.title}</option>
         })
-        sizeSelect = <select defaultValue={props.content.config.defaultSize} onChange={(event) => props.selectSizeToProps(event.target.value,props.type,props.content)} >
+        sizeSelect = <select defaultValue={props.content.config.defaultSize} onChange={(event) => props.selectSizeToProps(event.target.value, props.type, props.content)} >
             {optionSize}
         </select>
     } else {
@@ -67,13 +68,13 @@ const ProductUnit = (props, state) => {
         optionDough = props.content.config.dough.map((a, i) => {
             return <option value={a.name} key={i} >{a.title}</option>
         })
-        doughSelect = <select onChange={(event) => props.selectDoughToProps(event.target.value,props.type,props.content)} >
+        doughSelect = <select onChange={(event) => props.selectDoughToProps(event.target.value, props.type, props.content)} >
             {optionDough}
         </select>
     } else {
         doughSelect = null
     }
-
+    console.log('i am render')
     return (
         <div className={'product'}>
             <div className={'product_logo'}>
