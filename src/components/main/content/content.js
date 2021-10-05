@@ -2,8 +2,7 @@ import React from 'react';
 import {
     Route
 } from "react-router-dom";
-// import Chicken from './sorts/chicken';
-// import Pizza from './sorts/pizza';
+
 import Carousel from './carousel/carousel';
 import './content.css';
 import Products from './sorts/products/products';

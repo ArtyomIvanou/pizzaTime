@@ -358,12 +358,11 @@ const itemReducer = (state = initialState, action) => {
         case CHANGE_SIZE: {
             let stateCopy = [...state]
             let ind = stateCopy.findIndex(i => i.type === action.selectedType)
-            // stateCopy[ind]={...stateCopy[ind]}
-            //  stateCopy[ind].products=[...stateCopy[ind].products]
+
             stateCopy[ind].products[action.product - 1]={...stateCopy[ind].products[action.product - 1]}
             stateCopy[ind].products[action.product - 1].price= action.value.price
             stateCopy[ind].products[action.product - 1].weight= action.value.weight
-            // console.log(stateCopy[ind])
+    
 
             return stateCopy
         }
@@ -371,11 +370,11 @@ const itemReducer = (state = initialState, action) => {
          
             let stateCopy = [...state]
             let ind = stateCopy.findIndex(i => i.type === action.selectedType)
-            // stateCopy[ind]={...stateCopy[ind]}
+
             stateCopy[ind].products[action.product - 1]={...stateCopy[ind].products[action.product - 1]}
             stateCopy[ind].products[action.product - 1].addedPrice= action.value.price
             stateCopy[ind].products[action.product - 1].addedWeight= action.value.weight
-            // console.log(stateCopy[ind])
+
 
             return stateCopy
         }
