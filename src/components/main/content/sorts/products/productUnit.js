@@ -10,7 +10,7 @@ const ProductUnit = (props, state) => {
     let addMozarella
     let totalWeight
     let totalPrice = props.content.price + props.content.addedPrice + ' руб.'
-
+    let description = props.content.content.join(', ')
     if (props.type === 'pizza') {
         totalWeight = props.content.weight + props.content.addedWeight + ' гр.'
     } else {
@@ -46,13 +46,14 @@ const ProductUnit = (props, state) => {
         doughSelect = null
     }
     console.log('i am render')
+    // console.log(props.content.content)
     return (
         <div className={'product'}>
             <div className={'product_logo'}>
                 <img src={props.content.img} alt={props.content.title}></img>
             </div>
             <div className={'product_name'}>{props.content.title}</div>
-            <div className={'product_description'}>{props.content.content}</div>
+            <div className={'product_description'}>{description}</div>
             <div className={'product_customize'}>
                 <div className={'product_modification'}>
                     {sizeSelect}

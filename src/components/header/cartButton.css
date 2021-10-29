@@ -1,0 +1,12 @@
+.cart_enable{
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 50px;
+    width: 50px;
+    background-color: brown;
+}
+.cart_disable{
+    display: none;
+}

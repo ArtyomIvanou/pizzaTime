@@ -1,4 +1,5 @@
 .spa {
+  
   display: grid;
   grid-template-columns: 1fr minmax(320px, 1400px) 1fr;
   justify-content: center;
