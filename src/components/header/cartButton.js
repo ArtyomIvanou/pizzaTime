@@ -1,5 +1,6 @@
 import React from 'react'
 import './cartButton.css';
+import UserCartContainer from './userCartContainer';
 const CartButton=(props)=>{
   let showCartClassname
   if (props.show) {
@@ -11,7 +12,7 @@ const CartButton=(props)=>{
   
 console.log(props.show)
     return (
-      <div className={'cart'}><div className={showCartClassname}></div><button onClick={() => props.showCart(props.cart)}>Корзина</button><div>{props.cart.length}</div></div>  
+      <div className={'cart'}><div className={showCartClassname}><UserCartContainer/></div><button onClick={() => props.showCart(props.cart)}>Корзина</button><div>{props.cartLength}</div></div>  
     );
     
   }

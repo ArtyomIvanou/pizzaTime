@@ -18,9 +18,10 @@ const ProductUnitContainer = (props) => {
 let mapStateToProps = (state, props) => {
 
     let aaa = state.shop.find(a => a.type === props.type)
+    let bbb=aaa.products.find(a => a.id === props.number)
 
     return {
-        content: aaa.products[props.number],
+        content: bbb,
         type: aaa.type,
 
     }

@@ -29,4 +29,5 @@
     justify-content: center;
     align-content: center;
   }
+  .product_logo img{max-width: 300px;}
   .active_Link{color: blueviolet;}

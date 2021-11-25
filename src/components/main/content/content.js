@@ -16,6 +16,11 @@ const Content = (props) => {
             <Route exact path="/" ><Products selectedType={'pizza'}/></Route>
             <Route path={'/pizza/'} ><Products selectedType={'pizza'}/></Route>
             <Route path={'/chicken/'} ><Products selectedType={'chicken'}/></Route>
+            <Route path={'/drinks/'} ><Products selectedType={'drinks'}/></Route>
+            <Route path={'/potato/'} ><Products selectedType={'potato'}/></Route>
+            <Route path={'/bread/'} ><Products selectedType={'bread'}/></Route>
+            <Route path={'/salad/'} ><Products selectedType={'salad'}/></Route>
+            <Route path={'/desserts/'} ><Products selectedType={'desserts'}/></Route>
            
         </div>
     );

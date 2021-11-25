@@ -40,7 +40,8 @@ let initialState = [  //пицца
                 addedPrice: 0,
                 addedWeight: 0,
                 weight: 620,
-                price: 22.9
+                price: 22.9,
+                amount: 1,
             },
             {
                 id: 2,
@@ -70,6 +71,7 @@ let initialState = [  //пицца
                 addedWeight: 0,
                 weight: 950,
                 price: 27,
+                amount: 1,
             },
             {
                 id: 3,
@@ -99,6 +101,7 @@ let initialState = [  //пицца
                 addedWeight: 0,
                 weight: 370,
                 price: 19,
+                amount: 1,
             },
             {
                 id: 4,
@@ -127,7 +130,8 @@ let initialState = [  //пицца
                 addedPrice: 0,
                 addedWeight: 0,
                 weight: 375,
-                price: 33,
+                price: 19,
+                amount: 1,
             },
             {
                 id: 5,
@@ -156,7 +160,8 @@ let initialState = [  //пицца
                 addedPrice: 0,
                 addedWeight: 0,
                 weight: 399,
-                price: 33,
+                price: 19,
+                amount: 1,
             },
         ]
     },
@@ -177,24 +182,144 @@ let initialState = [  //пицца
                 type: 'hot',
                 config: {
                     size: [
-                        { name: 'small', weight: 300, price: 2, },
-                        { name: 'standart', weight: 400, price: 3, },
-                        { name: 'big', weight: 500, price: 4, },
+                        { name: 'small', weight: 300, price: 2,title: "0.3л"  },
+                        { name: 'standart', weight: 400, price: 3,title: "0.4л"  },
+                        { name: 'big', weight: 500, price: 4,title: "0.5л"  },
                     ],
                     defaultSize: 'standart',
-
+                    dough: [],
                     defaulDough: 'classic',
+                 
 
                 },
-                img: 'https://images.dominos.by/media/dominos/osg/api/2018/09/12/carbonara.png',
+                img: 'https://images.dominos.by/media/dominos/osg/api/2020/04/21/%D0%B2%D0%B8%D1%82%D0%B0_%D1%87%D0%B0%D0%B9_%D0%BA%D0%BB%D1%8E%D0%BA%D0%B2%D0%B0_%D1%81_%D0%B8%D0%BC%D0%B1%D0%B8%D1%80%D0%B5%D0%BC_%D1%81%D0%BC%D0%BE%D0%BB%D0%BB.png',
                 title: 'Чай Клюква с имбирем',
-                content: ['dfgdfg', 'dfgfdg', 'dfgfdgfd', 'dfgdfgfd', 'dfgdfgfffff', 'ggggggg',],
+                content: ['На доставку: чай в индивидуальной упаковке + стакан',],
                 // weight: [380, 620, 920],
                 addedPrice: 0,
                 addedWeight: 0,
                 weight: 400,
-                price: 3
-            }
+                price: 3,
+                amount: 1,
+            },
+          
+            {
+                id: 2,
+                type: 'hot',
+                config: {
+                    size: [
+                        { name: 'small', weight: 300, price: 2,title: "0.3л"  },
+                        { name: 'standart', weight: 400, price: 3,title: "0.4л"  },
+                        { name: 'big', weight: 500, price: 4,title: "0.5л"  },
+                    ],
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    
+
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2020/04/21/%D0%B2%D0%B8%D1%82%D0%B0_%D1%87%D0%B0%D0%B9_%D0%BE%D0%B1%D0%BB%D0%B5%D0%BF%D0%B8%D1%85%D0%BE%D0%B2%D1%8B%D0%B9_%D1%81_%D1%82%D0%B8%D0%BC%D1%8C%D1%8F%D0%BD%D0%BE%D0%BC_%D1%81%D0%BC%D0%BE%D0%BB%D0%BB.png',
+                title: 'Чай Облепиха с тимьяном',
+                content: ['На доставку: чай в индивидуальной упаковке + стакан',],
+                // weight: [380, 620, 920],
+                addedPrice: 0,
+                addedWeight: 0,
+                weight: 400,
+                price: 3,
+                amount: 1,
+            }, 
+            {
+                id: 3,
+                type: 'cold',
+                config: {
+                    size: [
+                      
+                    ],
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    
+
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2021/07/02/%D1%84%D1%8C%D1%8E%D0%B7%D1%82%D0%B8_%D0%BB%D0%B5%D1%81%D0%BD%D1%8B%D0%B5_%D1%8F%D0%B3%D0%BE%D0%B4%D1%8B_02.07.21.png',
+                title: 'ФьюзТи чёрный чай Лесные ягоды-гибискус 0,5л',
+                content: ['aaaaaaaaaaaaaa',],
+                // weight: [380, 620, 920],
+                addedPrice: 0,
+                addedWeight: 0,
+                weight: 400,
+                price: 3,
+                amount: 1,
+            }, 
+            {
+                id: 4,
+                type: 'hot',
+                config: {
+                    size: [
+                      
+                    ],
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    
+
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2021/07/02/%D1%84%D1%8C%D1%8E%D0%B7%D1%82%D0%B8_%D0%BB%D0%B5%D1%81%D0%BD%D1%8B%D0%B5_%D1%8F%D0%B3%D0%BE%D0%B4%D1%8B_02.07.21.png',
+                title: 'sdgsdgsdgsdgsdgsdbsbsbfb',
+                content: ['sdgsdgsdgsdgsdgsdbsbsbfb',],
+                // weight: [380, 620, 920],
+                addedPrice: 0,
+                addedWeight: 0,
+                weight: 400,
+                price: 3,
+                amount: 1,
+            }, 
+            {
+                id: 5,
+                type: 'hot',
+                config: {
+                    size: [
+                      
+                    ],
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    
+
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2021/07/02/%D1%84%D1%8C%D1%8E%D0%B7%D1%82%D0%B8_%D0%BB%D0%B5%D1%81%D0%BD%D1%8B%D0%B5_%D1%8F%D0%B3%D0%BE%D0%B4%D1%8B_02.07.21.png',
+                title: 'ggggggggggggg',
+                content: ['ggggggggggggg',],
+                // weight: [380, 620, 920],
+                addedPrice: 0,
+                addedWeight: 0,
+                weight: 400,
+                price: 3,
+                amount: 1,
+            },
+            {
+                id: 6,
+                type: 'hot',
+                config: {
+                    size: [
+                      
+                    ],
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    
+
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2021/07/02/%D1%84%D1%8C%D1%8E%D0%B7%D1%82%D0%B8_%D0%BB%D0%B5%D1%81%D0%BD%D1%8B%D0%B5_%D1%8F%D0%B3%D0%BE%D0%B4%D1%8B_02.07.21.png',
+                title: 'ssssssssssssss',
+                content: ['ssssssssssssss',],
+                // weight: [380, 620, 920],
+                addedPrice: 0,
+                addedWeight: 0,
+                weight: 400,
+                price: 3,
+                amount: 1,
+            },  
         ]
     },
     //курица
@@ -209,9 +334,7 @@ let initialState = [  //пицца
                 config: {
                     size: [],
                     defaultSize: 'standart',
-                    dough: [
-
-                    ],
+                    dough: [],
                     defaulDough: 'classic',
                     topping: 0,
                     toppingWeight: 30,
@@ -223,7 +346,31 @@ let initialState = [  //пицца
                 // weight: [380, 620, 920],
                 addedPrice: 0,
                 addedWeight: 0,
-                price: 9
+                price: 9,
+                amount: 1,
+                weight: 275,
+            },
+            {
+                id: 2,
+                type: null,
+                config: {
+                    size: [],
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    topping: 0,
+                    toppingWeight: 30,
+
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2019/04/29/krylyshki_kurinyye_s_gorchichnym_sousom_small.png',
+                title: 'Куриные крылышки',
+                content: [ 'Горчичный соус 25г',],
+                // weight: [380, 620, 920],
+                addedPrice: 0,
+                addedWeight: 0,
+                price: 9,
+                amount: 1,
+                weight: 275,
             }
         ]
     },
@@ -238,17 +385,44 @@ let initialState = [  //пицца
                 type: null,
                 config: {
                     size: [],
-                    defaultSize: [],
-
-                    defaulDough: [],
-
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    topping: 0,
+                    toppingWeight: 30,
                 },
                 img: 'https://images.dominos.by/media/dominos/osg/api/2019/04/29/kartofel_po_derevenski_small.png',
                 title: 'Картофельные Дольки',
                 content: [],
                 // weight: [380, 620, 920],
-                defaultPrice: 4,
+                // defaultPrice: 4,
+                addedPrice: 0,
+                addedWeight: 0,
                 price: 4,
+                amount: 1,
+                weight: 250,
+            },
+            {
+                id: 2,
+                type: null,
+                config: {
+                    size: [],
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    topping: 0,
+                    toppingWeight: 30,
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2020/09/18/kartofel_fri_small.png',
+                title: 'Картофель фри',
+                content: [],
+                // weight: [380, 620, 920],
+                // defaultPrice: 4,
+                addedPrice: 0,
+                addedWeight: 0,
+                price: 3.5,
+                amount: 1,
+                weight: 175,
             }
         ]
     },
@@ -256,31 +430,6 @@ let initialState = [  //пицца
     {
         type: 'bread',
         title: 'Хлебцы',
-        productsType: false,
-        products: [
-            {
-                id: 1,
-                type: 'hot',
-                config: {
-                    size: false,
-                    defaultSize: false,
-
-                    defaulDough: false,
-
-                },
-                img: 'https://images.dominos.by/media/dominos/osg/api/2019/04/29/kartofel_po_derevenski_small.png',
-                title: 'Хлебец с сырной начинкой',
-                content: ['Сыр моцарелла', 'Чеддер'],
-                // weight: [380, 620, 920],
-                addedPrice: 0,
-                price: 8,
-            }
-        ]
-    },
-    //салаты
-    {
-        type: 'salad',
-        title: 'Салаты',
         productsType: [],
         products: [
             {
@@ -288,18 +437,93 @@ let initialState = [  //пицца
                 type: null,
                 config: {
                     size: [],
-                    defaultSize: [],
-
-                    defaulDough: [],
-
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    topping: 0,
+                    toppingWeight: 30,
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2018/03/31/%D1%85%D0%BB%D0%B5%D0%B1%D0%B5%D1%86_%D1%81_%D1%81%D1%8B%D1%80%D0%BD%D0%BE%D0%B9_%D0%BD%D0%B0%D1%87%D0%B8%D0%BD%D0%BA%D0%BE%D0%B9.png',
+                title: 'Хлебец с сырной начинкой',
+                content: ['Сыр моцарелла', 'Чеддер'],
+                // weight: [380, 620, 920],
+                addedPrice: 0,
+                addedWeight: 0,
+                price: 8,
+                amount: 1,
+                weight: 150,
+            },
+            {
+                id: 2,
+                type: null,
+                config: {
+                    size: [],
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    topping: 0,
+                    toppingWeight: 30,
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2018/04/01/%D1%85%D0%BB%D0%B5%D0%B1%D0%B5%D1%86_%D1%81_%D0%B1%D0%B5%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC_%D0%B8_%D1%85%D0%B0%D0%BB%D0%B0%D0%BF%D0%B5%D0%BD%D1%8C%D0%BE.png',
+                title: 'Хлебец с беконом и халапеньо',
+                content: ['Сыр моцарелла', 'Чеддер','Бекон','Халапеньо'],
+                // weight: [380, 620, 920],
+                addedPrice: 0,
+                addedWeight: 0,
+                price: 8,
+                amount: 1,
+                weight: 150,
+            }
+        ]
+    },
+    //салаты
+    {
+        type: 'salad',
+        title: 'Салаты',
+         productsType: [],
+        products: [
+            {
+                id: 1,
+                type: null,
+                config: {
+                    size: [],
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    topping: 0,
+                    toppingWeight: 30,
                 },
                 img: 'https://images.dominos.by/media/dominos/osg/api/2021/02/09/Grecheskiy_small.png',
                 title: 'Салат Греческий',
                 content: ['Оливковое масло',],
                 // weight: [380, 620, 920],
                 addedPrice: 0,
-                price: 7.5,
-            }
+                addedWeight: 0,
+                price: 9,
+                amount: 1,
+                weight: 250,
+            },
+            {
+                id: 2,
+                type: null,
+                config: {
+                    size: [],
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    topping: 0,
+                    toppingWeight: 30,
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2021/02/09/Caesar_small.png',
+                title: 'Салат Цезарь',
+                content: ['Курица','Пармезан','Соус цезарь 25гр'],
+                // weight: [380, 620, 920],
+                addedPrice: 0,
+                addedWeight: 0,
+                price: 9,
+                amount: 1,
+                weight: 250,
+            },
         ]
     },
     //десерты
@@ -310,21 +534,46 @@ let initialState = [  //пицца
         products: [
             {
                 id: 1,
-                type: 'hot',
+                type: null,
                 config: {
                     size: [],
-                    defaultSize: [],
-
-                    defaulDough: [],
-
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    topping: 0,
+                    toppingWeight: 30,
                 },
-                img: 'https://images.dominos.by/media/dominos/osg/api/2019/04/29/kartofel_po_derevenski_small.png',
+                img: 'https://images.dominos.by/media/dominos/osg/api/2019/06/26/dzhem_rolly_small.png',
                 title: 'Джем-роллы с грушей',
                 content: [],
                 // weight: [380, 620, 920],
                 addedPrice: 0,
-                price: 7.5,
-            }
+                addedWeight: 0,
+                price: 7,
+                amount: 1,
+                weight: 200,
+            },
+            {
+                id: 2,
+                type: null,
+                config: {
+                    size: [],
+                    defaultSize: 'standart',
+                    dough: [],
+                    defaulDough: 'classic',
+                    topping: 0,
+                    toppingWeight: 30,
+                },
+                img: 'https://images.dominos.by/media/dominos/osg/api/2019/04/29/cream_rolly_small.png',
+                title: 'Крем-роллы',
+                content: [],
+                // weight: [380, 620, 920],
+                addedPrice: 0,
+                addedWeight: 0,
+                price: 8.99,
+                amount: 1,
+                weight: 300,
+            },
         ]
     },
     //соусы
@@ -349,6 +598,7 @@ let initialState = [  //пицца
                 // weight: [380, 620, 920],
                 addedPrice: 0,
                 price: 1,
+                amount: 1,
             }
         ]
     },]
@@ -359,22 +609,22 @@ const itemReducer = (state = initialState, action) => {
             let stateCopy = [...state]
             let ind = stateCopy.findIndex(i => i.type === action.selectedType)
 
-            stateCopy[ind].products[action.product - 1]={...stateCopy[ind].products[action.product - 1]}
-            stateCopy[ind].products[action.product - 1].price= action.value.price
-            stateCopy[ind].products[action.product - 1].weight= action.value.weight
-    
+            stateCopy[ind].products[action.product - 1] = { ...stateCopy[ind].products[action.product - 1] }
+            stateCopy[ind].products[action.product - 1].price = action.value.price
+            stateCopy[ind].products[action.product - 1].weight = action.value.weight
+
 
             return stateCopy
         }
         case CHANGE_DOUGH: {
-         
+
             let stateCopy = [...state]
             let ind = stateCopy.findIndex(i => i.type === action.selectedType)
 
-            stateCopy[ind].products[action.product - 1]={...stateCopy[ind].products[action.product - 1]}
-            stateCopy[ind].products[action.product - 1].addedPrice= action.value.price
-            stateCopy[ind].products[action.product - 1].addedWeight= action.value.weight
-
+            stateCopy[ind].products[action.product - 1] = { ...stateCopy[ind].products[action.product - 1] }
+            stateCopy[ind].products[action.product - 1].addedPrice = action.value.price
+            stateCopy[ind].products[action.product - 1].addedWeight = action.value.weight
+            // console.log(action.value)
 
             return stateCopy
         }

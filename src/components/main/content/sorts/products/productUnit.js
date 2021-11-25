@@ -14,7 +14,7 @@ const ProductUnit = (props, state) => {
     if (props.type === 'pizza') {
         totalWeight = props.content.weight + props.content.addedWeight + ' гр.'
     } else {
-        totalWeight = null
+        totalWeight = props.content.weight+ ' гр.'
     }
     if (props.type === 'pizza') {
         addMozarella = <div className={"topping-counter__actions"}>
