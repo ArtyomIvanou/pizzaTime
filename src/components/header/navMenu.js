@@ -20,8 +20,8 @@ const NavMenu=()=>{
               <li><NavLink to={'/salad/'}>Салаты</NavLink></li>
               <li><NavLink to={'/desserts/'}>Десерты</NavLink></li>
               <li><NavLink to={'/drinks/'}>Напитки</NavLink></li>
+              <li><NavLink to={'/sauses/'}>Соусы</NavLink></li>
               
-              <li>Соусы</li>
              
             </ul>
           </nav>

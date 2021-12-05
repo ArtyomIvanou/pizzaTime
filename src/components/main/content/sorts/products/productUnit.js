@@ -13,16 +13,14 @@ const ProductUnit = (props, state) => {
     let description = props.content.content.join(', ')
     if (props.type === 'pizza') {
         totalWeight = props.content.weight + props.content.addedWeight + ' гр.'
+        addMozarella = <div className={"topping-counter__actions"}>
+        <button type={"button"} >
+            <svg width={"26"} height={"26"} viewBox={"0 0 24 24"} xmlns={"http://www.w3.org/2000/svg"} fill={"rgb(0,121,174)"}><g><path d={"M11 11V7H13V11H17V13H13V17H11V13H7V11H11Z"}></path></g></svg></button>Моцарелла-мини</div>
     } else {
         totalWeight = props.content.weight+ ' гр.'
-    }
-    if (props.type === 'pizza') {
-        addMozarella = <div className={"topping-counter__actions"}>
-            <button type={"button"} >
-                <svg width={"26"} height={"26"} viewBox={"0 0 24 24"} xmlns={"http://www.w3.org/2000/svg"} fill={"rgb(0,121,174)"}><g><path d={"M11 11V7H13V11H17V13H13V17H11V13H7V11H11Z"}></path></g></svg></button>Моцарелла-мини</div>
-    } else {
         addMozarella = null
     }
+    
 
     if (props.content.config.size.length > 0) {
         optionSize = props.content.config.size.map((a, i) => {

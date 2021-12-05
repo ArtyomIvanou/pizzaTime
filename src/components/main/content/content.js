@@ -5,7 +5,7 @@ import {
 
 import Carousel from './carousel/carousel';
 import './content.css';
-import Products from './sorts/products/products';
+import Products from './sorts/products/productsFuncContainer';
 
 
 const Content = (props) => {
@@ -21,7 +21,7 @@ const Content = (props) => {
             <Route path={'/bread/'} ><Products selectedType={'bread'}/></Route>
             <Route path={'/salad/'} ><Products selectedType={'salad'}/></Route>
             <Route path={'/desserts/'} ><Products selectedType={'desserts'}/></Route>
-           
+            <Route path={'/sauses/'} ><Products selectedType={'sauses'}/></Route>
         </div>
     );
 

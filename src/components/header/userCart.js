@@ -8,15 +8,19 @@ const UserCart = (props) => {
   //   showCartClassname='cart_disable'
   // }
 
-  let cartList = props.cart.map((i,a) => {
+  let cartList = props.cart.map((i, a) => {
     console.log(i)
-    return <li key={a+i.id*i.price+a/i.id*i.weight}>{i.title}{i.amount}<button onClick={() => props.deleteItem(a)}>delete</button></li>
+    return <li key={a + i.id * i.price + a / i.id * i.weight}>{i.title}{i.amount}<button onClick={() => props.deleteItem(a)}>delete</button></li>
   })
   console.log(props.cart)
   return (
-    <ul>
-      {cartList}
-    </ul>
+    <div>
+      <ul>
+        {cartList}
+      </ul>
+      
+    </div>
+
   );
 
 }

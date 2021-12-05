@@ -18,6 +18,7 @@ const ProductUnitContainer = (props) => {
 let mapStateToProps = (state, props) => {
 
     let aaa = state.shop.find(a => a.type === props.type)
+    // console.log(aaa)
     let bbb=aaa.products.find(a => a.id === props.number)
 
     return {

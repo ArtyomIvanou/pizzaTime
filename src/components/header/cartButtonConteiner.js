@@ -17,6 +17,18 @@ let mapStateToProps = (state) => {
   //     console.log(stories);
   //     console.log('sdvjbdsv');
   // }); 
+  // isoFetch('http://localhost:3001/products')
+  // .then(function(response) {
+  //     if (response.status >= 400) {
+  //         throw new Error("Bad response from server");
+  //     }
+  //     return response.json();
+  // })
+  // .then(function(stories) {
+   
+  //     console.log(stories);
+  //     // console.log('sdvjbdsv');
+  // }); 
   return {
     cart: state.cart.cart,
     show: state.cart.show,
