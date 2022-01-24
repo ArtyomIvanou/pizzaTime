@@ -3,6 +3,26 @@ import '../../content.css';
 
 
 const ProductUnit = (props, state) => {
+    // console.log(props.content)
+    if (!props.content.addedDoughName) {
+        props.content.config.dough.map((a, i) => {
+            if (a.name===props.content.config.defaulDough) {
+                // console.log('good')
+                props.content.addedDoughName=a.title 
+            }
+            return a
+        }) 
+    }
+    if (!props.content.priceName) {
+        props.content.config.size.map((a, i) => {
+            if (a.name===props.content.config.defaultSize) {
+                // console.log('good')
+                props.content.priceName=a.title 
+            }
+            return a
+        }) 
+    }
+   
     let optionSize
     let optionDough
     let sizeSelect
@@ -23,10 +43,12 @@ const ProductUnit = (props, state) => {
     
 
     if (props.content.config.size.length > 0) {
+        // console.log(props.content.config)
         optionSize = props.content.config.size.map((a, i) => {
-            return <option value={a.name} info={a} key={i} >{a.title}</option>
+            //  console.log(a)
+            return <option value={a.name} info={a.name} key={i} >{a.title}</option>
         })
-        sizeSelect = <select defaultValue={props.content.config.defaultSize} onChange={(event) => props.selectSizeToProps(event.target.value, props.type, props.content)} >
+        sizeSelect = <select defaultValue={props.content.config.defaultSize} onChange={(event) => props.selectSize(event.target.value, props.type, props.content)} >
             {optionSize}
         </select>
     } else {
@@ -37,13 +59,13 @@ const ProductUnit = (props, state) => {
         optionDough = props.content.config.dough.map((a, i) => {
             return <option value={a.name} key={i} >{a.title}</option>
         })
-        doughSelect = <select onChange={(event) => props.selectDoughToProps(event.target.value, props.type, props.content)} >
+        doughSelect = <select onChange={(event) => props.selectDough(event.target.value, props.type, props.content)} >
             {optionDough}
         </select>
     } else {
         doughSelect = null
     }
-    console.log('i am render')
+    // console.log('i am render')
     // console.log(props.content.content)
     return (
         <div className={'product'}>

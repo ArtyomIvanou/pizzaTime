@@ -32,7 +32,7 @@ const ProductsFunctional = (props) => {
     })
 
 
-//    console.log(props.content)
+    // console.log(props.match)
     props.content.productsType.map((a) => {
         a.products = []
         return a

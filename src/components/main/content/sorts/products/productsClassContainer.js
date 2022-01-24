@@ -1,7 +1,8 @@
 import React from 'react'
 import ProductsFunctional from './productsFunctional'
-import isoFetch from 'isomorphic-fetch';
-
+// import isoFetch from 'isomorphic-fetch';
+import { withRouter } from 'react-router';
+import axios from 'axios';
 
 
 
@@ -25,19 +26,22 @@ class ProductsClassConteiner extends React.Component {
         //     console.log(stories);
         //     // console.log('sdvjbdsv');
         // }); 
-        console.log(this.props.content.products.length)
+        // console.log(this.props.content.products.length)
+        // debugger
         if (this.props.content.products.length <2) {
             // console.log(this.props.content)
             //http://localhost:3001/${this.props.type}?_page=1&_limit=20
+            // let productsType=this.props.match.params.productsType
+            // console.log(productsType)
             this.props.isLoading(true)
-            isoFetch(`http://localhost:3001/${this.props.type}`)
+            axios.get(`http://localhost:3001/${this.props.type}`)
                 .then(function (response) {
                     if (response.status >= 400) {
                         throw new Error("Bad response from server");
                     }
                   
                     
-                    return response.json();
+                    return response.data;
                 })
                 //                 .then(function (stories) {
                 //                     // let aaa=stories.find(a=>a.type === this.props.type)
@@ -47,7 +51,7 @@ class ProductsClassConteiner extends React.Component {
                 //                 });
                 .then(res => {
                     
-                    console.log(res)
+                    // console.log(res)
                     this.props.isLoading(false)
                     // let aaa=res.find(a=>a.type === this.props.type)
                     // console.log(aaa)
@@ -76,4 +80,4 @@ class ProductsClassConteiner extends React.Component {
 
 }
 
-export default ProductsClassConteiner;
+export default withRouter(ProductsClassConteiner);

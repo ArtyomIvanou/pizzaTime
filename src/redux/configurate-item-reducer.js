@@ -728,7 +728,7 @@ let initialState = [  //пицца
             //     price: 3,
             //     amount: 1,
             // },
-            
+
             // {
             //     id: 5,
             //     type: 'cold',
@@ -1391,7 +1391,7 @@ let initialState = [  //пицца
         title: 'Соусы',
         productsType: [],
         products: [
-            
+
             // {
             //     id: 1,
             //     type: null,
@@ -1477,19 +1477,20 @@ let initialState = [  //пицца
             //     weight: 50,
             // },
         ]
-    },]
+    },
+]
 const itemReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case CHANGE_SIZE: {
             let stateCopy = [...state]
             let ind = stateCopy.findIndex(i => i.type === action.selectedType)
-
-            let findItem = stateCopy[ind].products.findIndex(i => i.id === action.product)
-            // console.log(findItem)
+            let findItem = stateCopy[ind].products.findIndex(i => i.id === action.value.id)
             stateCopy[ind].products[findItem] = { ...stateCopy[ind].products[findItem] }
-            stateCopy[ind].products[findItem].price = action.value.price
-            stateCopy[ind].products[findItem].weight = action.value.weight
+            let findInfo = stateCopy[ind].products[findItem].config.size.find(i => i.name === action.product)
+            stateCopy[ind].products[findItem].price = findInfo.price
+            stateCopy[ind].products[findItem].priceName = findInfo.title
+            stateCopy[ind].products[findItem].weight = findInfo.weight
 
 
             return stateCopy
@@ -1498,10 +1499,13 @@ const itemReducer = (state = initialState, action) => {
 
             let stateCopy = [...state]
             let ind = stateCopy.findIndex(i => i.type === action.selectedType)
-            let findItem = stateCopy[ind].products.findIndex(i => i.id === action.product)
+            let findItem = stateCopy[ind].products.findIndex(i => i.id === action.value.id)
             stateCopy[ind].products[findItem] = { ...stateCopy[ind].products[findItem] }
-            stateCopy[ind].products[findItem].addedPrice = action.value.price
-            stateCopy[ind].products[findItem].addedWeight = action.value.weight
+            let findInfo = stateCopy[ind].products[findItem].config.dough.find(i => i.name === action.product)
+            //  console.log(findInfo)
+            stateCopy[ind].products[findItem].addedPrice = findInfo.price
+            stateCopy[ind].products[findItem].addedDoughName = findInfo.title
+            stateCopy[ind].products[findItem].addedWeight = findInfo.weight
             // console.log(action.value)
 
             return stateCopy
@@ -1513,7 +1517,7 @@ const itemReducer = (state = initialState, action) => {
             let ind = stateCopy.findIndex(i => i.type === action.selectedType)
             stateCopy[ind].products = [...stateCopy[ind].products]
             stateCopy[ind].products = action.value
-            // console.log(stateCopy)
+            // console.log(stateCopy[ind].products)
             return stateCopy
         }
         default:
@@ -1522,13 +1526,14 @@ const itemReducer = (state = initialState, action) => {
     }
 
 }
-export const selectSizeActionCreator = (id, type, info) => {
+export const selectSize = (id, type, info) => {
+    // console.log(id,type,info)
     return { type: CHANGE_SIZE, product: id, selectedType: type, value: info }
 }
-export const selectDoughActionCreator = (id, type, info) => {
+export const selectDough = (id, type, info) => {
     return { type: CHANGE_DOUGH, product: id, selectedType: type, value: info }
 }
-export const addToShopActionCreator = (type, info) => {
+export const addToShop = (type, info) => {
     return { type: ADD_TO_SHOP, selectedType: type, value: info }
 }
 export default itemReducer

@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux';
-import { deleteItemActionCreator, showCartActionCreator } from '../../redux/cart-reducer';
+import { deleteItem, showCart } from '../../redux/cart-reducer';
 import UserCart from './userCart'
 // import CartButton from './cartButton';
 // import isoFetch from 'isomorphic-fetch';
@@ -22,15 +22,15 @@ let mapStateToProps = (state) => {
     show: state.cart.show
   }
 }
-let mapDispatchToProps = (dispatch) => {
-  return {
-    showCart: () => {
-      dispatch(showCartActionCreator())
-    },
-    deleteItem: (id) => {
-      dispatch(deleteItemActionCreator(id))
-    },
-  }
-}
-const UserCartContainer = connect(mapStateToProps, mapDispatchToProps)(UserCart)
+// let mapDispatchToProps = (dispatch) => {
+//   return {
+//     showCart: () => {
+//       dispatch(showCartActionCreator())
+//     },
+//     deleteItem: (id) => {
+//       dispatch(deleteItemActionCreator(id))
+//     },
+//   }
+// }
+const UserCartContainer = connect(mapStateToProps, {showCart,deleteItem})(UserCart)
 export default UserCartContainer

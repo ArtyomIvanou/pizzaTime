@@ -59,13 +59,13 @@ const cartReducer = (state = initialState, action) => {
     }
 
 }
-export const addToCartActionCreator = (selected) => {
+export const addToCart = (selected) => {
     return { type: ADD_TO_CART, product: selected }
 }
-export const showCartActionCreator = (selected) => {
+export const showCart = (selected) => {
     return { type: SHOW_CART, product: selected }
 }
-export const deleteItemActionCreator = (selected) => {
+export const deleteItem = (selected) => {
     return { type: DELETE_ITEM, product: selected }
 }
 export default cartReducer

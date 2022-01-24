@@ -6,8 +6,9 @@ import Content from './content/content';
 import './main.css';
 
 const Main = (props) => {
-
-
+  
+  
+  
   return (
     <div className={'spa'}>
       <Header ></Header>

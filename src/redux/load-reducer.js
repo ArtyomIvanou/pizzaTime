@@ -7,7 +7,7 @@ const settingsReducer = (state = initialState, action) => {
         case IS_LOAD_CHECK:
             {
                 let stateCopy = { ...state }
-                console.log('skdjbjksdbfjsdb')
+                // console.log('skdjbjksdbfjsdb')
                 stateCopy.isLoading = action.answer
                 return stateCopy
             }
@@ -18,7 +18,7 @@ const settingsReducer = (state = initialState, action) => {
     }
 
 }
-export const isLoadingActionCreator = (bool) => {
+export const isLoading = (bool) => {
     return { type: IS_LOAD_CHECK, answer: bool }
 }
 

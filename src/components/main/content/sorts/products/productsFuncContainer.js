@@ -1,9 +1,10 @@
 import React from 'react'
 import ProductsClassConteiner from './productsClassContainer'
-import { addToShopActionCreator } from '../../../../../redux/configurate-item-reducer';
+import { addToShop} from '../../../../../redux/configurate-item-reducer';
 
 import { connect } from 'react-redux';
-import { isLoadingActionCreator } from './../../../../../redux/load-reducer';
+import { isLoading } from './../../../../../redux/load-reducer';
+import { withRouter } from 'react-router';
 const ProductsFuncConteiner = (props) => {
     return (
         <ProductsClassConteiner content={props.content}
@@ -25,15 +26,16 @@ let mapStateToProps = (state, props) => {
 
     }
 }
-let mapDispatchToProps = (dispatch) => {
-    return {
-        addToShop: (type,value) => {
-            dispatch(addToShopActionCreator(type,value))
-        },
-        isLoading:(value)=>{
-            dispatch(isLoadingActionCreator(value))
-        }
-    }
-}
-const ConnectedProducts = connect(mapStateToProps, mapDispatchToProps)(ProductsFuncConteiner)
+// let mapDispatchToProps = (dispatch) => {
+//     return {
+//         addToShop: (type,value) => {
+//             dispatch(addToShopActionCreator(type,value))
+//         },
+//         isLoading:(value)=>{
+//             dispatch(isLoadingActionCreator(value))
+//         }
+//     }
+// }
+let ProductsConteinerWithRouter=withRouter(ProductsFuncConteiner)
+const ConnectedProducts = connect(mapStateToProps, {addToShop,isLoading})(ProductsConteinerWithRouter)
 export default ConnectedProducts

@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux';
-import { showCartActionCreator } from '../../redux/cart-reducer';
+import { showCart } from '../../redux/cart-reducer';
 
 import CartButton from './cartButton';
 // import isoFetch from 'isomorphic-fetch';
@@ -35,12 +35,12 @@ let mapStateToProps = (state) => {
     cartLength:state.cart.cartLength,
   }
 }
-let mapDispatchToProps = (dispatch) => {
-  return {
-    showCart: () => {
-      dispatch(showCartActionCreator())
-    },
-  }
-}
-const Cart = connect(mapStateToProps, mapDispatchToProps)(CartButton)
+// let mapDispatchToProps = (dispatch) => {
+//   return {
+//     showCart: () => {
+//       dispatch(showCartActionCreator())
+//     },
+//   }
+// }
+const Cart = connect(mapStateToProps, {showCart})(CartButton)
 export default Cart

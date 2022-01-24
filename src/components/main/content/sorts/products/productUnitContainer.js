@@ -1,6 +1,6 @@
 import React from 'react'
-import { addToCartActionCreator } from '../../../../../redux/cart-reducer';
-import { selectSizeActionCreator, selectDoughActionCreator } from '../../../../../redux/configurate-item-reducer';
+import { addToCart } from '../../../../../redux/cart-reducer';
+import { selectSize, selectDough } from '../../../../../redux/configurate-item-reducer';
 
 import '../../content.css';
 import ProductUnit from './productUnit';
@@ -10,8 +10,8 @@ const ProductUnitContainer = (props) => {
     return <ProductUnit content={props.content}
         type={props.type}
         addToCart={props.addToCart}
-        selectSizeToProps={props.selectSizeToProps}
-        selectDoughToProps={props.selectDoughToProps} />
+        selectSize={props.selectSize}
+        selectDough={props.selectDough} />
 
 }
 
@@ -27,33 +27,33 @@ let mapStateToProps = (state, props) => {
 
     }
 }
-let mapDispatchToProps = (dispatch) => {
-    return {
-        addToCart: (content) => {
-            dispatch(addToCartActionCreator(content))
-        },
-        selectSizeToProps: (value, type, content) => {
-            content.config.size.map((a, i) => {
-                if (a.name === value) {
-                    return dispatch(selectSizeActionCreator(content.id, type, a))
-                } else {
-                    return null
-                }
-            }
-            )
-        },
-        selectDoughToProps: (value, type, content) => {
-            content.config.dough.map((a, i) => {
-                if (a.name === value) {
-                    return dispatch(selectDoughActionCreator(content.id, type, a))
-                } else {
-                    return null
-                }
-            }
-            )
-        }
+// let mapDispatchToProps = (dispatch) => {
+//     return {
+//         addToCart: (content) => {
+//             dispatch(addToCartActionCreator(content))
+//         },
+//         selectSizeToProps: (value, type, content) => {
+//             content.config.size.map((a, i) => {
+//                 if (a.name === value) {
+//                     return dispatch(selectSizeActionCreator(content.id, type, a))
+//                 } else {
+//                     return null
+//                 }
+//             }
+//             )
+//         },
+//         selectDoughToProps: (value, type, content) => {
+//             content.config.dough.map((a, i) => {
+//                 if (a.name === value) {
+//                     return dispatch(selectDoughActionCreator(content.id, type, a))
+//                 } else {
+//                     return null
+//                 }
+//             }
+//             )
+//         }
 
-    }
-}
-const SuperPr = connect(mapStateToProps, mapDispatchToProps)(ProductUnitContainer)
+//     }
+// }
+const SuperPr = connect(mapStateToProps, {addToCart,selectSize,selectDough})(ProductUnitContainer)
 export default SuperPr

@@ -10,7 +10,7 @@ const CartButton=(props)=>{
   }
 
   
-console.log(props.show)
+// console.log(props.show)
     return (
       <div className={'cart'}><div className={showCartClassname}><UserCartContainer/></div><button onClick={() => props.showCart(props.cart)}>Корзина</button><div>{props.cartLength}</div></div>  
     );
