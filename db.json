@@ -2191,12 +2191,5 @@
       "weight": 50
     }
   ],
-  "orders": [
-    {
-      "id": 6,
-      "first_name": "Fred",
-      "last_name": "Blair",
-      "email": "freddyb34@gmail.com"
-    }
-  ]
+  "orders": []
 }

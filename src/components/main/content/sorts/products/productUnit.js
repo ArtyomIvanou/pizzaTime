@@ -27,18 +27,18 @@ const ProductUnit = (props, state) => {
     let optionDough
     let sizeSelect
     let doughSelect
-    let addMozarella
+    // let addMozarella
     let totalWeight
     let totalPrice = props.content.price + props.content.addedPrice + ' руб.'
     let description = props.content.content.join(', ')
     if (props.type === 'pizza') {
         totalWeight = props.content.weight + props.content.addedWeight + ' гр.'
-        addMozarella = <div className={"topping-counter__actions"}>
-        <button type={"button"} >
-            <svg width={"26"} height={"26"} viewBox={"0 0 24 24"} xmlns={"http://www.w3.org/2000/svg"} fill={"rgb(0,121,174)"}><g><path d={"M11 11V7H13V11H17V13H13V17H11V13H7V11H11Z"}></path></g></svg></button>Моцарелла-мини</div>
+        // addMozarella = <div className={"topping-counter__actions"}>
+        // <button type={"button"} >
+        //     <svg width={"26"} height={"26"} viewBox={"0 0 24 24"} xmlns={"http://www.w3.org/2000/svg"} fill={"rgb(0,121,174)"}><g><path d={"M11 11V7H13V11H17V13H13V17H11V13H7V11H11Z"}></path></g></svg></button>Моцарелла-мини</div>
     } else {
         totalWeight = props.content.weight+ ' гр.'
-        addMozarella = null
+        // addMozarella = null
     }
     
 
@@ -81,7 +81,7 @@ const ProductUnit = (props, state) => {
                 </div>
             </div>
             <div className={'product_modification_control'}>
-                {addMozarella}
+                {/* {addMozarella} */}
             </div>
             <div className={'product-result'}>
 

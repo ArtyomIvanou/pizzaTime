@@ -1,10 +1,9 @@
 
 import { connect } from 'react-redux';
-import { deleteItem, showCart,addAmount } from '../../redux/cart-reducer';
-import UserCart from './userCart'
+import { deleteItem, showCart } from '../../redux/cart-reducer';
+import Ordercart from './orderCart'
 // import CartButton from './cartButton';
 // import isoFetch from 'isomorphic-fetch';
-import { reduceAmount } from './../../redux/cart-reducer';
 
 let mapStateToProps = (state) => {
   // isoFetch('http://fe.it-academy.by/Examples/net_city/countries.json')
@@ -19,7 +18,6 @@ let mapStateToProps = (state) => {
   //     console.log('sdvjbdsv');
   // }); 
   return {
-    summary:state.cart.summary,
     cart: state.cart.cart,
     show: state.cart.show
   }
@@ -34,5 +32,5 @@ let mapStateToProps = (state) => {
 //     },
 //   }
 // }
-const UserCartContainer = connect(mapStateToProps, {showCart,deleteItem,addAmount,reduceAmount})(UserCart)
-export default UserCartContainer
+const OrderCartContainer = connect(mapStateToProps, {showCart,deleteItem})(Ordercart)
+export default OrderCartContainer

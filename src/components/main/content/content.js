@@ -6,7 +6,7 @@ import {
 import Carousel from './carousel/carousel';
 import './content.css';
 import Products from './sorts/products/productsFuncContainer';
-import Orders from './orders'
+import Orders from '../../header/ordersFuncContainer';
 import CheckoutContainer from './checkoutFuncContainer';
 const Content = (props) => {
 
