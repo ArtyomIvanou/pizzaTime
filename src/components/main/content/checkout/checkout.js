@@ -16,9 +16,9 @@ const Checkout = (props) => {
     // console.log(props.cart)
     let sendOrder = () => {
         axios.post('http://localhost:3001/orders', {
-             id: Math.random(),
+            id: Math.random(),
             cart: props.cart,
-
+            summary: props.summary,
             tel: value,
         }).then(resp => {
             console.log(resp.data);
@@ -38,7 +38,7 @@ const Checkout = (props) => {
     }
 
     if (props.cart.length > 0) {
-        showSummary=props.summary.toFixed(2)
+        showSummary = props.summary.toFixed(2)
         phoneInput = <PhoneInput
             defaultCountry="BY"
             labels={ru}
@@ -48,7 +48,7 @@ const Checkout = (props) => {
             error={value ? (isValidPhoneNumber(value) ? undefined : 'Invalid phone number') : 'Phone number required'}
         />
     } else {
-        showSummary=null
+        showSummary = null
         phoneInput = <div>Корзина пуста</div>
     }
     if (isValid) {

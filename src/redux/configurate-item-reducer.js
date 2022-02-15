@@ -1488,6 +1488,7 @@ const itemReducer = (state = initialState, action) => {
             let findItem = stateCopy[ind].products.findIndex(i => i.id === action.value.id)
             stateCopy[ind].products[findItem] = { ...stateCopy[ind].products[findItem] }
             let findInfo = stateCopy[ind].products[findItem].config.size.find(i => i.name === action.product)
+            stateCopy[ind].products[findItem].config.defaultSize=findInfo.name
             stateCopy[ind].products[findItem].price = findInfo.price
             stateCopy[ind].products[findItem].priceName = findInfo.title
             stateCopy[ind].products[findItem].weight = findInfo.weight
@@ -1502,7 +1503,9 @@ const itemReducer = (state = initialState, action) => {
             let findItem = stateCopy[ind].products.findIndex(i => i.id === action.value.id)
             stateCopy[ind].products[findItem] = { ...stateCopy[ind].products[findItem] }
             let findInfo = stateCopy[ind].products[findItem].config.dough.find(i => i.name === action.product)
-            //  console.log(findInfo)
+              
+              stateCopy[ind].products[findItem].config.defaulDough=findInfo.name 
+              console.log( stateCopy[ind].products[findItem].config.defaulDough)
             stateCopy[ind].products[findItem].addedPrice = findInfo.price
             stateCopy[ind].products[findItem].addedDoughName = findInfo.title
             stateCopy[ind].products[findItem].addedWeight = findInfo.weight

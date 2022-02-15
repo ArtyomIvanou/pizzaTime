@@ -12,12 +12,9 @@ const cartReducer = (state = initialState, action) => {
                 let stateCopy = { ...state }
                 let cartCopy = [...stateCopy.cart]
                 stateCopy.addMode = true
-                // let emptyNewCart=[]
                 cartCopy.map((i, a) => {
-
                     if (i.id === action.product.id && i.price === action.product.price && i.addedPrice === action.product.addedPrice && i.weight === action.product.weight && i.addedWeight === action.product.addedWeight) {
                         stateCopy.addMode = false
-
                         i.amount++
                         return i
                     } else {
@@ -25,17 +22,14 @@ const cartReducer = (state = initialState, action) => {
                     }
                 })
                 if (stateCopy.addMode === true || cartCopy.length === 0) {
-
                     cartCopy.push(action.product)
                     stateCopy.addMode = false
                 }
                 stateCopy.summary += action.product.price + action.product.addedPrice
-
                 let resultedSum = Math.floor(stateCopy.summary * 1000000) / 1000000
                 stateCopy.summary = resultedSum
                 stateCopy.cartLength++
                 stateCopy.cart = cartCopy
-                console.log(stateCopy.summary)
                 return stateCopy
             }
         case ADD_AMOUNT:
@@ -44,7 +38,6 @@ const cartReducer = (state = initialState, action) => {
                 let cartCopy = [...stateCopy.cart]
                 let qqq = cartCopy.map((i, a) => {
                     if (a === action.product) {
-                        // console.log("good")
                         stateCopy.summary += i.price + i.addedPrice
                         let resultedSum = Math.floor(stateCopy.summary * 1000000) / 1000000
                         stateCopy.summary = resultedSum
@@ -53,10 +46,7 @@ const cartReducer = (state = initialState, action) => {
                     } else {
                         return i
                     }
-
                 })
-                console.log(action.product)
-
                 cartCopy = qqq
                 stateCopy.cart = qqq
                 stateCopy.cartLength++
@@ -77,30 +67,22 @@ const cartReducer = (state = initialState, action) => {
                     } else {
                         return i !== action.product
                     }
-
                 })
-                // let aaa=stateCopy.summary-(action.product.price+action.product.addedPrice)
-                // let resultedSum=Math.floor(aaa*1000000)/1000000
-                // stateCopy.summary=resultedSum
-                // stateCopy.summary.toFixed(2) 
                 cartCopy = qqq
                 stateCopy.cart = qqq
                 if (stateCopy.cartLength > 1) {
                     stateCopy.cartLength--
                 }
-                console.log(stateCopy.summary)
                 return stateCopy
             }
         case SHOW_CART:
             {
                 let stateCopy = { ...state }
                 stateCopy.show = !stateCopy.show
-                // console.log(stateCopy.show)
                 return stateCopy
             }
         case CLEAN_CART:
             {
-
                 let stateCopy = { ...state }
                 let cartCopy = [...stateCopy.cart]
                 let clean = []
@@ -109,8 +91,6 @@ const cartReducer = (state = initialState, action) => {
                 stateCopy.show = false
                 stateCopy.cartLength = 0
                 stateCopy.summary = 0
-                // stateCopy.cart=[]
-                // stateCopy.show = !stateCopy.show
                 console.log(stateCopy.summary)
                 return stateCopy
             }
@@ -126,19 +106,14 @@ const cartReducer = (state = initialState, action) => {
                     }
                     if (i.amount > 1 && a === action.product) {
                         i.amount--
-
                         return i
                     } else {
-
                         return a !== action.product
                     }
-
-
                 })
                 cartCopy = qqq
                 stateCopy.cart = qqq
                 stateCopy.cartLength--
-                console.log(stateCopy.summary)
                 return stateCopy
             }
         default:

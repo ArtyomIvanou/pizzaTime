@@ -25,26 +25,21 @@ class OrdersClassConteiner extends React.Component {
                     
                     return response.data;
                 })
-                //                 .then(function (stories) {
-                //                     // let aaa=stories.find(a=>a.type === this.props.type)
-                // // this.props.addToShop(this.props.type,aaa)
-                //                     console.log(stories);
-                //                     // console.log('sdvjbdsv');
-                //                 });
+              
                 .then(res => {
                     
-                    // console.log(res)
+                
                     this.props.isLoading(false)
                    
                     this.props.watchOrders(res)
-                    // this.forceUpdate()
+                    
                 })
         
     }
 
 
     render() {
-        //    console.log(this.props.type)
+       
         if (this.props.isLoadingAnswer) {
             return (
               <div>Loading......</div>

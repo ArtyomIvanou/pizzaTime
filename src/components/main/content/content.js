@@ -6,8 +6,8 @@ import {
 import Carousel from './carousel/carousel';
 import './content.css';
 import Products from './sorts/products/productsFuncContainer';
-import Orders from '../../header/ordersFuncContainer';
-import CheckoutContainer from './checkoutFuncContainer';
+import Orders from '../../header/orders/ordersFuncContainer';
+import CheckoutContainer from '../content/checkout/checkoutFuncContainer';
 const Content = (props) => {
 
     return (

@@ -1,17 +1,10 @@
-// import React from 'react';
+
 import Checkout from './checkout';
 import { connect } from 'react-redux';
-// import Checkout from './checkout';
-import { deleteItem, cleanCart} from '../../../redux/cart-reducer';
 
-// const ChekoutContainer = (props) => {
+import { deleteItem, cleanCart} from '../../../../redux/cart-reducer';
 
-//     return (
-//         <Checkout
-//             cart={props.cart}></Checkout>
-//     );
 
-// }
 let mapStateToProps = (state) => {
 
 

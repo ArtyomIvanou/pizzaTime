@@ -7,15 +7,7 @@ import {
   NavLink
 } from "react-router-dom";
 const HeaderTop=()=>{
-//   let showOrders=()=>{
-//     axios.get('http://localhost:3001/orders', {
-   
-// }).then(resp => {
-//     console.log(resp.data);
-// }).catch(error => {
-//     console.log(error);
-// });
-//   }
+
    
     return (
       
@@ -24,7 +16,7 @@ const HeaderTop=()=>{
           <div className={'delivery_time'}>30 минут доставка </div>
           <div className={'delivery_phone'}>7717</div>
           <div className={'enter_personal'}><NavLink to={'/orders/'}><button >Заказы</button></NavLink></div>
-          {/* <div className={'enter_personal'}><NavLink to={'/orders/'}><button onClick={() => {showOrders()}}>Заказы</button></NavLink></div> */}
+          
         </div>
         
     );
