@@ -5,10 +5,7 @@ import Header from '../header/header';
 import Content from './content/content';
 import './main.css';
 
-const Main = (props) => {
-  
-  
-  
+const Main = () => {  
   return (
     <div className={'spa'}>
       <Header ></Header>

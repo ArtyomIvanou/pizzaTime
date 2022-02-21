@@ -1,10 +1,15 @@
+import { ordersAPI } from './../api/api';
+import { isLoading } from './load-reducer';
+
+
 const WATCH_ORDERS = 'WATCH_ORDERS'
+
 const CHANGE_SIZE_FINAL = 'CHANGE_SIZE_FINAL'
 const CHANGE_DOUGH_FINAL = 'CHANGE_DOUGH_FINAL'
 const ADD_AMOUNT_OF_ORDER = 'ADD_AMOUNT_OF_ORDER'
 const REDUCE_AMOUNT_OF_ORDER = 'REDUCE_AMOUNT_OF_ORDER'
 const DELETE_ITEM_OF_ORDER = 'DELETE_ITEM_OF_ORDER'
-let initialState = { orders: [],summary: 0 }
+let initialState = { orders: [], summary: 0 }
 const ordersReducer = (state = initialState, action) => {
     switch (action.type) {
         case WATCH_ORDERS:
@@ -52,14 +57,14 @@ const ordersReducer = (state = initialState, action) => {
             ordersCopy[foundOrderIndex] = { ...ordersCopy[foundOrderIndex] }
             // console.log(ordersCopy[foundOrderIndex])
             let foundPositionIndex = ordersCopy[foundOrderIndex].cart.findIndex(i => i === action.info)
-            let foundItem=ordersCopy[foundOrderIndex].cart[foundPositionIndex]
+            let foundItem = ordersCopy[foundOrderIndex].cart[foundPositionIndex]
             foundItem.amount++
-            
+
             ordersCopy[foundOrderIndex].summary += foundItem.price + foundItem.addedPrice
             let resultedSum = Math.floor(ordersCopy[foundOrderIndex].summary * 1000000) / 1000000
             ordersCopy[foundOrderIndex].summary = resultedSum
-          
-            stateCopy.orders = ordersCopy 
+
+            stateCopy.orders = ordersCopy
             console.log(ordersCopy[foundOrderIndex].summary)
             return stateCopy
         }
@@ -70,18 +75,18 @@ const ordersReducer = (state = initialState, action) => {
             ordersCopy[foundOrderIndex] = { ...ordersCopy[foundOrderIndex] }
             // console.log(ordersCopy[foundOrderIndex])
             let foundPositionIndex = ordersCopy[foundOrderIndex].cart.findIndex(i => i === action.info)
-            let foundItem=ordersCopy[foundOrderIndex].cart[foundPositionIndex]
-            
-            if (foundItem.amount>=1) {
+            let foundItem = ordersCopy[foundOrderIndex].cart[foundPositionIndex]
+
+            if (foundItem.amount >= 1) {
                 foundItem.amount--
-            
-                ordersCopy[foundOrderIndex].summary =ordersCopy[foundOrderIndex].summary- foundItem.price - foundItem.addedPrice
+
+                ordersCopy[foundOrderIndex].summary = ordersCopy[foundOrderIndex].summary - foundItem.price - foundItem.addedPrice
                 let resultedSum = Math.floor(ordersCopy[foundOrderIndex].summary * 1000000) / 1000000
-                ordersCopy[foundOrderIndex].summary = resultedSum 
+                ordersCopy[foundOrderIndex].summary = resultedSum
             }
-            
+
             console.log(foundItem.amount)
-            stateCopy.orders = ordersCopy 
+            stateCopy.orders = ordersCopy
             console.log(ordersCopy[foundOrderIndex].summary)
             return stateCopy
         }
@@ -92,20 +97,20 @@ const ordersReducer = (state = initialState, action) => {
             ordersCopy[foundOrderIndex] = { ...ordersCopy[foundOrderIndex] }
 
             console.log(action.info)
-            
-            let qqq=ordersCopy[foundOrderIndex].cart.filter((a,i)=>{
-                if (a===action.info) {
-                    ordersCopy[foundOrderIndex].summary =ordersCopy[foundOrderIndex].summary- a.price - a.addedPrice
-                let resultedSum = Math.floor(ordersCopy[foundOrderIndex].summary * 1000000) / 1000000
-                ordersCopy[foundOrderIndex].summary = resultedSum  
+
+            let qqq = ordersCopy[foundOrderIndex].cart.filter((a, i) => {
+                if (a === action.info) {
+                    ordersCopy[foundOrderIndex].summary = ordersCopy[foundOrderIndex].summary - a.price - a.addedPrice
+                    let resultedSum = Math.floor(ordersCopy[foundOrderIndex].summary * 1000000) / 1000000
+                    ordersCopy[foundOrderIndex].summary = resultedSum
                 }
-                return a!==action.info
+                return a !== action.info
             })
-            ordersCopy[foundOrderIndex].cart=qqq
+            ordersCopy[foundOrderIndex].cart = qqq
             console.log(ordersCopy[foundOrderIndex].cart)
-           
-            stateCopy.orders = ordersCopy 
-         
+
+            stateCopy.orders = ordersCopy
+
             return stateCopy
         }
         default:
@@ -118,24 +123,43 @@ export const watchOrders = (res) => {
     return { type: WATCH_ORDERS, res: res }
 }
 export const selectSizeFinal = (value, id, info) => {
-  
+
     return { type: CHANGE_SIZE_FINAL, value: value, id: id, info: info }
 }
 export const selectDoughFinal = (value, id, info) => {
-    
+
     return { type: CHANGE_DOUGH_FINAL, value: value, id: id, info: info }
 }
-export const addAmountOfOrder = ( id, info) => {
-  
-    return { type: ADD_AMOUNT_OF_ORDER,  id: id, info: info }
+export const addAmountOfOrder = (id, info) => {
+
+    return { type: ADD_AMOUNT_OF_ORDER, id: id, info: info }
 }
-export const reduceAmountOfOrder = ( id, info) => {
-  
-    return { type: REDUCE_AMOUNT_OF_ORDER,  id: id, info: info }
+export const reduceAmountOfOrder = (id, info) => {
+
+    return { type: REDUCE_AMOUNT_OF_ORDER, id: id, info: info }
 }
-export const deleteAmountOfOrder = ( id, info) => {
-   
-    return { type: DELETE_ITEM_OF_ORDER,  id: id, info: info }
+export const deleteAmountOfOrder = (id, info) => {
+
+    return { type: DELETE_ITEM_OF_ORDER, id: id, info: info }
+}
+export const deleteOrder = (id) => (dispatch) => {
+    ordersAPI.deleteOrderApi(id)
+        .then(() => { return ordersAPI.getOrders() })
+        .then(resp => {
+            return dispatch(watchOrders(resp))
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}
+export const getOrders = () => (dispatch) => {
+    dispatch(isLoading(true))
+    ordersAPI.getOrders()
+        .then(res => {
+            dispatch(isLoading(false))
+            return dispatch(watchOrders(res))
+
+        })
 }
 
 

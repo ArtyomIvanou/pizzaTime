@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { showCart } from '../../../redux/cart-reducer';
 
 import CartButton from './cartButton';
-
+import {compose} from 'redux'
 
 let mapStateToProps = (state) => {
  
@@ -13,6 +13,6 @@ let mapStateToProps = (state) => {
     cartLength:state.cart.cartLength,
   }
 }
-
-const Cart = connect(mapStateToProps, {showCart})(CartButton)
-export default Cart
+// compose(connect(mapStateToProps, {showCart}))(CartButton)
+// const Cart = connect(mapStateToProps, {showCart})(CartButton)
+export default compose(connect(mapStateToProps, {showCart}))(CartButton)

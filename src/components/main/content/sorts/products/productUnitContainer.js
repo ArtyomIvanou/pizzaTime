@@ -1,7 +1,7 @@
 import React from 'react'
 import { addToCart } from '../../../../../redux/cart-reducer';
 import { selectSize, selectDough } from '../../../../../redux/configurate-item-reducer';
-
+import {compose} from 'redux'
 import '../../content.css';
 import ProductUnit from './productUnit';
 import { connect } from 'react-redux';
@@ -27,33 +27,6 @@ let mapStateToProps = (state, props) => {
 
     }
 }
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         addToCart: (content) => {
-//             dispatch(addToCartActionCreator(content))
-//         },
-//         selectSizeToProps: (value, type, content) => {
-//             content.config.size.map((a, i) => {
-//                 if (a.name === value) {
-//                     return dispatch(selectSizeActionCreator(content.id, type, a))
-//                 } else {
-//                     return null
-//                 }
-//             }
-//             )
-//         },
-//         selectDoughToProps: (value, type, content) => {
-//             content.config.dough.map((a, i) => {
-//                 if (a.name === value) {
-//                     return dispatch(selectDoughActionCreator(content.id, type, a))
-//                 } else {
-//                     return null
-//                 }
-//             }
-//             )
-//         }
-
-//     }
-// }
-const SuperPr = connect(mapStateToProps, {addToCart,selectSize,selectDough})(ProductUnitContainer)
-export default SuperPr
+// compose(connect(mapStateToProps, {addToCart,selectSize,selectDough}))(ProductUnitContainer)
+// const SuperPr = connect(mapStateToProps, {addToCart,selectSize,selectDough})(ProductUnitContainer)
+export default compose(connect(mapStateToProps, {addToCart,selectSize,selectDough}))(ProductUnitContainer)

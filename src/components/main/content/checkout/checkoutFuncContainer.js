@@ -1,8 +1,8 @@
 
 import Checkout from './checkout';
 import { connect } from 'react-redux';
-
-import { deleteItem, cleanCart} from '../../../../redux/cart-reducer';
+import {compose} from 'redux'
+import { deleteItem, sendOrder} from '../../../../redux/cart-reducer';
 
 
 let mapStateToProps = (state) => {
@@ -14,5 +14,6 @@ let mapStateToProps = (state) => {
         validation: state.cart.validation
     }
 }
-const CheckoutFuncContainer = connect(mapStateToProps, { deleteItem,cleanCart })(Checkout)
-export default CheckoutFuncContainer
+// compose(connect(mapStateToProps, { deleteItem,sendOrder }))(Checkout)
+// const CheckoutFuncContainer = connect(mapStateToProps, { deleteItem,sendOrder })(Checkout)
+export default compose(connect(mapStateToProps, { deleteItem,sendOrder }))(Checkout)

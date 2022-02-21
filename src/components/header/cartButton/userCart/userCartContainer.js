@@ -4,7 +4,7 @@ import { deleteItem, showCart,addAmount } from '../../../../redux/cart-reducer';
 import UserCart from './userCart'
 
 import { reduceAmount } from '../../../../redux/cart-reducer';
-
+import {compose} from 'redux'
 let mapStateToProps = (state) => {
  
   return {
@@ -13,6 +13,6 @@ let mapStateToProps = (state) => {
     show: state.cart.show
   }
 }
-
-const UserCartContainer = connect(mapStateToProps, {showCart,deleteItem,addAmount,reduceAmount})(UserCart)
-export default UserCartContainer
+// compose(connect(mapStateToProps, {showCart,deleteItem,addAmount,reduceAmount}))(UserCart)
+// const UserCartContainer = connect(mapStateToProps, {showCart,deleteItem,addAmount,reduceAmount})(UserCart)
+export default compose(connect(mapStateToProps, {showCart,deleteItem,addAmount,reduceAmount}))(UserCart)

@@ -4,7 +4,8 @@ import ru from 'react-phone-number-input/locale/ru.json'
 import { useState } from 'react';
 import 'react-phone-number-input/style.css'
 import './phoneInputStyle.css';
-import axios from 'axios';
+// import axios from 'axios';
+// import { ordersAPI } from '../../../../api/api';
 const Checkout = (props) => {
     const [isValid, changeValid] = useState(false)
     const [value, setValue] = useState()
@@ -15,22 +16,12 @@ const Checkout = (props) => {
     let showSummary
     // console.log(props.cart)
     let sendOrder = () => {
-        axios.post('http://localhost:3001/orders', {
-            id: Math.random(),
-            cart: props.cart,
-            summary: props.summary,
-            tel: value,
-        }).then(resp => {
-            console.log(resp.data);
-        }).catch(error => {
-            console.log(error);
-        });
-    }
-    let allForSend = () => {
-        sendOrder()
-        props.cleanCart()
+ 
+        props.sendOrder(props.cart,props.summary,value) 
+       
         changeValid(false)
     }
+   
     const validation = (value) => {
         setValue(value)
         validPhoneCheck = value && isValidPhoneNumber(value) ? true : false
@@ -52,7 +43,7 @@ const Checkout = (props) => {
         phoneInput = <div>Корзина пуста</div>
     }
     if (isValid) {
-        showButtonSend = <button onClick={() => { allForSend() }}>Отправить</button>
+        showButtonSend = <button onClick={() => { sendOrder() }}>Отправить</button>
     } else {
         showButtonSend = null
     }
@@ -67,7 +58,7 @@ const Checkout = (props) => {
             <button onClick={() => props.deleteItem(i)}>delete</button>
         </div>
     })
-    console.log(value)
+    // console.log(value)
     return (
         <div className={'checkout'}  >
             <div className='phone_input_wrapper'>{phoneInput}</div>

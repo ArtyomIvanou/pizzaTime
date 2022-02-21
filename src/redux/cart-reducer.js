@@ -1,3 +1,6 @@
+
+
+import { ordersAPI } from './../api/api';
 const ADD_TO_CART = 'ADD_TO_CART'
 const SHOW_CART = 'SHOW_CART'
 const DELETE_ITEM = 'DELETE_ITEM'
@@ -140,5 +143,11 @@ export const reduceAmount = (selected) => {
 export const cleanCart = (selected) => {
     return { type: CLEAN_CART, product: selected }
 }
-
+export const sendOrder = (cart,summary,tel) => (dispatch) => {
+    ordersAPI.sendOrder(cart,summary,tel) 
+        .catch(error => {
+            console.log(error);
+        });
+        dispatch(cleanCart())
+}
 export default cartReducer
