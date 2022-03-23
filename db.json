@@ -2191,8 +2191,15 @@
       "weight": 50
     }
   ],
-  "orders": [
-  ],
+  "orders": [],
   "users": [
+    {
+      "email": "artemka@mailru",
+      "password": "$2a$10$6HtyBey/x9kt/POGSTZEL.ee1FGCYvPbdCmM61tUPzid6EG0KfhRi",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 1
+    }
   ]
 }
