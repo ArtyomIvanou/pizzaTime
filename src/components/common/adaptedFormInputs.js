@@ -19,11 +19,30 @@ export const PhoneInputAdapter = ({ input, meta }) => {
         </div>
     )
 }
+
 export const NameInputAdapter = ({ input, meta }) => {
     return (
         <div>
             <div><label>Ваше имя</label></div>
             <div><input {...input} type="text" placeholder="Username" /></div>
+            <div>{meta.error && meta.touched && <span>{meta.error}</span>}</div>
+        </div>
+    )
+}
+export const EmailInputAdapter = ({ input, meta }) => {
+    return (
+        <div>
+            <div><label>Ваша почта</label></div>
+            <div><input {...input} type="email" placeholder="email" /></div>
+            <div>{meta.error && meta.touched && <span>{meta.error}</span>}</div>
+        </div>
+    )
+}
+export const PasswordInputAdapter = ({ input, meta }) => {
+    return (
+        <div>
+            <div><label>Ваша почта</label></div>
+            <div><input {...input} type="password" placeholder="password" /></div>
             <div>{meta.error && meta.touched && <span>{meta.error}</span>}</div>
         </div>
     )

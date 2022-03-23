@@ -8,6 +8,7 @@ import './content.css';
 import Products from './sorts/products/productsFuncContainer';
 import Orders from '../../header/orders/ordersFuncContainer';
 import CheckoutContainer from '../content/checkout/checkoutFuncContainer';
+import EntryFuncContainer from './login/entryFuncContainer';
 const Content = (props) => {
 
     return (
@@ -24,6 +25,7 @@ const Content = (props) => {
             <Route path={'/sauses/'} ><Products selectedType={'sauses'}/></Route>
             <Route path={'/orders/'} ><Orders/></Route>
             <Route path={'/checkout/'} ><CheckoutContainer/></Route>
+            <Route path={'/entry/'} ><EntryFuncContainer/></Route>
         </div>
     );
 

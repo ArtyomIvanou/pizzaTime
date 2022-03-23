@@ -49,5 +49,48 @@ export const shopAPI = {
             })
     },
 }
+export const entryAPI = {
+    register  (form)  {
+        return instance.post(`register`, {
+            email: form.email,
+            password: form.password,
+            username: form.username,
+            telephone: form.telephone,
+            adress: form.adress
+          })
+          .then(function (response) {
+            console.log(response.status)
+            if (response.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            return response.data;
+        })
+        //   .then(user => {
+        //     return console.log(user)
+        // })
+    },
+     login(form){
+        //  console.log(form)
+        return instance.post(`login`, {
+            email: form.userEmail,
+            password: form.userPassword,
+         
+        })
+        .then(function (response) {
+        //   console.log(response.status)
+          if (response.status >= 400) {
+              throw new Error("Bad response from server");
+          }
+        //   console.log(response.data)
+          return response.data.user;
+      })
+    //     .then(user => {
+    //       return console.log(user)
+    //   })
+    // .catch(error => {
+    //     console.log(error);
+    // });
+      }
+}
 
 

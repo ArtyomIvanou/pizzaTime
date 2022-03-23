@@ -2574,37 +2574,102 @@
         "userAdress": "почтовая",
         "telephone": "+375292939956"
       }
+    }
+  ],
+  "users": [
+    {
+      "email": "monster@gmail.com",
+      "password": "$2a$10$/8wWn3fGiDAzYfsf2beAiO9RLTY0nnUfkl5uHIhpuCa7OtSSc0BeK",
+      "id": 1
     },
     {
-      "id": 0.1445472558025267,
-      "cart": [
-        {
-          "id": 1,
-          "type": null,
-          "config": {
-            "size": [],
-            "defaultSize": "standart",
-            "dough": [],
-            "defaulDough": "classic",
-            "topping": 0,
-            "toppingWeight": 30
-          },
-          "img": "https://images.dominos.by/media/dominos/osg/api/2019/06/26/dzhem_rolly_small.png",
-          "title": "Джем-роллы с грушей",
-          "content": [],
-          "addedPrice": 0,
-          "addedWeight": 0,
-          "price": 7,
-          "amount": 1,
-          "weight": 200
-        }
-      ],
-      "summary": 7,
-      "form": {
-        "userAdress": "почтовая",
-        "telephone": "+375292939956",
-        "username": "drhdh"
-      }
+      "email": "artemka248944@gamail.com",
+      "password": "$2a$10$94YIvOWsja5RuXB5mcXNpeEXD0oBrAx5SQBKfJp3na8s9JGhn52WG",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 2
+    },
+    {
+      "email": "artemka248944@gmail.com",
+      "password": "$2a$10$.Ffljea0/cmuXkn.1iUo1.nJjwl1J.8BtX5Nd3Ms5fWfSFZsfqDdm",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 3,
+      "isAdmin":true
+    },
+    {
+      "email": "artemka248944@tut.com",
+      "password": "$2a$10$hM/FDlCPRyADYMbu9TDjkuNXy7x3m4oiyR83DUdW.zIW5oywyQcPm",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 4
+    },
+    {
+      "email": "artemka248944@mail.rusS",
+      "password": "$2a$10$nL7ufJd4BvuQ39gahxPYReKmhMo5chUSpQPvg8WyvwxoOLwHkY0vy",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 5
+    },
+    {
+      "email": "artemka248944@mail.rus",
+      "password": "$2a$10$.2QJ6YbKIf3WuHQp0z0KnewKMtMRNA6Mub5Fw9JuNlORfLUbo2Z/i",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 6
+    },
+    {
+      "email": "artemka248944@mail.rb",
+      "password": "$2a$10$4gVpQ5w87xPsoYO47h0HQePis36V/S5ld1hSm5.w2ibhoB7RNSN2W",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 7
+    },
+    {
+      "email": "artemka248944@mail.re",
+      "password": "$2a$10$EyqofEBjtoq2tyl4LPpCru13oLh581.cck6sS2Zt91sUTG.UHOiCa",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 8
+    },
+    {
+      "email": "artemka248944@mail.rq",
+      "password": "$2a$10$pwieNK/mE6hEdDhSbPR4IexH1qOkbQEpoNJ.jeDYnVz8bJ4DQIxSK",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 9
+    },
+    {
+      "email": "artemka248944@mail.rp",
+      "password": "$2a$10$/1va.MFz0/OFxotgUuL4busUKgTj4rlx7LFDRAl527YSq/NhQ0pSe",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 10
+    },
+    {
+      "email": "artemka248944@mail.ru",
+      "password": "$2a$10$bEGYx5yx6lmQ08IQakt4V.4diydFrc/9tVd3ke5njTufqiGe/vFHa",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 11
+    },
+    {
+      "email": "artemka@mailru",
+      "password": "$2a$10$xngEwjBZX962umhYEYzNKu68Cqw42i5NtjyIBu9qP/fOPk2.8oT/e",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "id": 12
     }
   ]
 }

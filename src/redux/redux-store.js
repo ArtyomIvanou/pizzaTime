@@ -4,7 +4,8 @@ import cartReducer from './cart-reducer'
 import settingsReducer from './load-reducer'
 import ordersReducer from './orders-reducer'
 import thunk from 'redux-thunk'
-let reducers=combineReducers({shop:itemReducer,cart:cartReducer,settings:settingsReducer,orders:ordersReducer})
+import userReducer from './user-reducer'
+let reducers=combineReducers({shop:itemReducer,cart:cartReducer,settings:settingsReducer,orders:ordersReducer,user:userReducer})
 
 
 let store = createStore(reducers,applyMiddleware(thunk))
