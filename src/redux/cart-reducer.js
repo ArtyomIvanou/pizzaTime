@@ -143,8 +143,8 @@ export const reduceAmount = (selected) => {
 export const cleanCart = (selected) => {
     return { type: CLEAN_CART, product: selected }
 }
-export const sendOrder = (cart,summary,tel) => (dispatch) => {
-    ordersAPI.sendOrder(cart,summary,tel) 
+export const sendOrder = (cart,summary,form) => (dispatch) => {
+    ordersAPI.sendOrder(cart,summary,form) 
         .catch(error => {
             console.log(error);
         });

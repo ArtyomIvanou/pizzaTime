@@ -27,12 +27,12 @@ export const ordersAPI = {
         
     },
     
-    sendOrder(cart,summary,tel) {
+    sendOrder(cart,summary,form) {
         return instance.post(`orders/`, {
             id: Math.random(),
             cart: cart,
             summary: summary,
-            tel: tel,
+            form: form,
         })
           
     },
