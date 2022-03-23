@@ -2517,6 +2517,8 @@
         {
           "id": 4,
           "type": "hot",
+<<<<<<< HEAD
+=======
           "config": {
             "size": [],
             "defaultSize": "standart",
@@ -2548,6 +2550,58 @@
         {
           "id": 1,
           "type": null,
+>>>>>>> 93486fcb74a35dd4c999174a99da1ae24e1db7d5
+          "config": {
+            "size": [],
+            "defaultSize": "standart",
+            "dough": [],
+            "defaulDough": "classic"
+          },
+<<<<<<< HEAD
+          "img": "https://images.dominos.by/media/dominos/osg/api/2020/04/21/%D0%B2%D0%B8%D1%82%D0%B0_%D1%87%D0%B0%D0%B9_%D0%B8%D0%B7_%D1%81%D0%BC%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D0%BD%D1%8B_%D1%81_%D0%B1%D0%B0%D0%B7%D0%B8%D0%BB%D0%B8%D0%BA%D0%BE%D0%BC_%D1%81%D0%BC%D0%BE%D0%BB%D0%BB.png",
+          "title": "Чай Смородина с базиликом",
+          "content": [
+            "На доставку: чай в индивидуальной упаковке + стакан"
+          ],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "weight": 400,
+          "price": 3,
+          "amount": 1
+        }
+      ],
+      "summary": 64.7,
+=======
+          "img": "https://images.dominos.by/media/dominos/osg/api/2021/02/09/Grecheskiy_small.png",
+          "title": "Салат Греческий",
+          "content": [
+            "Оливковое масло"
+          ],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "price": 9,
+          "amount": 1,
+          "weight": 250
+        }
+      ],
+      "summary": 9,
+>>>>>>> 93486fcb74a35dd4c999174a99da1ae24e1db7d5
+      "form": {
+        "username": "artemka248944@gmail.com",
+        "userAdress": "почтовая",
+        "telephone": "+375292939956"
+      }
+    },
+    {
+<<<<<<< HEAD
+      "id": 0.7308212768175857,
+=======
+      "id": 0.1445472558025267,
+>>>>>>> 93486fcb74a35dd4c999174a99da1ae24e1db7d5
+      "cart": [
+        {
+          "id": 1,
+          "type": null,
           "config": {
             "size": [],
             "defaultSize": "standart",
@@ -2556,6 +2610,7 @@
             "topping": 0,
             "toppingWeight": 30
           },
+<<<<<<< HEAD
           "img": "https://images.dominos.by/media/dominos/osg/api/2021/02/09/Grecheskiy_small.png",
           "title": "Салат Греческий",
           "content": [
@@ -2670,6 +2725,24 @@
       "telephone": "+375292939956",
       "adress": "8 луговая 5",
       "id": 12
+=======
+          "img": "https://images.dominos.by/media/dominos/osg/api/2019/06/26/dzhem_rolly_small.png",
+          "title": "Джем-роллы с грушей",
+          "content": [],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "price": 7,
+          "amount": 1,
+          "weight": 200
+        }
+      ],
+      "summary": 7,
+      "form": {
+        "userAdress": "почтовая",
+        "telephone": "+375292939956",
+        "username": "drhdh"
+      }
+>>>>>>> 93486fcb74a35dd4c999174a99da1ae24e1db7d5
     }
   ]
 }

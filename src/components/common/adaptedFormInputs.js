@@ -19,7 +19,10 @@ export const PhoneInputAdapter = ({ input, meta }) => {
         </div>
     )
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 93486fcb74a35dd4c999174a99da1ae24e1db7d5
 export const NameInputAdapter = ({ input, meta }) => {
     return (
         <div>
@@ -29,6 +32,7 @@ export const NameInputAdapter = ({ input, meta }) => {
         </div>
     )
 }
+<<<<<<< HEAD
 export const EmailInputAdapter = ({ input, meta }) => {
     return (
         <div>
@@ -47,6 +51,8 @@ export const PasswordInputAdapter = ({ input, meta }) => {
         </div>
     )
 }
+=======
+>>>>>>> 93486fcb74a35dd4c999174a99da1ae24e1db7d5
 export const AdressInputAdapter = ({ input, meta }) => {
     return (
         <div>
