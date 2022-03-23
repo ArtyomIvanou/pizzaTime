@@ -32,7 +32,7 @@ export const NameInputAdapter = ({ input, meta }) => {
         </div>
     )
 }
-<<<<<<< HEAD
+
 export const EmailInputAdapter = ({ input, meta }) => {
     return (
         <div>
