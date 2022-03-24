@@ -1,7 +1,8 @@
 import React from 'react';
-import 'react-phone-number-input/style.css'
-import './phoneInputStyle.css';
+// import 'react-phone-number-input/style.css'
+// import './phoneInputStyle.css';
 import { Form, Field } from 'react-final-form'
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import { PhoneInputAdapter,NameInputAdapter,AdressInputAdapter, EmailInputAdapter, PasswordInputAdapter } from '../../../common/adaptedFormInputs';
 import { requiredInput,validPhoneNumber,composeValidators } from '../../../common/formControl';
 
@@ -9,7 +10,8 @@ import { requiredInput,validPhoneNumber,composeValidators } from '../../../commo
 const Registration = (props) => {
 
     const sendOrder = (form) => {
-        props.sendOrder(props.cart, props.summary, form)  
+        props.registrationUser(form)  
+        return <Redirect to="/" />
     }
  
     const onSubmit = async values => {       
@@ -26,7 +28,7 @@ const Registration = (props) => {
 
                     </Field>
                     <Field
-                        name="userPassowrd"
+                        name="userPassword"
                         validate={requiredInput}
                         component={PasswordInputAdapter}>
 

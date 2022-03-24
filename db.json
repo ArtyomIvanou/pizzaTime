@@ -2191,7 +2191,183 @@
       "weight": 50
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "id": 0.4522135735276229,
+      "cart": [
+        {
+          "id": 2,
+          "type": null,
+          "config": {
+            "size": [],
+            "defaultSize": "standart",
+            "dough": [],
+            "defaulDough": "classic",
+            "topping": 0,
+            "toppingWeight": 30
+          },
+          "img": "https://images.dominos.by/media/dominos/osg/api/2019/04/29/cream_rolly_small.png",
+          "title": "Крем-роллы",
+          "content": [],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "price": 8.99,
+          "amount": 1,
+          "weight": 300
+        },
+        {
+          "id": 1,
+          "type": "classic",
+          "config": {
+            "size": [
+              {
+                "name": "small",
+                "weight": 380,
+                "price": 17,
+                "title": "27см"
+              },
+              {
+                "name": "standart",
+                "weight": 620,
+                "price": 22.9,
+                "title": "30см"
+              },
+              {
+                "name": "big",
+                "weight": 920,
+                "price": 25.6,
+                "title": "33см"
+              }
+            ],
+            "defaultSize": "standart",
+            "dough": [
+              {
+                "name": "classic",
+                "weight": 0,
+                "price": 0,
+                "title": "Классическое"
+              },
+              {
+                "name": "hotDog",
+                "weight": 100,
+                "price": 4,
+                "title": "Хот Дог борт"
+              },
+              {
+                "name": "cheese",
+                "weight": 50,
+                "price": 2,
+                "title": "Сырный борт"
+              },
+              {
+                "name": "thin",
+                "weight": -50,
+                "price": 0,
+                "title": "Тонкое"
+              }
+            ],
+            "defaulDough": "classic",
+            "topping": 0,
+            "toppingWeight": 30
+          },
+          "img": "https://images.dominos.by/media/dominos/osg/api/2018/09/12/carbonara.png",
+          "title": "Карбонара",
+          "content": [
+            "Лук",
+            "Бекон",
+            "Крем фреш",
+            "Ветчина",
+            "Шампиньоны",
+            "Сыр моцарелла"
+          ],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "weight": 620,
+          "price": 22.9,
+          "amount": 1,
+          "addedDoughName": "Классическое",
+          "priceName": "30см"
+        },
+        {
+          "id": 6,
+          "type": "classic",
+          "config": {
+            "size": [
+              {
+                "name": "small",
+                "weight": 350,
+                "price": 15,
+                "title": "27см"
+              },
+              {
+                "name": "standart",
+                "weight": 585,
+                "price": 20.9,
+                "title": "30см"
+              },
+              {
+                "name": "big",
+                "weight": 920,
+                "price": 25.6,
+                "title": "33см"
+              }
+            ],
+            "defaultSize": "standart",
+            "dough": [
+              {
+                "name": "classic",
+                "weight": 0,
+                "price": 0,
+                "title": "Классическое"
+              },
+              {
+                "name": "hotDog",
+                "weight": 100,
+                "price": 4,
+                "title": "Хот Дог борт"
+              },
+              {
+                "name": "cheese",
+                "weight": 50,
+                "price": 2,
+                "title": "Сырный борт"
+              },
+              {
+                "name": "thin",
+                "weight": -50,
+                "price": 0,
+                "title": "Тонкое"
+              }
+            ],
+            "defaulDough": "classic",
+            "topping": 0,
+            "toppingWeight": 30
+          },
+          "img": "https://images.dominos.by/media/dominos/osg/api/2019/10/18/fermerskaya_small.png",
+          "title": "Фермерская",
+          "content": [
+            "Огурцы",
+            "Ветчина",
+            "Соус ранч",
+            "Сыр моцарелла"
+          ],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "weight": 585,
+          "price": 20.9,
+          "amount": 1,
+          "addedDoughName": "Классическое",
+          "priceName": "30см"
+        }
+      ],
+      "summary": 52.79,
+      "form": {
+        "username": "artemka248944@gmail.com",
+        "userAdress": "почтовая",
+        "telephone": "+375292939956"
+      }
+    }
+  ],
   "users": [
     {
       "email": "artemka@mailru",
@@ -2200,6 +2376,39 @@
       "telephone": "+375292939956",
       "adress": "8 луговая 5",
       "id": 1
+    },
+    {
+      "email": "artemka248944@gmail.com",
+      "password": "$2a$10$3fFlXytXBwNiSxS/TJd/seCvkOLD1xpCfkRc65nrW0HnhOhY9x4se",
+      "username": "tema",
+      "telephone": "+375292939956",
+      "adress": "8 луговая 5",
+      "isAdmin": "true",
+      "id": 2
+    },
+    {
+      "email": "artemka248944@gmail.coma",
+      "password": "$2a$10$HGK0xBIaofKWtvMF6FPZIuVzgEzqB4E5a8DL1N65rKuz/QgeUquy6",
+      "username": "artemka248944@gmail.com",
+      "telephone": "+375292939956",
+      "adress": "почтовая",
+      "id": 3
+    },
+    {
+      "email": "tem248944@tut.by",
+      "password": "$2a$10$fqQNkycLxRKDq.Kw7Qvpz.Vr7YRfxRQJvAioj6S5i0PDsyEYuMFZq",
+      "username": "artemka248944@gmail.com",
+      "telephone": "+375292939956",
+      "adress": "почтовая",
+      "id": 4
+    },
+    {
+      "email": "artemka248944@gmail.c",
+      "password": "$2a$10$VehJfJ0yvYPj7wCLg7YC7ugR4mLRL3qLe8FZ5IExlIemjyXA1YIuG",
+      "username": "test",
+      "telephone": "+375292939956",
+      "adress": "почтовая",
+      "id": 5
     }
   ]
 }

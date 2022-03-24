@@ -51,12 +51,13 @@ export const shopAPI = {
 }
 export const entryAPI = {
     register  (form)  {
+        console.log(form)
         return instance.post(`register`, {
-            email: form.email,
-            password: form.password,
+            email: form.userEmail,
+            password: form.userPassword,
             username: form.username,
             telephone: form.telephone,
-            adress: form.adress
+            adress: form.userAdress
           })
           .then(function (response) {
             console.log(response.status)
