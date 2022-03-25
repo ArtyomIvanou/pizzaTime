@@ -20,9 +20,9 @@ const Entry = (props) => {
     const onSubmit = async values => {
         sendOrder(values)
     }
-    // if (props.user.isAutorizied) {
-    //     return <Redirect to="/" />
-    // }
+    if (props.user.isAutorizied) {
+        return <Redirect to="/" />
+    }
     return <Form
         onSubmit={onSubmit}
         render={({ handleSubmit, control, form, submitting, pristine, values, invalid }) => (

@@ -2193,28 +2193,8 @@
   ],
   "orders": [
     {
-      "id": 0.4522135735276229,
+      "id": 0.9271520341764516,
       "cart": [
-        {
-          "id": 2,
-          "type": null,
-          "config": {
-            "size": [],
-            "defaultSize": "standart",
-            "dough": [],
-            "defaulDough": "classic",
-            "topping": 0,
-            "toppingWeight": 30
-          },
-          "img": "https://images.dominos.by/media/dominos/osg/api/2019/04/29/cream_rolly_small.png",
-          "title": "Крем-роллы",
-          "content": [],
-          "addedPrice": 0,
-          "addedWeight": 0,
-          "price": 8.99,
-          "amount": 1,
-          "weight": 300
-        },
         {
           "id": 1,
           "type": "classic",
@@ -2287,32 +2267,43 @@
           "amount": 1,
           "addedDoughName": "Классическое",
           "priceName": "30см"
-        },
+        }
+      ],
+      "summary": 22.9,
+      "form": {
+        "username": "artemka248944@gmail.com",
+        "userAdress": "почтовая",
+        "telephone": "+375292939956"
+      }
+    },
+    {
+      "id": 0.6622945806656677,
+      "cart": [
         {
-          "id": 6,
-          "type": "classic",
+          "id": 2,
+          "type": "legends",
           "config": {
             "size": [
               {
                 "name": "small",
-                "weight": 350,
-                "price": 15,
+                "weight": 390,
+                "price": 18,
                 "title": "27см"
               },
               {
                 "name": "standart",
-                "weight": 585,
-                "price": 20.9,
+                "weight": 650,
+                "price": 23,
                 "title": "30см"
               },
               {
                 "name": "big",
-                "weight": 920,
-                "price": 25.6,
-                "title": "33см"
+                "weight": 950,
+                "price": 27,
+                "title": "35см"
               }
             ],
-            "defaultSize": "standart",
+            "defaultSize": "big",
             "dough": [
               {
                 "name": "classic",
@@ -2343,24 +2334,27 @@
             "topping": 0,
             "toppingWeight": 30
           },
-          "img": "https://images.dominos.by/media/dominos/osg/api/2019/10/18/fermerskaya_small.png",
-          "title": "Фермерская",
+          "img": "https://images.dominos.by/media/dominos/osg/api/2021/06/10/meksikanskaya_small.png",
+          "title": "Мексиканская",
           "content": [
-            "Огурцы",
-            "Ветчина",
-            "Соус ранч",
-            "Сыр моцарелла"
+            "Сыр моцарелла",
+            "Сладкий перец",
+            "Соус Бургер",
+            "Халапеньо",
+            "Курица",
+            "Кукуруза",
+            "Томаты"
           ],
           "addedPrice": 0,
           "addedWeight": 0,
-          "weight": 585,
-          "price": 20.9,
+          "weight": 950,
+          "price": 27,
           "amount": 1,
           "addedDoughName": "Классическое",
-          "priceName": "30см"
+          "priceName": "35см"
         }
       ],
-      "summary": 52.79,
+      "summary": 27,
       "form": {
         "username": "artemka248944@gmail.com",
         "userAdress": "почтовая",
@@ -2369,14 +2363,6 @@
     }
   ],
   "users": [
-    {
-      "email": "artemka@mailru",
-      "password": "$2a$10$6HtyBey/x9kt/POGSTZEL.ee1FGCYvPbdCmM61tUPzid6EG0KfhRi",
-      "username": "tema",
-      "telephone": "+375292939956",
-      "adress": "8 луговая 5",
-      "id": 1
-    },
     {
       "email": "artemka248944@gmail.com",
       "password": "$2a$10$3fFlXytXBwNiSxS/TJd/seCvkOLD1xpCfkRc65nrW0HnhOhY9x4se",
@@ -2387,25 +2373,25 @@
       "id": 2
     },
     {
-      "email": "artemka248944@gmail.coma",
-      "password": "$2a$10$HGK0xBIaofKWtvMF6FPZIuVzgEzqB4E5a8DL1N65rKuz/QgeUquy6",
-      "username": "artemka248944@gmail.com",
+      "email": "artemka248944@tut.by",
+      "password": "$2a$10$LwMILwa8rDjb.b7gDFgiTOIe7.gu.07/CjENbgBvT4ykDfFxt/n86",
+      "username": "Artyom",
       "telephone": "+375292939956",
       "adress": "почтовая",
       "id": 3
     },
     {
       "email": "tem248944@tut.by",
-      "password": "$2a$10$fqQNkycLxRKDq.Kw7Qvpz.Vr7YRfxRQJvAioj6S5i0PDsyEYuMFZq",
-      "username": "artemka248944@gmail.com",
+      "password": "$2a$10$HOtxI9EMSut8fh7VQODMu.PNNQGYYXzziZMZULB970kBUMyzAQ/VW",
+      "username": "aaa",
       "telephone": "+375292939956",
       "adress": "почтовая",
       "id": 4
     },
     {
-      "email": "artemka248944@gmail.c",
-      "password": "$2a$10$VehJfJ0yvYPj7wCLg7YC7ugR4mLRL3qLe8FZ5IExlIemjyXA1YIuG",
-      "username": "test",
+      "email": "tem248944@mail.ru",
+      "password": "$2a$10$b0x3EbQ7vsOc9vHgTpWGuecps.R7fmW7zGfp6//JfBI28lGfxw17W",
+      "username": "qqq",
       "telephone": "+375292939956",
       "adress": "почтовая",
       "id": 5

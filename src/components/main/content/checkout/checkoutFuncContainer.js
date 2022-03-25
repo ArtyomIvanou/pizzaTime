@@ -11,7 +11,8 @@ let mapStateToProps = (state) => {
     return {
         summary:state.cart.summary,
         cart: state.cart.cart,
-        validation: state.cart.validation
+        validation: state.cart.validation,
+        user:state.user.user
     }
 }
 // compose(connect(mapStateToProps, { deleteItem,sendOrder }))(Checkout)

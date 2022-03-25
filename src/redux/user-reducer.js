@@ -57,12 +57,16 @@ export const loginUser = (form) => (dispatch) => {
         .then(res => {
             console.log(res)
             window.localStorage.removeItem('currentUser');
+            dispatch(setUser({
+                email: res.email, name: res.username, telephone: res.telephone, adress: res.adress
+            }))
             if (res.isAdmin) {
                 dispatch(isAdmin(true))
             } else {
                 dispatch(isAdmin(false))
             }
             dispatch(isAutorizied(true))
+            // dispatch(setUser(res))
             window.localStorage.setItem('currentUser', JSON.stringify({
                 email: res.email, name: res.username, telephone: res.telephone, adress: res.adress
             }));
@@ -83,6 +87,9 @@ export const registrationUser = (form) => (dispatch) => {
         .then(res => {
             console.log(res)
             window.localStorage.removeItem('currentUser');
+            dispatch(setUser({
+                email: res.email, name: res.username, telephone: res.telephone, adress: res.adress
+            }))
             if (res.isAdmin) {
                 dispatch(isAdmin(true))
             } else {
@@ -104,7 +111,7 @@ export const logout = () => (dispatch) => {
     window.localStorage.removeItem('currentUser');
     dispatch(isAutorizied(false))
     dispatch(isAdmin(false))
-
+    dispatch(setUser(undefined))
 }
 export const loginUserFromLocalstorage = (form) => (dispatch) => {
     if (form.email === "artemka248944@gmail.com") {
@@ -115,7 +122,8 @@ export const loginUserFromLocalstorage = (form) => (dispatch) => {
         dispatch(isAutorizied(true))
         dispatch(isAdmin(false))
     }
-    console.log(form)
+    dispatch(setUser(form))
+    // console.log(form)
 
 
 }

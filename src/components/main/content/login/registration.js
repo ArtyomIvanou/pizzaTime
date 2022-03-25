@@ -11,11 +11,14 @@ const Registration = (props) => {
 
     const sendOrder = (form) => {
         props.registrationUser(form)  
-        return <Redirect to="/" />
+       
     }
  
     const onSubmit = async values => {       
        sendOrder(values)
+    }
+    if (props.user.isAutorizied) {
+        return <Redirect to="/" />
     }
         return <Form
             onSubmit={onSubmit}

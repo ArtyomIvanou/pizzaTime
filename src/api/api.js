@@ -64,7 +64,7 @@ export const entryAPI = {
             if (response.status >= 400) {
                 throw new Error("Bad response from server");
             }
-            return response.data;
+            return response.data.user;
         })
         //   .then(user => {
         //     return console.log(user)
