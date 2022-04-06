@@ -15,7 +15,7 @@ export const PhoneInputAdapter = ({ input, meta }) => {
                 placeholder="Ваш телефон"
                 value={input.value}
             />
-            <div>{meta.error && meta.touched && <span>{meta.error}</span>}</div>
+            <div>{(meta.error || meta.submitError) && meta.touched && <span>{meta.error || meta.submitError}</span>}</div>
         </div>
     )
 }
@@ -24,25 +24,27 @@ export const NameInputAdapter = ({ input, meta }) => {
         <div>
             <div><label>Ваше имя</label></div>
             <div><input {...input} type="text" placeholder="Username" /></div>
-            <div>{meta.error && meta.touched && <span>{meta.error}</span>}</div>
+            <div>{(meta.error || meta.submitError) && meta.touched && <span>{meta.error || meta.submitError}</span>}</div>
         </div>
     )
 }
 export const EmailInputAdapter = ({ input, meta }) => {
+    
     return (
         <div>
             <div><label>Ваша почта</label></div>
             <div><input {...input} type="email" placeholder="email" /></div>
-            <div>{meta.error && meta.touched && <span>{meta.error}</span>}</div>
+            <div>{(meta.error || meta.submitError) && meta.touched && <span>{meta.error || meta.submitError}</span>}</div>
         </div>
     )
 }
 export const PasswordInputAdapter = ({ input, meta }) => {
+    // console.log(meta)
     return (
         <div>
             <div><label>Ваша почта</label></div>
             <div><input {...input} type="password" placeholder="password" /></div>
-            <div>{meta.error && meta.touched && <span>{meta.error}</span>}</div>
+            <div>{(meta.error || meta.submitError) && meta.touched && <span>{meta.error || meta.submitError}</span>}</div>
         </div>
     )
 }
@@ -51,7 +53,7 @@ export const AdressInputAdapter = ({ input, meta }) => {
         <div>
             <div><label>Ваш адрес</label></div>
             <div><input {...input} type="text" placeholder="Ваш адрес" /></div>
-            <div>{meta.error && meta.touched && <span>{meta.error}</span>}</div>
+            <div>{meta.error && meta.touched && <span>{meta.error || meta.submitError}</span>}</div>
         </div>
     )
 }

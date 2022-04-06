@@ -1,23 +1,13 @@
 import React from 'react'
-
 import Orders from './orders';
-
-
-
 
 class OrdersClassConteiner extends React.Component {
 
-
     componentDidMount() {
-
         this.props.getOrders()
-
-
     }
 
-
     render() {
-
         if (this.props.isLoadingAnswer) {
             return (
                 <div>Loading......</div>
@@ -30,9 +20,7 @@ class OrdersClassConteiner extends React.Component {
                 />
             )
         }
-
     }
-
 }
 
 export default OrdersClassConteiner;

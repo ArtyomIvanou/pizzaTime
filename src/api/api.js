@@ -60,7 +60,7 @@ export const entryAPI = {
             adress: form.userAdress
           })
           .then(function (response) {
-            console.log(response.status)
+            // console.log(response.status)
             if (response.status >= 400) {
                 throw new Error("Bad response from server");
             }
@@ -78,9 +78,10 @@ export const entryAPI = {
          
         })
         .then(function (response) {
-        //   console.log(response.status)
+        //   console.log(response)
           if (response.status >= 400) {
               throw new Error("Bad response from server");
+            //   return response
           }
         //   console.log(response.data)
           return response.data.user;

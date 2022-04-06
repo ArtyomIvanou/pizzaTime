@@ -7,19 +7,21 @@ import { requiredInput, validPhoneNumber, composeValidators } from '../../../com
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Checkout = (props) => {
-
+// console.log('render checkout')
     let phoneInput
     let cartItem
     let showSummary
     let myForm
     const sendOrder = (form) => {
+       console.log(()=> props.sendOrder(props.cart, props.summary, form))
         props.sendOrder(props.cart, props.summary, form)
+        
     }
 
     const onSubmit = async values => {
         sendOrder(values)
     }
-    
+  
     if (props.cart.length > 0) {
         showSummary = props.summary.toFixed(2)
         myForm = <Form
@@ -56,6 +58,7 @@ const Checkout = (props) => {
                         >
                             Сброс
                         </button>
+                       
                     </div>
                 </form>
             )}

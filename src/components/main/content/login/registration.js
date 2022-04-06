@@ -1,6 +1,4 @@
 import React from 'react';
-// import 'react-phone-number-input/style.css'
-// import './phoneInputStyle.css';
 import { Form, Field } from 'react-final-form'
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import { PhoneInputAdapter,NameInputAdapter,AdressInputAdapter, EmailInputAdapter, PasswordInputAdapter } from '../../../common/adaptedFormInputs';
@@ -10,8 +8,7 @@ import { requiredInput,validPhoneNumber,composeValidators } from '../../../commo
 const Registration = (props) => {
 
     const sendOrder = (form) => {
-        props.registrationUser(form)  
-       
+        props.registrationUser(form)    
     }
  
     const onSubmit = async values => {       
@@ -22,7 +19,7 @@ const Registration = (props) => {
     }
         return <Form
             onSubmit={onSubmit}
-            render={({ handleSubmit, control, form, submitting, pristine, values, invalid }) => (
+            render={({ handleSubmit, submitError=props.user.isError,control, form, submitting, pristine, values, invalid }) => (
                 <form onSubmit={handleSubmit} className={'registration'}>
                      <Field
                         name="userEmail"
@@ -52,6 +49,7 @@ const Registration = (props) => {
                         validate={composeValidators(requiredInput,validPhoneNumber)}
                         component={PhoneInputAdapter}
                     />
+                    {submitError && <div className="error">{submitError}</div>}
                     <div className="buttons">
                         <button type="submit" disabled={submitting || pristine || invalid}>
                             Зарегистрироваться

@@ -1,9 +1,11 @@
 import { entryAPI } from "../api/api"
+
+// import { FORM_ERROR } from 'final-form'
 const IS_AUTORIZIED = 'IS_AUTORIZIED'
 const IS_ADMIN = 'IS_ADMIN'
 const IS_ERROR = 'IS_ERROR'
 const SET_USER = 'SET_USER'
-let initialState = { isAutorizied: false, isAdmin: false, isError: false, user: undefined }
+let initialState = { isAutorizied: false, isAdmin: false, isError: undefined,  user: undefined }
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case IS_AUTORIZIED:
@@ -52,7 +54,7 @@ export const setUser = (info) => {
 }
 export const loginUser = (form) => (dispatch) => {
 
-    dispatch(isError(false))
+    dispatch(isError(undefined))
     entryAPI.login(form)
         .then(res => {
             console.log(res)
@@ -76,13 +78,16 @@ export const loginUser = (form) => (dispatch) => {
         })
 
         .catch(error => {
-            console.log(error);
-            return dispatch(isError(true))
+            // console.log(error);
+            // console.log('masndc n');
+             dispatch(isError('Неверный email или пароль' ))
+             
+            // return { [FORM_ERROR]: 'Login Failed' }
         });
 }
 export const registrationUser = (form) => (dispatch) => {
 
-    dispatch(isError(false))
+    dispatch(isError(undefined))
     entryAPI.register(form)
         .then(res => {
             console.log(res)
@@ -103,8 +108,8 @@ export const registrationUser = (form) => (dispatch) => {
 
         })
         .catch(error => {
-            console.log(error);
-            return dispatch(isError(true))
+            dispatch(isError('Такой пользователь уже существует' ))
+            
         });
 }
 export const logout = () => (dispatch) => {

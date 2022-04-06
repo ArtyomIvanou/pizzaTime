@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Route
 } from "react-router-dom";
-
 import Carousel from './carousel/carousel';
 import './content.css';
 import Products from './sorts/products/productsFuncContainer';
@@ -10,8 +9,8 @@ import Orders from '../../header/orders/ordersFuncContainer';
 import CheckoutContainer from '../content/checkout/checkoutFuncContainer';
 import EntryFuncContainer from './login/entryFuncContainer';
 import RegistrationFuncContainer from './login/registrationFuncContainer';
-const Content = (props) => {
-
+const Content = () => {
+// console.log('content render')
     return (
         <div className={'content'}>
             <Carousel ></Carousel>

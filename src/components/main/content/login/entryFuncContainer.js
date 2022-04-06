@@ -5,11 +5,12 @@ import {compose} from 'redux'
 
 import Entry from './entry';
 import { loginUser } from './../../../../redux/user-reducer';
+import { selectUser } from '../../../../redux/selectors';
 
 
 let mapStateToProps = (state) => {
     return {
-        user:state.user
+        user:selectUser(state)
     }
 }
 

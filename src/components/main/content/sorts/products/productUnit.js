@@ -65,7 +65,7 @@ const ProductUnit = (props, state) => {
     } else {
         doughSelect = null
     }
-    // console.log('i am render')
+    console.log('i am render')
     // console.log(props.content.content)
     return (
         <div className={'product'}>

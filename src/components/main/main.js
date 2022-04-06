@@ -1,11 +1,13 @@
 
-import React from 'react';
+import React  from 'react';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import Content from './content/content';
 import './main.css';
 
-const Main = () => {  
+
+const Main = () => { 
+ 
   return (
     <div className={'spa'}>
       <Header ></Header>
@@ -15,4 +17,5 @@ const Main = () => {
   );
 
 }
-export default Main
+
+export default (Main)

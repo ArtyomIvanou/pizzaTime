@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { deleteItem, showCart } from '../../../../redux/cart-reducer';
 import Ordercart from './orderCart'
 import {compose} from 'redux'
+import { selectCart,selectCartShow } from './../../../../redux/selectors';
 
 let mapStateToProps = (state) => {
  
   return {
-    cart: state.cart.cart,
-    show: state.cart.show
+    cart: selectCart(state),
+    show: selectCartShow(state)
   }
 }
-// compose(connect(mapStateToProps, {showCart,deleteItem}))(Ordercart)
-// const OrderCartContainer = connect(mapStateToProps, {showCart,deleteItem})(Ordercart)
+
 export default compose(connect(mapStateToProps, {showCart,deleteItem}))(Ordercart)

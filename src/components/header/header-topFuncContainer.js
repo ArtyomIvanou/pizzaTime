@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React,{useEffect} from 'react';
 import { compose } from 'redux'
 import { connect } from 'react-redux';
 import HeaderTop from './header-top';
 import { loginUserFromLocalstorage, logout } from './../../redux/user-reducer';
+import { selectUser } from './../../redux/selectors';
 
 const HeaderTopFuncConteiner = (props) => {
 
@@ -22,7 +23,7 @@ const HeaderTopFuncConteiner = (props) => {
 
 let mapStateToProps = (state, props) => {
   return {
-    user: state.user
+    user: selectUser(state)
   }
 }
 

@@ -1,19 +1,14 @@
 import React from 'react';
 import OrderUnitFuncContainer from '../orderUnitFuncContainer';
 import { Form, Field } from 'react-final-form';
-// import axios from 'axios';
-// import { ordersAPI } from '../../../api/api';
-// import { getOrders,deleteOrderApi } from '../../../api/api';
 import { NameInputAdapter, AdressInputAdapter, PhoneInputAdapter } from '../../common/adaptedFormInputs';
 import { requiredInput, validPhoneNumber, composeValidators } from '../../common/formControl';
-// const onSubmit=(values)=>console.log(values)
-const Orders = (props) => {
 
+const Orders = (props) => {
 
     let positions
     if (props.content.length > 0) {
         positions = props.content.map((a, i) => {
-            //  console.log(a.form)
             const onSubmit = (values) => {
                 alert('отправлен на кухню и курьеру')
                 console.log(values, a.cart)}

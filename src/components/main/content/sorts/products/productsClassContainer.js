@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductsFunctional from './productsFunctional'
-import { withRouter } from 'react-router';
+// import { withRouter } from 'react-router';
 
 
 class ProductsClassConteiner extends React.Component {
@@ -9,8 +9,9 @@ class ProductsClassConteiner extends React.Component {
             this.props.getShop(this.props.type)
         }
     }
-    render() {
-       
+    render() { 
+        console.log('ProductsClassConteiner')  
+        // console.log(this.props)  
         if (this.props.isLoadingAnswer) {
             return (
                 <div>Loading......</div>
@@ -18,7 +19,7 @@ class ProductsClassConteiner extends React.Component {
         } else {
             return (
                 <ProductsFunctional content={this.props.content}
-                    type={this.props.type}
+                    type={this.props.type} {...this.props}
                 />
             )
         }
@@ -27,4 +28,4 @@ class ProductsClassConteiner extends React.Component {
 
 }
 
-export default withRouter(ProductsClassConteiner);
+export default (ProductsClassConteiner);

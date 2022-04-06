@@ -1,38 +1,20 @@
 import React, { Fragment } from 'react'
 import '../../content.css';
-
 import {
     Switch,
     Route,
     NavLink
 } from "react-router-dom";
-
-
-// import isoFetch from 'isomorphic-fetch';
 import ProductUnitContainer from './productUnitContainer';
 
 const ProductsFunctional = (props) => {
-    // isoFetch('http://localhost:3001/products')
-    // .then(function(response) {
-    //     if (response.status >= 400) {
-    //         throw new Error("Bad response from server");
-    //     }
-    //     return response.json();
-    // })
-    // .then(function(stories) {
 
-    //     console.log(stories);
-    //     // console.log('sdvjbdsv');
-    // }); 
     let productsSort = props.content.productsType.map((a, i) => {
-
         return <li key={i} ><NavLink
             activeClassName={'active_Link'}
             to={'/' + props.type + '/' + a.type}>{a.title} </NavLink></li>
     })
 
-
-    // console.log(props.match)
     props.content.productsType.map((a) => {
         a.products = []
         return a
@@ -56,7 +38,7 @@ const ProductsFunctional = (props) => {
                     return <ProductUnitContainer key={e}
                         number={b.id}
                         type={props.type}
-                        content={b}
+                        // content={b}
                     />
                 })
             } else {
@@ -70,15 +52,16 @@ const ProductsFunctional = (props) => {
             return <Route key={a.id}
                 path={'/' + props.type + '/' + a.type}><ProductUnitContainer key={a.id}
                     number={a.id}
+                    // content={a}
                     type={props.type}
                 /></Route>
         })
     }
     let allProductsShow = props.content.products.map((a, i) => {
-// console.log(a)
+        // console.log(a)
         return <ProductUnitContainer key={a.id}
             number={a.id}
-            content={a}
+            // content={a}
             type={props.type}
         />
     })

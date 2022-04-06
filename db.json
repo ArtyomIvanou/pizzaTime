@@ -2360,6 +2360,285 @@
         "userAdress": "почтовая",
         "telephone": "+375292939956"
       }
+    },
+    {
+      "id": 0.47504740561638337,
+      "cart": [
+        {
+          "id": 2,
+          "type": null,
+          "config": {
+            "size": [],
+            "defaultSize": "standart",
+            "dough": [],
+            "defaulDough": "classic",
+            "topping": 0,
+            "toppingWeight": 30
+          },
+          "img": "https://images.dominos.by/media/dominos/osg/api/2018/04/01/%D1%85%D0%BB%D0%B5%D0%B1%D0%B5%D1%86_%D1%81_%D0%B1%D0%B5%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC_%D0%B8_%D1%85%D0%B0%D0%BB%D0%B0%D0%BF%D0%B5%D0%BD%D1%8C%D0%BE.png",
+          "title": "Хлебец с беконом и халапеньо",
+          "content": [
+            "Сыр моцарелла",
+            "Чеддер",
+            "Бекон",
+            "Халапеньо"
+          ],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "price": 8,
+          "amount": 1,
+          "weight": 150
+        }
+      ],
+      "summary": 8,
+      "form": {
+        "username": "aaa",
+        "userAdress": "почтовая",
+        "telephone": "+375292939956"
+      }
+    },
+    {
+      "id": 0.4646697231895185,
+      "cart": [
+        {
+          "id": 2,
+          "type": "legends",
+          "config": {
+            "size": [
+              {
+                "name": "small",
+                "weight": 390,
+                "price": 18,
+                "title": "27см"
+              },
+              {
+                "name": "standart",
+                "weight": 650,
+                "price": 23,
+                "title": "30см"
+              },
+              {
+                "name": "big",
+                "weight": 950,
+                "price": 27,
+                "title": "35см"
+              }
+            ],
+            "defaultSize": "standart",
+            "dough": [
+              {
+                "name": "classic",
+                "weight": 0,
+                "price": 0,
+                "title": "Классическое"
+              },
+              {
+                "name": "hotDog",
+                "weight": 100,
+                "price": 4,
+                "title": "Хот Дог борт"
+              },
+              {
+                "name": "cheese",
+                "weight": 50,
+                "price": 2,
+                "title": "Сырный борт"
+              },
+              {
+                "name": "thin",
+                "weight": -50,
+                "price": 0,
+                "title": "Тонкое"
+              }
+            ],
+            "defaulDough": "hotDog",
+            "topping": 0,
+            "toppingWeight": 30
+          },
+          "img": "https://images.dominos.by/media/dominos/osg/api/2021/06/10/meksikanskaya_small.png",
+          "title": "Мексиканская",
+          "content": [
+            "Сыр моцарелла",
+            "Сладкий перец",
+            "Соус Бургер",
+            "Халапеньо",
+            "Курица",
+            "Кукуруза",
+            "Томаты"
+          ],
+          "addedPrice": 4,
+          "addedWeight": 100,
+          "weight": 650,
+          "price": 23,
+          "amount": 1,
+          "addedDoughName": "Хот Дог борт",
+          "priceName": "30см"
+        }
+      ],
+      "summary": 27,
+      "form": {
+        "username": "tema",
+        "userAdress": "8 луговая 5",
+        "telephone": "+375292939956"
+      }
+    },
+    {
+      "id": 0.2592759606965156,
+      "cart": [
+        {
+          "id": 9,
+          "type": "legends",
+          "config": {
+            "size": [
+              {
+                "name": "small",
+                "weight": 390,
+                "price": 18,
+                "title": "27см"
+              },
+              {
+                "name": "standart",
+                "weight": 650,
+                "price": 23,
+                "title": "30см"
+              },
+              {
+                "name": "big",
+                "weight": 950,
+                "price": 27,
+                "title": "35см"
+              }
+            ],
+            "defaultSize": "big",
+            "dough": [
+              {
+                "name": "classic",
+                "weight": 0,
+                "price": 0,
+                "title": "Классическое"
+              },
+              {
+                "name": "hotDog",
+                "weight": 100,
+                "price": 4,
+                "title": "Хот Дог борт"
+              },
+              {
+                "name": "cheese",
+                "weight": 50,
+                "price": 2,
+                "title": "Сырный борт"
+              },
+              {
+                "name": "thin",
+                "weight": -50,
+                "price": 0,
+                "title": "Тонкое"
+              }
+            ],
+            "defaulDough": "classic",
+            "topping": 0,
+            "toppingWeight": 30
+          },
+          "img": "https://images.dominos.by/media/dominos/osg/api/2019/07/03/myunkhenskaya_small.png",
+          "title": "Мюнхенская",
+          "content": [
+            "Баварские колбаски",
+            "Томаты",
+            "Соус барбекю",
+            "Горчица",
+            "Сыр моцарелла",
+            "Ветчина",
+            " Мюнхенские колбаски"
+          ],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "weight": 950,
+          "price": 27,
+          "amount": 1,
+          "addedDoughName": "Классическое",
+          "priceName": "35см"
+        },
+        {
+          "id": 1,
+          "type": null,
+          "config": {
+            "size": [],
+            "defaultSize": "standart",
+            "dough": [],
+            "defaulDough": "classic",
+            "topping": 0,
+            "toppingWeight": 30
+          },
+          "img": "https://images.dominos.by/media/dominos/osg/api/2021/02/09/Grecheskiy_small.png",
+          "title": "Салат Греческий",
+          "content": [
+            "Оливковое масло"
+          ],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "price": 9,
+          "amount": 1,
+          "weight": 250
+        }
+      ],
+      "summary": 36,
+      "form": {
+        "username": "tema",
+        "userAdress": "8 луговая 5",
+        "telephone": "+375292939956"
+      }
+    },
+    {
+      "id": 0.21184899259276402,
+      "cart": [
+        {
+          "id": 2,
+          "type": null,
+          "config": {
+            "size": [],
+            "defaultSize": "standart",
+            "dough": [],
+            "defaulDough": "classic",
+            "topping": 0,
+            "toppingWeight": 30
+          },
+          "img": "https://images.dominos.by/media/dominos/osg/api/2019/04/29/cream_rolly_small.png",
+          "title": "Крем-роллы",
+          "content": [],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "price": 8.99,
+          "amount": 3,
+          "weight": 300
+        },
+        {
+          "id": 3,
+          "type": null,
+          "config": {
+            "size": [],
+            "defaultSize": "standart",
+            "dough": [],
+            "defaulDough": "classic",
+            "topping": 0,
+            "toppingWeight": 30
+          },
+          "img": "https://images.dominos.by/media/dominos/osg/api/2019/04/29/shoko_rolly_small.png",
+          "title": "Шоко-роллы",
+          "content": [],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "price": 8.99,
+          "amount": 3,
+          "weight": 300
+        }
+      ],
+      "summary": 53.94,
+      "form": {
+        "username": "tema",
+        "userAdress": "8 луговая 5",
+        "telephone": "+375292939956"
+      }
     }
   ],
   "users": [
@@ -2395,6 +2674,22 @@
       "telephone": "+375292939956",
       "adress": "почтовая",
       "id": 5
+    },
+    {
+      "email": "tem248944@yandex.by",
+      "password": "$2a$10$KHkuJAQiDdYonPzIuUoKJuKP1S7Y3O4rO3g/BXFn16go6pa/XTBoC",
+      "username": "111",
+      "telephone": "+375292939956",
+      "adress": "луговая 5",
+      "id": 6
+    },
+    {
+      "email": "artemka248944@gmail.xn--h1ak",
+      "password": "$2a$10$5fJetLcJzWz4ApulTVHHx.P8hYcVT/q82pnuOOvzGHD8wdNm9JtKu",
+      "username": "aaa",
+      "telephone": "+375292939956",
+      "adress": "почтовая",
+      "id": 7
     }
   ]
 }

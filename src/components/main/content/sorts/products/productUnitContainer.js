@@ -1,32 +1,31 @@
 import React from 'react'
 import { addToCart } from '../../../../../redux/cart-reducer';
 import { selectSize, selectDough } from '../../../../../redux/configurate-item-reducer';
-import {compose} from 'redux'
+import { compose } from 'redux'
 import '../../content.css';
 import ProductUnit from './productUnit';
 import { connect } from 'react-redux';
+import { selectSelectedTypeOfShop } from '../../../../../redux/selectors';
 const ProductUnitContainer = (props) => {
-
-    return <ProductUnit content={props.content}
-        type={props.type}
-        addToCart={props.addToCart}
-        selectSize={props.selectSize}
-        selectDough={props.selectDough} />
+    // let bbb = props.content.products.find(a => a.id === props.number)
+    // console.log(bbb)
+    return <ProductUnit  {...props} />
 
 }
 
 let mapStateToProps = (state, props) => {
-
-    let aaa = state.shop.find(a => a.type === props.type)
+    //  console.log(props)
+    //  console.log(state.shop)
+    let ccc = selectSelectedTypeOfShop(state, props.type)
+    // console.log(ccc)
+    // let aaa = state.shop.find(a => a.type === props.type)
     // console.log(aaa)
-    let bbb=aaa.products.find(a => a.id === props.number)
-
+    let bbb = ccc.products.find(a => a.id === props.number)
+    // console.log(bbb)
     return {
         content: bbb,
-        type: aaa.type,
+
 
     }
 }
-// compose(connect(mapStateToProps, {addToCart,selectSize,selectDough}))(ProductUnitContainer)
-// const SuperPr = connect(mapStateToProps, {addToCart,selectSize,selectDough})(ProductUnitContainer)
-export default compose(connect(mapStateToProps, {addToCart,selectSize,selectDough}))(ProductUnitContainer)
+export default compose(connect(mapStateToProps, { addToCart, selectSize, selectDough }))(ProductUnitContainer)
