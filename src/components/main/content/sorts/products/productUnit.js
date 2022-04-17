@@ -1,13 +1,10 @@
 import React from 'react'
 import '../../content.css';
 
-
-const ProductUnit = (props, state) => {
-    // console.log(props.content)
+const ProductUnit = (props) => {
     if (!props.content.addedDoughName) {
         props.content.config.dough.map((a, i) => {
             if (a.name===props.content.config.defaulDough) {
-                // console.log('good')
                 props.content.addedDoughName=a.title 
             }
             return a
@@ -16,7 +13,6 @@ const ProductUnit = (props, state) => {
     if (!props.content.priceName) {
         props.content.config.size.map((a, i) => {
             if (a.name===props.content.config.defaultSize) {
-                // console.log('good')
                 props.content.priceName=a.title 
             }
             return a
@@ -27,27 +23,20 @@ const ProductUnit = (props, state) => {
     let optionDough
     let sizeSelect
     let doughSelect
-    // let addMozarella
     let totalWeight
     let totalPrice = props.content.price + props.content.addedPrice + ' руб.'
     let description = props.content.content.join(', ')
     if (props.type === 'pizza') {
         totalWeight = props.content.weight + props.content.addedWeight + ' гр.'
-        // addMozarella = <div className={"topping-counter__actions"}>
-        // <button type={"button"} >
-        //     <svg width={"26"} height={"26"} viewBox={"0 0 24 24"} xmlns={"http://www.w3.org/2000/svg"} fill={"rgb(0,121,174)"}><g><path d={"M11 11V7H13V11H17V13H13V17H11V13H7V11H11Z"}></path></g></svg></button>Моцарелла-мини</div>
+      
     } else {
         totalWeight = props.content.weight+ ' гр.'
-        // addMozarella = null
+  
     }
     
 
     if (props.content.config.size.length > 0) {
-        // console.log(props.content.config)
-        optionSize = props.content.config.size.map((a, i) => {
-            //  console.log(a)
-            return <option value={a.name} info={a.name} key={i} >{a.title}</option>
-        })
+        optionSize = props.content.config.size.map((a, i) => <option value={a.name} info={a.name} key={i}>{a.title}</option>)
         sizeSelect = <select defaultValue={props.content.config.defaultSize} onChange={(event) => props.selectSize(event.target.value, props.type, props.content)} >
             {optionSize}
         </select>
@@ -56,17 +45,14 @@ const ProductUnit = (props, state) => {
     }
 
     if (props.content.config.dough.length > 0) {
-        optionDough = props.content.config.dough.map((a, i) => {
-            return <option value={a.name} key={i} >{a.title}</option>
-        })
+        optionDough = props.content.config.dough.map((a, i) => <option value={a.name} key={i}>{a.title}</option>)
         doughSelect = <select onChange={(event) => props.selectDough(event.target.value, props.type, props.content)} >
             {optionDough}
         </select>
     } else {
         doughSelect = null
     }
-    console.log('i am render')
-    // console.log(props.content.content)
+
     return (
         <div className={'product'}>
             <div className={'product_logo'}>
@@ -80,11 +66,7 @@ const ProductUnit = (props, state) => {
                     {doughSelect}
                 </div>
             </div>
-            <div className={'product_modification_control'}>
-                {/* {addMozarella} */}
-            </div>
             <div className={'product-result'}>
-
                 <div className={"product-card__modification-info"}>
                     <p className={"product-card__modification-info-price"}>{totalPrice}</p>
                     <p className={"product-card__modification-info-weight"}>{totalWeight}</p>

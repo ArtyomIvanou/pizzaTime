@@ -7,15 +7,12 @@ import { requiredInput, validPhoneNumber, composeValidators } from '../../../com
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Checkout = (props) => {
-// console.log('render checkout')
     let phoneInput
     let cartItem
     let showSummary
     let myForm
     const sendOrder = (form) => {
-       console.log(()=> props.sendOrder(props.cart, props.summary, form))
         props.sendOrder(props.cart, props.summary, form)
-        
     }
 
     const onSubmit = async values => {
@@ -71,18 +68,16 @@ const Checkout = (props) => {
         return <Redirect to="/" />
     }
 
-    cartItem = props.cart.map((a, i) => {
-        return <div key={Math.random()}>
-            <span>{a.title}</span><span>{'  '}</span>
-            <span>{a.priceName}</span><span>{'  '}</span>
-            <span>{a.addedDoughName}</span><span>{'  '}</span>
-            <span>{a.weight + a.addedWeight}<span>{'гр'}</span></span><span>{'  '}</span>
-            <span>{a.price + a.addedPrice}</span><span>{'р'}</span><span>{'  '}</span>
-            <span>{a.amount}</span><span>{'шт'}</span><span>{'  '}</span>
-            <button onClick={() => props.deleteItem(i)}>delete</button>
+    cartItem = props.cart.map((a, i) => <div key={Math.random()}>
+        <span>{a.title}</span><span>{'  '}</span>
+        <span>{a.priceName}</span><span>{'  '}</span>
+        <span>{a.addedDoughName}</span><span>{'  '}</span>
+        <span>{a.weight + a.addedWeight}<span>{'гр'}</span></span><span>{'  '}</span>
+        <span>{a.price + a.addedPrice}</span><span>{'р'}</span><span>{'  '}</span>
+        <span>{a.amount}</span><span>{'шт'}</span><span>{'  '}</span>
+        <button onClick={() => props.deleteItem(i)}>delete</button>
 
-        </div>
-    })
+    </div>)
 
     return (
         <div className={'checkout'}  >

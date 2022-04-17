@@ -9,8 +9,6 @@ const CartButton=(props)=>{
     showCartClassname='cart_disable'
   }
 
-  
-// console.log(props.show)
     return (
       <div className={'cart'}><div className={showCartClassname}><UserCartContainer/></div><button onClick={() => props.showCart()}>Корзина</button><div>{props.cartLength}</div></div>  
     );

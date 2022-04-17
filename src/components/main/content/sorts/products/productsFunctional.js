@@ -9,11 +9,9 @@ import ProductUnitContainer from './productUnitContainer';
 
 const ProductsFunctional = (props) => {
 
-    let productsSort = props.content.productsType.map((a, i) => {
-        return <li key={i} ><NavLink
-            activeClassName={'active_Link'}
-            to={'/' + props.type + '/' + a.type}>{a.title} </NavLink></li>
-    })
+    let productsSort = props.content.productsType.map((a, i) => <li key={i}><NavLink
+        activeClassName={'active_Link'}
+        to={'/' + props.type + '/' + a.type}>{a.title} </NavLink></li>)
 
     props.content.productsType.map((a) => {
         a.products = []
@@ -21,6 +19,7 @@ const ProductsFunctional = (props) => {
     })
     props.content.products.map((a) => {
         props.content.productsType.map((b) => {
+            b.products = []
             if (b.type === a.type) {
                 b.products.push(a)
             }
@@ -28,43 +27,32 @@ const ProductsFunctional = (props) => {
         })
         return a
     })
+    // console.log( props)
+    // console.log( props.content.productsType)
     let allProducts
     if (props.content.productsType.length > 1) {
         allProducts = props.content.productsType.map((a, i) => {
-            let ccc
+            let ccc =null
             if (a.products.length >= 1) {
-                ccc = a.products.map((b, e) => {
-
-                    return <ProductUnitContainer key={e}
-                        number={b.id}
-                        type={props.type}
-                        // content={b}
-                    />
-                })
-            } else {
-                ccc = null
-            }
+                ccc = a.products.map((b, e) => <ProductUnitContainer key={e}
+                    number={b.id}
+                    type={props.type}
+                    content={b} />)
+            } 
             return <Route key={i}
                 path={'/' + props.type + '/' + a.type}>{ccc}</Route>
         })
     } else {
-        allProducts = props.content.products.map((a, i) => {
-            return <Route key={a.id}
-                path={'/' + props.type + '/' + a.type}><ProductUnitContainer key={a.id}
-                    number={a.id}
-                    // content={a}
-                    type={props.type}
-                /></Route>
-        })
+        allProducts = props.content.products.map((a) => <Route key={a.id}
+            path={'/' + props.type + '/' + a.type}><ProductUnitContainer key={a.id}
+                number={a.id}
+                content={a}
+                type={props.type} /></Route>)
     }
-    let allProductsShow = props.content.products.map((a, i) => {
-        // console.log(a)
-        return <ProductUnitContainer key={a.id}
-            number={a.id}
-            // content={a}
-            type={props.type}
-        />
-    })
+    let allProductsShow = props.content.products.map((a) => <ProductUnitContainer key={a.id}
+        number={a.id}
+        content={a}
+        type={props.type} />)
 
     return (
         <Fragment>

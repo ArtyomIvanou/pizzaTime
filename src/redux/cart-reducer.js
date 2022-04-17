@@ -1,5 +1,3 @@
-
-
 import { ordersAPI } from './../api/api';
 const ADD_TO_CART = 'ADD_TO_CART'
 const SHOW_CART = 'SHOW_CART'
@@ -12,6 +10,8 @@ const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_CART:
             {
+                // console.log(action)
+
                 let stateCopy = { ...state }
                 let cartCopy = [...stateCopy.cart]
                 stateCopy.addMode = true
@@ -125,29 +125,20 @@ const cartReducer = (state = initialState, action) => {
     }
 
 }
-export const addToCart = (selected) => {
-    return { type: ADD_TO_CART, product: selected }
-}
-export const showCart = (selected) => {
-    return { type: SHOW_CART, product: selected }
-}
-export const deleteItem = (selected) => {
-    return { type: DELETE_ITEM, product: selected }
-}
-export const addAmount = (selected) => {
-    return { type: ADD_AMOUNT, product: selected }
-}
-export const reduceAmount = (selected) => {
-    return { type: REDUCE_AMOUNT, product: selected }
-}
-export const cleanCart = (selected) => {
-    return { type: CLEAN_CART, product: selected }
-}
-export const sendOrder = (cart,summary,form) => (dispatch) => {
-    ordersAPI.sendOrder(cart,summary,form) 
-        .catch(error => {
-            console.log(error);
-        });
+export const addToCart = (selected) => ({ type: ADD_TO_CART, product: selected })
+export const showCart = (selected) => ({ type: SHOW_CART, product: selected })
+export const deleteItem = (selected) => ({ type: DELETE_ITEM, product: selected })
+export const addAmount = (selected) => ({ type: ADD_AMOUNT, product: selected })
+export const reduceAmount = (selected) => ({ type: REDUCE_AMOUNT, product: selected })
+export const cleanCart = (selected) => ({ type: CLEAN_CART, product: selected })
+export const sendOrder = (cart, summary, form) => async (dispatch) => {
+    try {
+        await ordersAPI.sendOrder(cart, summary, form)
         dispatch(cleanCart())
+    } catch (error) {
+        console.log(error);
+    }
+   
+      
 }
 export default cartReducer

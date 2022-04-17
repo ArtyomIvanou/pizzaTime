@@ -1,11 +1,9 @@
 import { entryAPI } from "../api/api"
-
-// import { FORM_ERROR } from 'final-form'
 const IS_AUTORIZIED = 'IS_AUTORIZIED'
 const IS_ADMIN = 'IS_ADMIN'
 const IS_ERROR = 'IS_ERROR'
 const SET_USER = 'SET_USER'
-let initialState = { isAutorizied: false, isAdmin: false, isError: undefined,  user: undefined }
+let initialState = { isAutorizied: false, isAdmin: false, isError: undefined, user: undefined }
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case IS_AUTORIZIED:
@@ -40,77 +38,56 @@ const userReducer = (state = initialState, action) => {
     }
 
 }
-export const isAutorizied = (bool) => {
-    return { type: IS_AUTORIZIED, answer: bool }
-}
-export const isAdmin = (bool) => {
-    return { type: IS_ADMIN, answer: bool }
-}
-export const isError = (bool) => {
-    return { type: IS_ERROR, answer: bool }
-}
-export const setUser = (info) => {
-    return { type: SET_USER, answer: info }
-}
-export const loginUser = (form) => (dispatch) => {
+export const isAutorizied = (bool) => ({ type: IS_AUTORIZIED, answer: bool })
+export const isAdmin = (bool) => ({ type: IS_ADMIN, answer: bool })
+export const isError = (bool) => ({ type: IS_ERROR, answer: bool })
+export const setUser = (info) => ({ type: SET_USER, answer: info })
+export const loginUser = (form) => async (dispatch) => {
+    try {
+        dispatch(isError(undefined))
+        const res = await entryAPI.login(form)
+        window.localStorage.removeItem('currentUser');
+        dispatch(setUser({
+            email: res.email, name: res.username, telephone: res.telephone, adress: res.adress
+        }))
+        if (res.isAdmin) {
+            dispatch(isAdmin(true))
+        } else {
+            dispatch(isAdmin(false))
+        }
+        dispatch(isAutorizied(true))
+        window.localStorage.setItem('currentUser', JSON.stringify({
+            email: res.email, name: res.username, telephone: res.telephone, adress: res.adress
+        }));
+        return res
+    } catch (error) {
+        dispatch(isError('Неверный email или пароль'))
+    }
 
-    dispatch(isError(undefined))
-    entryAPI.login(form)
-        .then(res => {
-            console.log(res)
-            window.localStorage.removeItem('currentUser');
-            dispatch(setUser({
-                email: res.email, name: res.username, telephone: res.telephone, adress: res.adress
-            }))
-            if (res.isAdmin) {
-                dispatch(isAdmin(true))
-            } else {
-                dispatch(isAdmin(false))
-            }
-            dispatch(isAutorizied(true))
-            // dispatch(setUser(res))
-            window.localStorage.setItem('currentUser', JSON.stringify({
-                email: res.email, name: res.username, telephone: res.telephone, adress: res.adress
-            }));
-            return res
-            // dispatch(isAutorizied(true))
-
-        })
-
-        .catch(error => {
-            // console.log(error);
-            // console.log('masndc n');
-             dispatch(isError('Неверный email или пароль' ))
-             
-            // return { [FORM_ERROR]: 'Login Failed' }
-        });
 }
-export const registrationUser = (form) => (dispatch) => {
+export const registrationUser = (form) => async (dispatch) => {
+    try {
+        dispatch(isError(undefined))
+        let res = await entryAPI.register(form)
 
-    dispatch(isError(undefined))
-    entryAPI.register(form)
-        .then(res => {
-            console.log(res)
-            window.localStorage.removeItem('currentUser');
-            dispatch(setUser({
-                email: res.email, name: res.username, telephone: res.telephone, adress: res.adress
-            }))
-            if (res.isAdmin) {
-                dispatch(isAdmin(true))
-            } else {
-                dispatch(isAdmin(false))
-            }
-            dispatch(isAutorizied(true))
-            window.localStorage.setItem('currentUser', JSON.stringify({
-                email: res.email, name: res.username, telephone: res.telephone, adress: res.adress
-            }));
-            // dispatch(isAutorizied(true))
+        console.log(res)
+        window.localStorage.removeItem('currentUser');
+        dispatch(setUser({
+            email: res.email, name: res.username, telephone: res.telephone, adress: res.adress
+        }))
+        if (res.isAdmin) {
+            dispatch(isAdmin(true))
+        } else {
+            dispatch(isAdmin(false))
+        }
+        dispatch(isAutorizied(true))
+        window.localStorage.setItem('currentUser', JSON.stringify({
+            email: res.email, name: res.username, telephone: res.telephone, adress: res.adress
+        }));
+    } catch (error) {
+        dispatch(isError('Такой пользователь уже существует'))
+    }
 
-        })
-        .catch(error => {
-            dispatch(isError('Такой пользователь уже существует' ))
-            
-        });
 }
 export const logout = () => (dispatch) => {
     window.localStorage.removeItem('currentUser');
@@ -128,8 +105,6 @@ export const loginUserFromLocalstorage = (form) => (dispatch) => {
         dispatch(isAdmin(false))
     }
     dispatch(setUser(form))
-    // console.log(form)
-
 
 }
 export default userReducer

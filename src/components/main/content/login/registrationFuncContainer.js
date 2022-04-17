@@ -9,10 +9,8 @@ import { registrationUser } from '../../../../redux/user-reducer';
 import Registration from './registration';
 
 
-let mapStateToProps = (state) => {
-    return {
-        user:selectUser(state)
-    }
-}
+let mapStateToProps = (state) => ({
+    user: selectUser(state)
+})
 
 export default compose(connect(mapStateToProps, { registrationUser }))(Registration)

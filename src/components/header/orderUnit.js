@@ -1,22 +1,15 @@
 import React from 'react';
 
-
-
 const OrderUnit = (props) => {
-    // console.log(props.content)
     let cartItem
-
-
-    cartItem = props.content.cart.map((a, i) => {
+    cartItem = props.content.cart.map((a) => {
         let optionSize
         let sizeSelect
         let optionDough
         let doughSelect
         if (a.config.size.length > 0) {
-            optionSize = a.config.size.map((size, i) => {
-                return <option value={size.name} info={size.name} key={i} >{size.title}</option>
-            })
-            sizeSelect = <select defaultValue={a.config.defaultSize} onChange={(event) => props.selectSize(event.target.value, props.id, a)} >
+            optionSize = a.config.size.map((size, i) => <option value={size.name} info={size.name} key={i}>{size.title}</option>)
+            sizeSelect = <select defaultValue={a.config.defaultSize} onChange={(event) => props.selectSizeFinal(event.target.value, props.id, a)} >
                 {optionSize}
             </select>
         } else {
@@ -24,10 +17,8 @@ const OrderUnit = (props) => {
         }
 
         if (a.config.dough.length > 0) {
-            optionDough = a.config.dough.map((a, i) => {
-                return <option value={a.name} key={i} >{a.title}</option>
-            })
-            doughSelect = <select defaultValue={a.config.defaulDough} onChange={(event) => props.selectDough(event.target.value, props.id, a)} >
+            optionDough = a.config.dough.map((a, i) => <option value={a.name} key={i}>{a.title}</option>)
+            doughSelect = <select defaultValue={a.config.defaulDough} onChange={(event) => props.selectDoughFinal(event.target.value, props.id, a)} >
                 {optionDough}
             </select>
         } else {

@@ -7,15 +7,12 @@ const settingsReducer = (state = initialState, action) => {
         case IS_LOAD_CHECK:
             {
                 let stateCopy = { ...state }
-                // console.log('skdjbjksdbfjsdb')
                 stateCopy.isLoading = action.answer
                 return stateCopy
             }
             case SELECT_TYPE:
                 {
                     let stateCopy = { ...state }
-                    // console.log('skdjbjksdbfjsdb')
-                    // stateCopy.setSelectType = {...stateCopy.setSelectType}
                     stateCopy.setSelectType = action.answer
                     return stateCopy
                 }
@@ -25,11 +22,7 @@ const settingsReducer = (state = initialState, action) => {
     }
 
 }
-export const isLoading = (bool) => {
-    return { type: IS_LOAD_CHECK, answer: bool }
-}
-export const setTypeOfPosition = (type) => {
-    return { type: SELECT_TYPE, answer: type }
-}
+export const isLoading = (bool) => ({ type: IS_LOAD_CHECK, answer: bool })
+export const setTypeOfPosition = (type) => ({ type: SELECT_TYPE, answer: type })
 
 export default settingsReducer

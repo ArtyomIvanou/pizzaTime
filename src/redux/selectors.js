@@ -18,15 +18,9 @@ export const selectValidation = state => state.cart.validation
 
 export const selectSettingsIsLoading = state => state.settings.isLoading
 
-export const selectShop = (state, props) => {
-    return { shop: state.shop, props: props }
-}
-export const selectTypeOfPosition = (state) => {
-    return  state.settings.setSelectType
-}
+export const selectShop = (state, props) => ({ shop: state.shop, props: props })
+export const selectTypeOfPosition = (state) => state.settings.setSelectType
 export const selectSelectedTypeOfShop = createSelector(
     selectShop,
-    (obj) => {
-        return obj.shop.find(a => a.type === obj.props)
-    }
+    (obj) => obj.shop.find(a => a.type === obj.props)
 )

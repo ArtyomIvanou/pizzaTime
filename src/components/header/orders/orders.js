@@ -5,7 +5,7 @@ import { NameInputAdapter, AdressInputAdapter, PhoneInputAdapter } from '../../c
 import { requiredInput, validPhoneNumber, composeValidators } from '../../common/formControl';
 
 const Orders = (props) => {
-
+    // console.log('Orders')
     let positions
     if (props.content.length > 0) {
         positions = props.content.map((a, i) => {
@@ -14,7 +14,6 @@ const Orders = (props) => {
                 console.log(values, a.cart)}
             let finalForm = (<Form
                 onSubmit={onSubmit}
-
                 render={({ handleSubmit, control, form, submitting, pristine, values, invalid }) => (
                     <div>
                         <OrderUnitFuncContainer content={a} />
