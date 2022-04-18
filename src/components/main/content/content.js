@@ -3,14 +3,14 @@ import {
     Route
 } from "react-router-dom";
 import Carousel from './carousel/carousel';
-import './content.css';
+import styles from './content.module.css';
 import Products from './sorts/products/productsFuncContainer';
 import Orders from '../../header/orders/ordersFuncContainer';
 import CheckoutContainer from '../content/checkout/checkoutFuncContainer';
 import EntryFuncContainer from './login/entryFuncContainer';
 import RegistrationFuncContainer from './login/registrationFuncContainer';
 const Content = () => (
-    <div className={'content'}>
+    <div className={styles.content}>
         <Carousel></Carousel>
         <Route exact path="/"><Products selectedType={'pizza'} /></Route>
         <Route path={'/pizza/:productsType?'}><Products selectedType={'pizza'} /></Route>

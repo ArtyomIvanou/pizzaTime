@@ -1,7 +1,7 @@
 import { addToCart } from '../../../../../redux/cart-reducer';
 import { selectSize, selectDough } from '../../../../../redux/configurate-item-reducer';
 import { compose } from 'redux'
-import '../../content.css';
+// import '../../content.css';
 import ProductUnit from './productUnit';
 import { connect } from 'react-redux';
 import { selectSelectedTypeOfShop } from '../../../../../redux/selectors';

@@ -1,9 +1,9 @@
 import React from 'react'
-import './header.css';
+import styles from './header.module.css';
 import NavMenu from './navMenu';
 import CartButtonConteiner from './cartButton/cartButtonConteiner';
 const HeaderBottom = () => (
-  <div className={'header_bottom'}>
+  <div className={styles.header_bottom}>
     <NavMenu></NavMenu>
     <CartButtonConteiner />
   </div>

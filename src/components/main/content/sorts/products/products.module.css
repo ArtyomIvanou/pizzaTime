@@ -1,0 +1,143 @@
+/*----products----*/
+ul {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(80px, 1fr));
+}
+
+ul li {
+    list-style: none;
+
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 320px));
+    justify-content: center;
+    align-content: center;
+}
+.content_name{font-size: 1.5em;
+    font-weight: 500;
+margin-left: 20px;}
+.product {
+    box-sizing: border-box;
+    display: grid;
+    width: 280px;
+    justify-content: center;
+    align-content: space-between;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px auto;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(63, 93, 138, .1);
+    transition: all 0.2s 0s linear;
+}
+
+.product:hover{
+    box-shadow: 0px 0px 18px 6px rgba(34, 60, 80, 0.2);
+    transform:   translateY(-3px);
+}
+
+.product_logo img {
+    max-width: 250px;
+    max-height: 250px;
+    margin: auto;
+}
+
+.product_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product_name, .product_description {
+    text-align: center;
+}
+
+.product_name {
+    min-width: 270px;
+    padding: 20px 0px 5px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.product_description {
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding: 10px auto;
+    color: rgb(139, 138, 138);
+}
+
+.descriptionHeight {
+    min-height: 5em;
+}
+
+.product_modification {
+    display: flex;
+    justify-content: center;
+}
+
+.product_result {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(auto-fill, 50%)
+}
+
+.product_card_modification_info {
+    padding-left: 15px;
+}
+
+.product_card_actions {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.addToCart {
+    user-select: none;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: brown;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    max-width: max-content;
+    padding: 5px 4px;
+    transition: all 0.2s;
+
+}
+
+.addToCart:hover {
+   
+    box-shadow: 4px -2px 98px 100px rgba(207, 207, 207, 0.1) inset;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+    color: black;
+}
+
+.active_Link {
+
+    color: red;
+    font-weight: 500;
+
+}
+
+select {
+    margin: 5px;
+    border-color: rgb(211, 211, 211);
+    padding: 4px;
+    cursor: pointer;
+}
+
+/* select::selection{border-color: red;} */
+option {
+    padding: 5px;
+}

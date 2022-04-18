@@ -5,8 +5,9 @@
     top: 0px;
     /* height: 50px;
     width: 50px; */
-    background-color: brown;
+    background-color: rgb(170, 247, 247);
     z-index: 10;
+    max-width: 50%;
 }
 .cart_disable{
     display: none;

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import '../../content.css';
+import styles from'./products.module.css';
 import {
     Switch,
     Route,
@@ -10,7 +10,7 @@ import ProductUnitContainer from './productUnitContainer';
 const ProductsFunctional = (props) => {
 
     let productsSort = props.content.productsType.map((a, i) => <li key={i}><NavLink
-        activeClassName={'active_Link'}
+        activeClassName={styles.active_Link}
         to={'/' + props.type + '/' + a.type}>{a.title} </NavLink></li>)
 
     props.content.productsType.map((a) => {
@@ -19,7 +19,7 @@ const ProductsFunctional = (props) => {
     })
     props.content.products.map((a) => {
         props.content.productsType.map((b) => {
-            b.products = []
+          
             if (b.type === a.type) {
                 b.products.push(a)
             }
@@ -34,7 +34,7 @@ const ProductsFunctional = (props) => {
         allProducts = props.content.productsType.map((a, i) => {
             let ccc =null
             if (a.products.length >= 1) {
-                ccc = a.products.map((b, e) => <ProductUnitContainer key={e}
+                ccc = a.products.map((b, e) => <ProductUnitContainer  key={e}
                     number={b.id}
                     type={props.type}
                     content={b} />)
@@ -44,27 +44,27 @@ const ProductsFunctional = (props) => {
         })
     } else {
         allProducts = props.content.products.map((a) => <Route key={a.id}
-            path={'/' + props.type + '/' + a.type}><ProductUnitContainer key={a.id}
+            path={'/' + props.type + '/' + a.type}><ProductUnitContainer  key={a.id}
                 number={a.id}
                 content={a}
                 type={props.type} /></Route>)
     }
-    let allProductsShow = props.content.products.map((a) => <ProductUnitContainer key={a.id}
+    let allProductsShow = props.content.products.map((a) => <ProductUnitContainer  key={a.id}
         number={a.id}
         content={a}
         type={props.type} />)
 
     return (
         <Fragment>
-            <div className={'content_description'}>
-                <div className={'content_name'}>{props.content.title}</div>
-                <div className={'content_sort'}>
+            <div className={styles.content_description}>
+                <div className={styles.content_name}>{props.content.title}</div>
+                <div className={styles.content_sort}>
                     <ul>
                         {productsSort}
                     </ul>
                 </div>
             </div>
-            <div className={'products'}>
+            <div className={styles.products}>
                 <Switch>
                     <Route exact path={'/'} >{allProductsShow}</Route>
                     <Route exact path={'/' + props.type + '/'} >{allProductsShow}</Route>

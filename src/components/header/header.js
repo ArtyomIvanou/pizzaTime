@@ -1,9 +1,9 @@
 import React from 'react'
-import './header.css';
+ import styles from './header.module.css';
 import HeaderTop from './header-topFuncContainer';
 import HeaderBottom from './header-bottom';
 const Header = () => (
-    <header>
+    <header className={styles.header}>
         <HeaderTop></HeaderTop>
         <HeaderBottom></HeaderBottom>
     </header>

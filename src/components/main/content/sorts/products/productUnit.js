@@ -1,5 +1,6 @@
 import React from 'react'
-import '../../content.css';
+import styles from './products.module.css';
+import classNames from 'classnames';
 
 const ProductUnit = (props) => {
     if (!props.content.addedDoughName) {
@@ -26,12 +27,13 @@ const ProductUnit = (props) => {
     let totalWeight
     let totalPrice = props.content.price + props.content.addedPrice + ' руб.'
     let description = props.content.content.join(', ')
+    let descriptionHeight
     if (props.type === 'pizza') {
         totalWeight = props.content.weight + props.content.addedWeight + ' гр.'
-      
+        descriptionHeight=styles.descriptionHeight
     } else {
         totalWeight = props.content.weight+ ' гр.'
-  
+        descriptionHeight=null
     }
     
 
@@ -54,26 +56,25 @@ const ProductUnit = (props) => {
     }
 
     return (
-        <div className={'product'}>
-            <div className={'product_logo'}>
+        <div className={styles.product}>
+            <div className={styles.product_logo}>
                 <img src={props.content.img} alt={props.content.title}></img>
             </div>
-            <div className={'product_name'}>{props.content.title}</div>
-            <div className={'product_description'}>{description}</div>
-            <div className={'product_customize'}>
-                <div className={'product_modification'}>
+            <div className={styles.product_name}>{props.content.title}</div>
+            <div className={classNames(styles.product_description,descriptionHeight)}>{description}</div>
+            <div className={styles.product_customize}>
+                <div className={styles.product_modification}>
                     {sizeSelect}
                     {doughSelect}
                 </div>
             </div>
-            <div className={'product-result'}>
-                <div className={"product-card__modification-info"}>
-                    <p className={"product-card__modification-info-price"}>{totalPrice}</p>
-                    <p className={"product-card__modification-info-weight"}>{totalWeight}</p>
+            <div className={styles.product_result}>
+                <div className={styles.product_card_modification_info}>
+                    <p className={styles.product_card_modification_info_price}>{totalPrice}</p>
+                    <p className={styles.product_card_modification_info_weight}>{totalWeight}</p>
                 </div>
-                <div className={"product-card__actions"}>
-                    <button title={"В корзину"} type={"button"} onClick={() => props.addToCart(props.content)}><span ><span >
-                        <span >В корзину</span></span></span></button>
+                <div className={styles.product_card_actions}>
+                     <div className={styles.addToCart} title={"В корзину"} onClick={() => props.addToCart(props.content)}>В корзину</div>   
                 </div>
             </div>
         </div>)

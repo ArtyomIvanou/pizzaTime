@@ -1,16 +1,16 @@
 import React from 'react'
-import '../cartButton/cartButton.css';
+import styles from '../cartButton/cartButton.module.css';
 import UserCartContainer from './userCart/userCartContainer';
 const CartButton=(props)=>{
   let showCartClassname
   if (props.show) {
-    showCartClassname='cart_enable'
+    showCartClassname=styles.cart_enable
   } else {
-    showCartClassname='cart_disable'
+    showCartClassname=styles.cart_disable
   }
 
     return (
-      <div className={'cart'}><div className={showCartClassname}><UserCartContainer/></div><button onClick={() => props.showCart()}>Корзина</button><div>{props.cartLength}</div></div>  
+      <div className={styles.cart}><div className={showCartClassname}><UserCartContainer/></div><button onClick={() => props.showCart()}>Корзина</button><div>{props.cartLength}</div></div>  
     );
     
   }
