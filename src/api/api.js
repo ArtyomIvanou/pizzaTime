@@ -17,9 +17,6 @@ export const ordersAPI = {
     deleteOrderApi(id) {
         return instance.delete(`orders/${id}`, {
         })
-
-
-
     },
 
     sendOrder(cart, summary, form) {
@@ -43,7 +40,6 @@ export const shopAPI = {
 }
 export const entryAPI = {
     async register(form) {
-        console.log(form)
         const response = await instance.post(`register`, {
             email: form.userEmail,
             password: form.userPassword,

@@ -3,7 +3,6 @@ import styles from '../cartButton.module.css';
 import OrderCartContainer from '../../../main/content/orderCart/orderCartContainer';
 import CartListUnit from './CartListUnit';
 const UserCart = (props) => {
-  // console.log(props)
   let cartList = props.cart.map((i, a) => <li key={a + i.id * i.price + a / i.id * i.weight} >
     <CartListUnit content={i}
       position={a}

@@ -7,8 +7,5 @@ const HeaderBottom = () => (
     <NavMenu></NavMenu>
     <CartButtonConteiner />
   </div>
-
-
-
 )
 export default HeaderBottom

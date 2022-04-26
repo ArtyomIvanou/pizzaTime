@@ -5,7 +5,6 @@ import HeaderTop from './header-top';
 import { loginUserFromLocalstorage, logout } from './../../redux/user-reducer';
 import { selectUser } from './../../redux/selectors';
 const HeaderTopFuncConteiner = (props) => {
-  // console.log('HeaderTopFuncConteiner')
   useEffect(() => {
     let info = window.localStorage.getItem('currentUser')
     info = JSON.parse(info)

@@ -2631,6 +2631,40 @@
         "userAdress": "почтовая",
         "telephone": "+375292939956"
       }
+    },
+    {
+      "id": 0.1896674374657228,
+      "cart": [
+        {
+          "id": 1,
+          "type": null,
+          "config": {
+            "size": [],
+            "defaultSize": "standart",
+            "dough": [],
+            "defaulDough": "classic",
+            "topping": 0,
+            "toppingWeight": 30
+          },
+          "img": "https://images.dominos.by/media/dominos/osg/api/2019/04/29/krylyshki_kurinyye_ostryye_small.png",
+          "title": "Крылышки острые",
+          "content": [
+            "Сальса соус",
+            "Томатный соус 25г"
+          ],
+          "addedPrice": 0,
+          "addedWeight": 0,
+          "price": 9,
+          "amount": 1,
+          "weight": 275
+        }
+      ],
+      "summary": 9,
+      "form": {
+        "username": "artemka248944",
+        "userAdress": "почтовая",
+        "telephone": "+375292939956"
+      }
     }
   ],
   "users": [

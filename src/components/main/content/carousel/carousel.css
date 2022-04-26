@@ -2,9 +2,4 @@
 
  .carousel {
     z-index: 0;
-}/*
-@media screen and (max-width: 640px) {
-  .carousel_wrapper {
-      display: none;
-    }
-  } */
+}

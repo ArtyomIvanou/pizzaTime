@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { deleteItem, showCart,addAmount } from '../../../../redux/cart-reducer';
+import { deleteItem, showCart, addAmount } from '../../../../redux/cart-reducer';
 import UserCart from './userCart'
 import { reduceAmount } from '../../../../redux/cart-reducer';
-import {compose} from 'redux'
+import { compose } from 'redux'
 import { selectCart, selectCartShow, selectSummary } from '../../../../redux/selectors';
 let mapStateToProps = (state) => ({
   summary: selectSummary(state),
@@ -10,4 +10,4 @@ let mapStateToProps = (state) => ({
   show: selectCartShow(state)
 })
 
-export default compose(connect(mapStateToProps, {showCart,deleteItem,addAmount,reduceAmount}))(UserCart)
+export default compose(connect(mapStateToProps, { showCart, deleteItem, addAmount, reduceAmount }))(UserCart)

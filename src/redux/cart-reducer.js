@@ -10,8 +10,6 @@ const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_CART:
             {
-                // console.log(action)
-
                 let stateCopy = { ...state }
                 let cartCopy = [...stateCopy.cart]
                 stateCopy.addMode = true
@@ -53,7 +51,6 @@ const cartReducer = (state = initialState, action) => {
                 cartCopy = qqq
                 stateCopy.cart = qqq
                 stateCopy.cartLength++
-                console.log(stateCopy.summary)
                 return stateCopy
             }
         case REDUCE_AMOUNT:
@@ -94,7 +91,6 @@ const cartReducer = (state = initialState, action) => {
                 stateCopy.show = false
                 stateCopy.cartLength = 0
                 stateCopy.summary = 0
-                console.log(stateCopy.summary)
                 return stateCopy
             }
         case DELETE_ITEM:

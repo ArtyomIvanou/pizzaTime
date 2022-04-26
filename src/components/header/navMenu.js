@@ -1,11 +1,7 @@
 import React from 'react'
-// import '../header/header.css';
 import styles from "./header.module.css"
-import {
- 
-  NavLink
-} from "react-router-dom";
-const NavMenu=()=>(
+import { NavLink } from "react-router-dom";
+const NavMenu = () => (
   <nav className={styles.nav_menu}>
     <ul>
       <li><NavLink activeClassName={styles.activeLink} to={'/pizza/'}>Пицца</NavLink></li>
@@ -18,10 +14,5 @@ const NavMenu=()=>(
       <li><NavLink activeClassName={styles.activeLink} to={'/sauses/'}>Соусы</NavLink></li>
     </ul>
   </nav>
-
-
-
-
-
 )
-  export default NavMenu
+export default NavMenu

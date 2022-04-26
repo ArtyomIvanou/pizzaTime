@@ -27,8 +27,6 @@ const ProductsFunctional = (props) => {
         })
         return a
     })
-    // console.log( props)
-    // console.log( props.content.productsType)
     let allProducts
     if (props.content.productsType.length > 1) {
         allProducts = props.content.productsType.map((a, i) => {
