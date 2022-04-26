@@ -17,16 +17,16 @@ const HeaderTop = (props) => {
   let isAdmin
   if (props.user.isAutorizied) {
     if (props.user.isAdmin) {
-      userInfo = <span>admin</span>
+      userInfo = null
       isAdmin = <NavLink to={'/orders/'}><button >Заказы</button></NavLink>
     } else {
       isAdmin = null
       userInfo = <span>Привет,{userName}</span>
     }
-    entry = <div className={styles.enter_personal}>{userInfo}{isAdmin}<button onClick={() => props.logout()}>выход</button></div>
+    entry = <div className={styles.enter_personal}><div>{userInfo}{isAdmin}</div><div className={styles.login} onClick={() => props.logout()}>Выход</div></div>
   } else {
     userInfo = null
-    entry = <div className={styles.enter_personal}>{userInfo}{isAdmin}<NavLink to={'/entry/'}><button >Вход</button></NavLink></div>
+    entry = <div className={styles.enter_personal}>{userInfo}{isAdmin}<NavLink to={'/entry/'}><div className={styles.login} >Вход</div></NavLink></div>
   }
 
   return (

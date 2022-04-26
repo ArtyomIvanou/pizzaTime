@@ -59,7 +59,7 @@ const ProductsFunctional = (props) => {
             <div className={styles.content_description}>
                 <div className={styles.content_name}>{props.content.title}</div>
                 <div className={styles.content_sort}>
-                    <ul>
+                    <ul className={styles.sort_list}>
                         {productsSort}
                     </ul>
                 </div>

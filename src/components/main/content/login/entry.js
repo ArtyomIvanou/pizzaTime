@@ -1,5 +1,7 @@
 import React from 'react';
 import 'react-phone-number-input/style.css'
+import formstyles from '../../../common/formstyle.module.css'
+import styles from './entry.module.css'
 import { Form, Field } from 'react-final-form'
 import { EmailInputAdapter, PasswordInputAdapter } from '../../../common/adaptedFormInputs';
 import { requiredInput } from '../../../common/formControl';
@@ -22,8 +24,8 @@ const Entry = (props) => {
     return <Form
         onSubmit={onSubmit}
         render={({ handleSubmit,submitError=props.user.isError, control, form, submitting, pristine, values, invalid }) => (
-            <div>
-                <form onSubmit={handleSubmit} className={'entry'}>
+            <div className={styles.entry}>
+                <form onSubmit={handleSubmit} className={formstyles.formStyle}>
                     <Field
                         name="userEmail"
                         validate={requiredInput}
@@ -50,7 +52,7 @@ const Entry = (props) => {
                         </button>
                     </div>
                 </form>
-                <NavLink to={'/registration/'}><button >Регистрация</button></NavLink>
+                <NavLink to={'/registration/'}><button className={styles.button_register} >Регистрация</button></NavLink>
             </div>
 
         )}

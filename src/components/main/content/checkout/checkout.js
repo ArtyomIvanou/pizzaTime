@@ -1,10 +1,12 @@
 import React from 'react';
 import 'react-phone-number-input/style.css'
-import './phoneInputStyle.css';
+import styles from './checkout.module.css';
+import formStyle from '../../../common/formstyle.module.css'
 import { Form, Field } from 'react-final-form'
 import { PhoneInputAdapter, NameInputAdapter, AdressInputAdapter } from '../../../common/adaptedFormInputs';
-import { requiredInput, validPhoneNumber, composeValidators } from '../../../common/formControl';
+import { requiredInput, validPhoneNumber, maxLength, composeValidators } from '../../../common/formControl';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import CartListUnit from './../../../header/cartButton/userCart/CartListUnit';
 
 const Checkout = (props) => {
     let phoneInput
@@ -18,29 +20,30 @@ const Checkout = (props) => {
     const onSubmit = async values => {
         sendOrder(values)
     }
-  
+
     if (props.cart.length > 0) {
         showSummary = props.summary.toFixed(2)
         myForm = <Form
             onSubmit={onSubmit}
             render={({ handleSubmit, control, form, submitting, pristine, values, invalid }) => (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className={formStyle.formStyle}>
                     <Field
-                        defaultValue={props.user?props.user.name:undefined}
+                        defaultValue={props.user ? props.user.name : undefined}
                         name="username"
-                        validate={requiredInput}
+                        validate={composeValidators(requiredInput, maxLength(15))}
                         component={NameInputAdapter}>
 
                     </Field>
                     <Field
                         name="userAdress"
-                        defaultValue={props.user?props.user.adress:undefined}
+                        defaultValue={props.user ? props.user.adress : undefined}
                         validate={requiredInput}
                         component={AdressInputAdapter}>
                     </Field>
                     <Field
+
                         name="telephone"
-                        defaultValue={props.user?props.user.telephone:undefined}
+                        defaultValue={props.user ? props.user.telephone : undefined}
                         validate={composeValidators(requiredInput, validPhoneNumber)}
                         component={PhoneInputAdapter}
                     />
@@ -55,7 +58,7 @@ const Checkout = (props) => {
                         >
                             Сброс
                         </button>
-                       
+
                     </div>
                 </form>
             )}
@@ -68,23 +71,36 @@ const Checkout = (props) => {
         return <Redirect to="/" />
     }
 
-    cartItem = props.cart.map((a, i) => <div key={Math.random()}>
-        <span>{a.title}</span><span>{'  '}</span>
-        <span>{a.priceName}</span><span>{'  '}</span>
-        <span>{a.addedDoughName}</span><span>{'  '}</span>
-        <span>{a.weight + a.addedWeight}<span>{'гр'}</span></span><span>{'  '}</span>
-        <span>{a.price + a.addedPrice}</span><span>{'р'}</span><span>{'  '}</span>
-        <span>{a.amount}</span><span>{'шт'}</span><span>{'  '}</span>
-        <button onClick={() => props.deleteItem(i)}>delete</button>
+    cartItem = props.cart.map((i, a) => <li key={a + i.id * i.price + a / i.id * i.weight}>
+        <CartListUnit content={i}
+            position={a}
+            deleteItem={props.deleteItem}
+            addAmount={props.addAmount}
+            reduceAmount={props.reduceAmount}
+            styles={styles} />
 
-    </div>)
+    </li>)
 
     return (
-        <div className={'checkout'}  >
-            <div className='phone_input_wrapper'>{phoneInput}</div>
-            {cartItem}
-            {myForm}
-            <div>{showSummary}</div>
+        <div className={styles.checkout}  >
+            <div className={styles.phone_input}>{phoneInput}</div>
+            <div className={styles.checkout_order}>
+                <div className={styles.phone_input}>
+                    {myForm}
+
+                </div>
+                <div>
+                    <ul>
+                        {cartItem}
+                    </ul>
+                    <div className={styles.summary}>{' Итого: '+showSummary + 'р.'}</div>
+                </div>
+
+
+            </div>
+
+
+
         </div>
     );
 

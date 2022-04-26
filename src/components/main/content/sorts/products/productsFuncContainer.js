@@ -3,6 +3,7 @@ import ProductsFunctional from './productsFunctional';
 import { getShop} from '../../../../../redux/configurate-item-reducer';
 import {compose} from 'redux'
 import { connect } from 'react-redux';
+import styles from'./products.module.css';
 // import { withRouter } from 'react-router';
 import { selectSelectedTypeOfShop, selectSettingsIsLoading } from '../../../../../redux/selectors';
 
@@ -15,7 +16,7 @@ const ProductsFuncConteiner = (props) => {
     }, [props.type]);
     let result
     if (props.isLoadingAnswer) {
-        result = <div>Loading......</div>
+        result = <div className={styles.loading}>Loading......</div>
     } else {
         result = <ProductsFunctional content={props.content}
             type={props.type} {...props}

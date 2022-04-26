@@ -7,7 +7,8 @@ export const requiredInput = (value) => {
         return "Поле обязательное"
     }
 }
-
+export const maxLength = max => value =>
+    value.length < max ? undefined : `Должно быть меньше ${max} символов`;
 export const validPhoneNumber = (value) => {
     if (isValidPhoneNumber(value)) {
         return undefined
@@ -18,4 +19,4 @@ export const validPhoneNumber = (value) => {
 
 }
 export const composeValidators = (...validators) => value =>
-validators.reduce((error, validator) => error || validator(value), undefined);
+    validators.reduce((error, validator) => error || validator(value), undefined);

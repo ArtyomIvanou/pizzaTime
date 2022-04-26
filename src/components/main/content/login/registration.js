@@ -1,27 +1,29 @@
 import React from 'react';
 import { Form, Field } from 'react-final-form'
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
-import { PhoneInputAdapter,NameInputAdapter,AdressInputAdapter, EmailInputAdapter, PasswordInputAdapter } from '../../../common/adaptedFormInputs';
-import { requiredInput,validPhoneNumber,composeValidators } from '../../../common/formControl';
-
+import { PhoneInputAdapter, NameInputAdapter, AdressInputAdapter, EmailInputAdapter, PasswordInputAdapter } from '../../../common/adaptedFormInputs';
+import { requiredInput, validPhoneNumber, maxLength, composeValidators } from '../../../common/formControl';
+import formstyles from '../../../common/formstyle.module.css'
+import styles from './entry.module.css'
 
 const Registration = (props) => {
 
     const sendOrder = (form) => {
-        props.registrationUser(form)    
+        props.registrationUser(form)
     }
- 
-    const onSubmit = async values => {       
-       sendOrder(values)
+
+    const onSubmit = async values => {
+        sendOrder(values)
     }
     if (props.user.isAutorizied) {
         return <Redirect to="/" />
     }
-        return <Form
-            onSubmit={onSubmit}
-            render={({ handleSubmit, submitError=props.user.isError,control, form, submitting, pristine, values, invalid }) => (
-                <form onSubmit={handleSubmit} className={'registration'}>
-                     <Field
+    return <Form
+        onSubmit={onSubmit}
+        render={({ handleSubmit, submitError = props.user.isError, control, form, submitting, pristine, values, invalid }) => (
+            <div className={styles.entry}>
+                <form onSubmit={handleSubmit} className={formstyles.formStyle}>
+                    <Field
                         name="userEmail"
                         validate={requiredInput}
                         component={EmailInputAdapter}>
@@ -35,7 +37,7 @@ const Registration = (props) => {
                     </Field>
                     <Field
                         name="username"
-                        validate={requiredInput}
+                        validate={composeValidators(requiredInput, maxLength(15))}
                         component={NameInputAdapter}>
 
                     </Field>
@@ -46,7 +48,7 @@ const Registration = (props) => {
                     </Field>
                     <Field
                         name="telephone"
-                        validate={composeValidators(requiredInput,validPhoneNumber)}
+                        validate={composeValidators(requiredInput, validPhoneNumber)}
                         component={PhoneInputAdapter}
                     />
                     {submitError && <div className="error">{submitError}</div>}
@@ -63,14 +65,18 @@ const Registration = (props) => {
                         </button>
                     </div>
                 </form>
-            )}
-        />
+            </div>
+
+        )}
+    />
 
 
-   
-   
 
-   
+
+
+
+
+
 
 }
 

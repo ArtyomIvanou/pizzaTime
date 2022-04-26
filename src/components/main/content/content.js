@@ -11,7 +11,7 @@ import EntryFuncContainer from './login/entryFuncContainer';
 import RegistrationFuncContainer from './login/registrationFuncContainer';
 const Content = () => (
     <div className={styles.content}>
-        <Carousel></Carousel>
+        <Carousel ></Carousel>
         <Route exact path="/"><Products selectedType={'pizza'} /></Route>
         <Route path={'/pizza/:productsType?'}><Products selectedType={'pizza'} /></Route>
         <Route path={'/chicken/'}><Products selectedType={'chicken'} /></Route>

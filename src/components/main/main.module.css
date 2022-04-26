@@ -1,12 +1,16 @@
 
-
+body, html {
+  margin: 0px;
+  padding: 0px;
+}
 .spa {
   
   display: grid;
-  grid-template-columns: 1fr minmax(320px, 1400px) 1fr;
-  grid-template-rows: minmax(10px, auto) minmax(1000px, auto) minmax(10px, auto);
+  grid-template-columns: 1fr minmax(280px, 1400px) 1fr;
+  grid-template-rows: minmax(10px, auto) minmax(auto, auto) minmax(10px, auto);
   justify-content: center;
   grid-template-areas: ". header ." ". content ." ". footer .";
+  
 }
 
 footer {
@@ -16,4 +20,5 @@ footer {
 
 footer {
   grid-area: footer;
+  align-self: flex-end;
 }

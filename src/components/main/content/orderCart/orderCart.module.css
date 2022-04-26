@@ -1,0 +1,11 @@
+.button_order {
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid brown;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: brown;
+
+}
