@@ -1,22 +1,17 @@
 
-import React from 'react';
-import Content from './content';
-//import NavMenu from './navMenu';
+import React  from 'react';
 import Footer from '../footer/footer';
 import Header from '../header/header';
-import './main.css';
-const Main = () => {
+import Content from './content/content';
+import styles from './main.module.css';
 
 
-  return (
-    <div className={'spa'}>
+const Main = () => (
+  <div className={styles.spa}>
+    <Header></Header>
+    <Content></Content>
+    <Footer></Footer>
+  </div>
+)
 
-      <Header></Header>
-
-      <Content></Content>
-      <Footer></Footer>
-    </div>
-  );
-
-}
 export default Main

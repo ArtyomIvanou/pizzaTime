@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProdUnit Link changes the class when hovered 1`] = `
+<div
+  className="product"
+>
+  <div
+    className="product_logo"
+  >
+    <img
+      alt="Пепперони Блюз"
+      src="	https://images.dominos.by/media/dominos/osg/api/2018/09/12/pepperoni_bluz.png"
+    />
+  </div>
+  <div
+    className="product_name"
+  >
+    Пепперони Блюз
+  </div>
+  <div
+    className="product_description"
+  >
+    Голубой сыр, Пепперони, Соус ранч, Сыр моцарелла
+  </div>
+  <div
+    className="product_customize"
+  >
+    <div
+      className="product_modification"
+    >
+      <select
+        defaultValue="standart"
+        onChange={[Function]}
+      >
+        <option
+          info="small"
+          value="small"
+        >
+          27см
+        </option>
+        <option
+          info="standart"
+          value="standart"
+        >
+          30см
+        </option>
+        <option
+          info="big"
+          value="big"
+        >
+          33см
+        </option>
+      </select>
+      <select
+        onChange={[Function]}
+      >
+        <option
+          value="classic"
+        >
+          Классическое
+        </option>
+        <option
+          value="hotDog"
+        >
+          Хот Дог борт
+        </option>
+        <option
+          value="cheese"
+        >
+          Сырный борт
+        </option>
+        <option
+          value="thin"
+        >
+          Тонкое
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    className="product-result"
+  >
+    <div
+      className="product-card__modification-info"
+    >
+      <p
+        className="product-card__modification-info-price"
+      >
+        20.7 руб.
+      </p>
+      <p
+        className="product-card__modification-info-weight"
+      >
+        585 гр.
+      </p>
+    </div>
+    <div
+      className="product-card__actions"
+    >
+      <button
+        onClick={[Function]}
+        title="В корзину"
+        type="button"
+      >
+        <span>
+          <span>
+            <span>
+              В корзину
+            </span>
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProdUnit Link changes the class when hovered 2`] = `
+<div
+  className="product"
+>
+  <div
+    className="product_logo"
+  >
+    <img
+      alt="Пепперони Блюз"
+      src="	https://images.dominos.by/media/dominos/osg/api/2018/09/12/pepperoni_bluz.png"
+    />
+  </div>
+  <div
+    className="product_name"
+  >
+    Пепперони Блюз
+  </div>
+  <div
+    className="product_description"
+  >
+    Голубой сыр, Пепперони, Соус ранч, Сыр моцарелла
+  </div>
+  <div
+    className="product_customize"
+  >
+    <div
+      className="product_modification"
+    >
+      <select
+        defaultValue="standart"
+        onChange={[Function]}
+      >
+        <option
+          info="small"
+          value="small"
+        >
+          27см
+        </option>
+        <option
+          info="standart"
+          value="standart"
+        >
+          30см
+        </option>
+        <option
+          info="big"
+          value="big"
+        >
+          33см
+        </option>
+      </select>
+      <select
+        onChange={[Function]}
+      >
+        <option
+          value="classic"
+        >
+          Классическое
+        </option>
+        <option
+          value="hotDog"
+        >
+          Хот Дог борт
+        </option>
+        <option
+          value="cheese"
+        >
+          Сырный борт
+        </option>
+        <option
+          value="thin"
+        >
+          Тонкое
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    className="product-result"
+  >
+    <div
+      className="product-card__modification-info"
+    >
+      <p
+        className="product-card__modification-info-price"
+      >
+        20.7 руб.
+      </p>
+      <p
+        className="product-card__modification-info-weight"
+      >
+        585 гр.
+      </p>
+    </div>
+    <div
+      className="product-card__actions"
+    >
+      <button
+        onClick={[Function]}
+        title="В корзину"
+        type="button"
+      >
+        <span>
+          <span>
+            <span>
+              В корзину
+            </span>
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

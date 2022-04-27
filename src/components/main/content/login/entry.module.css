@@ -1,0 +1,21 @@
+.entry {
+    margin: 0px auto;
+    max-width: 460px;
+}
+
+.button_register {
+    padding: 0;
+    border: 1px solid #00537a;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 15px;
+    font: inherit;
+    color: white;
+    background-color: #00537a;
+    /* отображаем курсор в виде руки при наведении; некоторые
+    считают, что необходимо оставлять стрелочный вид для кнопок */
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.button_register:hover{ box-shadow: 4px -2px 98px 100px rgba(207, 207, 207, 0.1) inset;}

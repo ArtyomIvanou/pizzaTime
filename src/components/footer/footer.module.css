@@ -1,0 +1,35 @@
+.footer {
+    color: rgb(141, 141, 141);
+}
+
+.aboutAll {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, minmax(100px, 250px));
+    text-align: center;
+    margin-top: 10px;
+}
+
+.about {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.about_logo, .about_numbers {
+    font-size: 1.7em;
+    color: rgb(185, 3, 3);
+}
+
+@media screen and (max-width: 1024px) {
+    .aboutAll {
+        grid-template-columns: repeat(2, minmax(100px, 250px));
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .aboutAll {
+        display: none;
+    }
+}

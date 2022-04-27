@@ -1,6 +1,7 @@
 import React from 'react'
 import ImageGallery from 'react-image-gallery';
 import './carousel.css';
+import styles from './carousel.module.css'
 const images = [
   {
     original: 'https://images.dominos.by/media/dominos/sliders/ru/big/2021/01/20/%D0%A2%D0%B8%D0%B7%D0%B5%D1%80_%D0%BA%D0%B5%D1%88%D0%B1%D1%8D%D0%BA_70_%D0%B4%D0%B5%D1%81%D0%BA%D1%82%D0%BE%D0%BF_7.jpg',
@@ -15,6 +16,6 @@ const images = [
     //thumbnail: 'https://images.dominos.by/media/dominos/sliders/ru/big/2021/01/20/%D0%A2%D0%B8%D0%B7%D0%B5%D1%80_%D0%BA%D0%B5%D1%88%D0%B1%D1%8D%D0%BA_70_%D0%B4%D0%B5%D1%81%D0%BA%D1%82%D0%BE%D0%BF_7.jpg',
   },
 ];
-const Carousel=()=>{return <ImageGallery items={images} />;}
+const Carousel=()=><div className={styles.carousel_wrapper}> <ImageGallery items={images} className={'carousel'} /></div>
 
 export default Carousel

@@ -1,0 +1,21 @@
+/*----content----*/
+.content_sort ul {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(80px, 1fr));
+}
+
+.content {
+  grid-area: content;
+  background-color: rgb(246, 253, 253);
+  min-height: 130vh;
+}
+
+.content_sort ul {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(80px, 1fr));
+}
+
+.content_sort ul li {
+  list-style: none;
+}
+

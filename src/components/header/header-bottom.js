@@ -1,21 +1,11 @@
 import React from 'react'
-import './header.css';
-import NavMenu from '../main/navMenu';
-import CartButton from './cartButton';
-const HeaderBottom=()=>{
-  
-   
-    return (
-      
-        <div className={'header_bottom'}>
-         <NavMenu></NavMenu>
-
-          <CartButton></CartButton>
-        </div>
-
-
-      
-    );
-    
-  }
-  export default HeaderBottom
+import styles from './header.module.css';
+import NavMenu from './navMenu';
+import CartButtonConteiner from './cartButton/cartButtonConteiner';
+const HeaderBottom = () => (
+  <div className={styles.header_bottom}>
+    <NavMenu></NavMenu>
+    <CartButtonConteiner />
+  </div>
+)
+export default HeaderBottom

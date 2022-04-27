@@ -1,0 +1,24 @@
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+}
+.spa {
+  
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 1400px) 1fr;
+  grid-template-rows: minmax(10px, auto) minmax(auto, auto) minmax(10px, auto);
+  justify-content: center;
+  grid-template-areas: ". header ." ". content ." ". footer .";
+  
+}
+
+footer {
+  background-color: white;
+  border-top: 1px solid rgb(231, 231, 231);
+}
+
+footer {
+  grid-area: footer;
+  align-self: flex-end;
+}
